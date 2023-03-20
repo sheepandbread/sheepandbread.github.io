@@ -94,12 +94,24 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <script>
+  a = true;
   function onclickFunny(){
+    a = false;
     $("#ha").css("display","block");
     setTimeout(function(){
       $("#ha").css("display","none");
     },2000);
   }
+  function onmouse(x){
+    if (a) {
+    document.getElementById("box2").id = 'box3';
+    }
+  }
+  function outmouse(x){
+    if (a) {
+      document.getElementById("box3").id = 'box2';
+    }
+  } 
 </script>
 
 <style>
@@ -107,18 +119,19 @@
   width: 100px;
   height: 50px;
   background-color: #f8bf74;
-  border: solid 2px white;
+  border: solid 0px white;
   border-radius: 50px;
   margin-left: 50px;
 }
-#box2:hover{
-    width: 200px;
+#box3{
+  width: 200px;
   height: 50px;
   margin-left: 0px;
+  border-radius: 50px;
   background-color: #fcce92;
-  border-color:#d6650a;
+  border: solid 2px #d6650a;
 }
-#box2:hover::before{
+#box3:before{
   background-color: #fcce92;
   content: '- 你好 :)  ';
   color: #ffaa00;
@@ -138,7 +151,7 @@
 <h3 id="hia">重开博客！</h3>
 <div id="box">
   <img id="ha" src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/%E5%B0%8F%E5%85%B0.png">
-  <button id="box2" onclick="onclickFunny()">🍞</button>
+  <button id="box2" onmousemove="onmouse(this)" onclick="onclickFunny()"onmouseout="outmouse(this)">🍞</button>
 </div>
 <br/>
 
@@ -146,7 +159,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/03/19/hello-world/" data-id="clfgyagui0000fe3l0f8s932i" data-title="Hello - New - World" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/03/19/hello-world/" data-id="clfh0wy5p0000563l1yfm0pv7" data-title="Hello - New - World" class="article-share-link">Share</a>
       
       
       

@@ -6,16 +6,16 @@
   
   <title>Hello - New - World | 咩包</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="function onclickFunny(){     $(&quot;#ha&quot;).css(&quot;display&quot;,&quot;block&quot;);     setTimeout(function(){       $(&quot;#ha&quot;).css(&quot;display&quot;,&quot;none&quot;);     },2000);   }    #box2{   width: 100px;   height: 50px;   backgroun">
+  <meta name="description" content="a &#x3D; true;   function onclickFunny(){     a &#x3D; false;     $(&quot;#ha&quot;).css(&quot;display&quot;,&quot;block&quot;);     setTimeout(function(){       $(&quot;#ha&quot;).css(&quot;display&quot;,&quot;none&quot;);     },2000);   }   function onmouse(x){">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hello - New - World">
 <meta property="og:url" content="http://example.com/2023/03/19/hello-world/index.html">
 <meta property="og:site_name" content="咩包">
-<meta property="og:description" content="function onclickFunny(){     $(&quot;#ha&quot;).css(&quot;display&quot;,&quot;block&quot;);     setTimeout(function(){       $(&quot;#ha&quot;).css(&quot;display&quot;,&quot;none&quot;);     },2000);   }    #box2{   width: 100px;   height: 50px;   backgroun">
+<meta property="og:description" content="a &#x3D; true;   function onclickFunny(){     a &#x3D; false;     $(&quot;#ha&quot;).css(&quot;display&quot;,&quot;block&quot;);     setTimeout(function(){       $(&quot;#ha&quot;).css(&quot;display&quot;,&quot;none&quot;);     },2000);   }   function onmouse(x){">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/%E5%B0%8F%E5%85%B0.png">
 <meta property="article:published_time" content="2023-03-19T03:57:27.514Z">
-<meta property="article:modified_time" content="2023-03-20T14:05:21.339Z">
+<meta property="article:modified_time" content="2023-03-20T16:10:36.565Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/%E5%B0%8F%E5%85%B0.png">
@@ -98,12 +98,24 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <script>
+  a = true;
   function onclickFunny(){
+    a = false;
     $("#ha").css("display","block");
     setTimeout(function(){
       $("#ha").css("display","none");
     },2000);
   }
+  function onmouse(x){
+    if (a) {
+    document.getElementById("box2").id = 'box3';
+    }
+  }
+  function outmouse(x){
+    if (a) {
+      document.getElementById("box3").id = 'box2';
+    }
+  } 
 </script>
 
 <style>
@@ -111,18 +123,19 @@
   width: 100px;
   height: 50px;
   background-color: #f8bf74;
-  border: solid 2px white;
+  border: solid 0px white;
   border-radius: 50px;
   margin-left: 50px;
 }
-#box2:hover{
-    width: 200px;
+#box3{
+  width: 200px;
   height: 50px;
   margin-left: 0px;
+  border-radius: 50px;
   background-color: #fcce92;
-  border-color:#d6650a;
+  border: solid 2px #d6650a;
 }
-#box2:hover::before{
+#box3:before{
   background-color: #fcce92;
   content: '- 你好 :)  ';
   color: #ffaa00;
@@ -142,7 +155,7 @@
 <h3 id="hia">重开博客！</h3>
 <div id="box">
   <img id="ha" src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/%E5%B0%8F%E5%85%B0.png">
-  <button id="box2" onclick="onclickFunny()">🍞</button>
+  <button id="box2" onmousemove="onmouse(this)" onclick="onclickFunny()"onmouseout="outmouse(this)">🍞</button>
 </div>
 <br/>
 
@@ -150,7 +163,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/03/19/hello-world/" data-id="clfgyagui0000fe3l0f8s932i" data-title="Hello - New - World" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/03/19/hello-world/" data-id="clfh0wy5p0000563l1yfm0pv7" data-title="Hello - New - World" class="article-share-link">Share</a>
       
       
       
