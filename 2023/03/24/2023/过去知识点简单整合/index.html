@@ -24,12 +24,11 @@
 <meta property="og:description" content="整合一下以前学习的知识">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://github.com/jackfrued/Python-100-Days/raw/master/Day01-15/res/python-set.png">
-<meta property="og:image" content="http://c.biancheng.net/uploads/allimg/210824/092Z42610-0.gif">
-<meta property="og:image" content="http://c.biancheng.net/uploads/allimg/210824/093001K37-0.gif">
-<meta property="og:image" content="http://c.biancheng.net/uploads/allimg/210824/09330262M-0.gif">
-<meta property="og:image" content="http://c.biancheng.net/uploads/allimg/210824/09350M4S-0.gif">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/%E6%88%AA%E5%B1%8F2023-09-28%20%E4%B8%8B%E5%8D%884.21.23.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/%E6%88%AA%E5%B1%8F2023-09-28%20%E4%B8%8B%E5%8D%884.21.41.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/%E6%88%AA%E5%B1%8F2023-09-28%20%E4%B8%8B%E5%8D%884.22.01.png">
 <meta property="article:published_time" content="2023-03-24T08:15:16.000Z">
-<meta property="article:modified_time" content="2023-09-12T16:31:28.692Z">
+<meta property="article:modified_time" content="2023-10-07T02:07:27.228Z">
 <meta property="article:author" content="咩包">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://github.com/jackfrued/Python-100-Days/raw/master/Day01-15/res/python-set.png">
@@ -235,7 +234,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          10k 字
+          12k 字
         
       </span>
     
@@ -246,7 +245,7 @@
         
         
         
-          83 分钟
+          99 分钟
         
       </span>
     
@@ -435,9 +434,11 @@
 <p>定义类：class</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Student</span>(<span class="hljs-title class_ inherited__">object</span>):<br><br>    <span class="hljs-comment"># __init__是一个特殊方法用于在创建对象时进行初始化操作</span><br>    <span class="hljs-comment"># 通过这个方法我们可以为学生对象绑定name和age两个属性</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, name, age</span>):<br>        self.name = name<br>        self.age = age<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">study</span>(<span class="hljs-params">self, course_name</span>):<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;%s正在学习%s.&#x27;</span> % (self.name, course_name))<br></code></pre></td></tr></table></figure>
 
-<p>在Python中，属性和方法的<strong>访问权限只有两种</strong>，也就是<strong>公开的和私有的</strong>。</p>
-<p>如果希望属性是私有的，在给属性命名时可以用两个下划线作为开头。</p>
-<h1 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h1><p><a target="_blank" rel="noopener" href="https://github.com/baa-god/sql_node/blob/master/mysql/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.md">详细笔记</a>、<a target="_blank" rel="noopener" href="http://c.biancheng.net/sql/what-is-sql.html">sql教程</a></p>
+<p>在Python中，属性和方法的<strong>访问权限有三种</strong>，也就是<strong>公开的、受保护的和私有的</strong>。</p>
+<p>如果希望属性是<strong>私有</strong>属性，在给属性命名时可以用两个下划线__作为开头。私有变量<strong>只能在本类的内部直接调用</strong>，若想间接调用，可**<code>._类名__私有变量</code>**进行调用。</p>
+<p>若是受保护的，一个下划线_作为开头。但总的来说，和公共变量差别不大。</p>
+<p>本质上，python没有真正意义上的私有，仍可以在外部访问私有属性和私有方法，所以是相对私有。</p>
+<h1 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h1><p><strong>参考：<a target="_blank" rel="noopener" href="https://github.com/baa-god/sql_node/blob/master/mysql/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.md">详细笔记</a>、<a target="_blank" rel="noopener" href="http://c.biancheng.net/sql/what-is-sql.html">sql教程</a></strong></p>
 <p>MySQL是关系型数据库。</p>
 <p><strong>登录</strong>：mysql -u 用户名 -p 密码</p>
 <p><strong>切换数据库</strong>：use xxx;</p>
@@ -478,11 +479,26 @@
 </ul>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-comment">-- NOT: 代表逻辑非</span><br><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> teacher <span class="hljs-keyword">WHERE</span> department <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;计算机系&#x27;</span> <span class="hljs-keyword">AND</span> profession <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">IN</span> (<br>    <span class="hljs-keyword">SELECT</span> profession <span class="hljs-keyword">FROM</span> teacher <span class="hljs-keyword">WHERE</span> department <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;电子工程系&#x27;</span><br>)<br><span class="hljs-comment">-- 合并两个集</span><br><span class="hljs-keyword">UNION</span><br><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> teacher <span class="hljs-keyword">WHERE</span> department <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;电子工程系&#x27;</span> <span class="hljs-keyword">AND</span> profession <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">IN</span> (<br>    <span class="hljs-keyword">SELECT</span> profession <span class="hljs-keyword">FROM</span> teacher <span class="hljs-keyword">WHERE</span> department <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;计算机系&#x27;</span><br>);<br><br><span class="hljs-comment">-- ANY: 符合SQL语句中的任意条件。</span><br><span class="hljs-comment">-- ALL: 符合所有的条件</span><br><span class="hljs-comment">-- 查询课程 3-105 且成绩 至少 高于 3-245 的 score 表。</span><br><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> score <span class="hljs-keyword">WHERE</span> c_no <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;3-105&#x27;</span> <span class="hljs-keyword">AND</span> degree <span class="hljs-operator">&gt;</span> <span class="hljs-keyword">ANY</span>(<br>    <span class="hljs-keyword">SELECT</span> degree <span class="hljs-keyword">FROM</span> score <span class="hljs-keyword">WHERE</span> c_no <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;3-245&#x27;</span><br>) <span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> degree <span class="hljs-keyword">DESC</span>;<br></code></pre></td></tr></table></figure>
 
+<h2 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h2><p><strong>主键【PRIMARY KEY】</strong>：使某个字段不重复且不得为空，确保表内所有数据的唯一性。</p>
+<p><strong>联合主键【PRIMARY KEY(a, b)】</strong>：联合主键中的每个字段都不能为空，并且不能和已设置的联合主键重复。</p>
+<p><strong>自增约束【PRIMARY KEY AUTO_INCREMENT】</strong>：自增约束的主键由系统自动递增分配。</p>
+<p><strong>唯一主键【UNIQUE(a)】</strong></p>
+<p><strong>非空约束【NOT NULL】</strong></p>
+<p><strong>默认约束【DEFAULT xx】</strong></p>
+<p>**外键约束【FOREIGN KEY(a) REFERENCES ** <em>table_name</em> <strong>(b)】</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-comment">-- 联合主键</span><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-keyword">user</span> (<br>    id <span class="hljs-type">INT</span>,<br>    name <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">20</span>),<br>    password <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">20</span>),<br>    <span class="hljs-keyword">PRIMARY</span> KEY(id, name)<br>);<br><br>mysql<span class="hljs-operator">&gt;</span> <span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> <span class="hljs-keyword">user</span> <span class="hljs-keyword">values</span>(<span class="hljs-number">1</span>,<span class="hljs-string">&#x27;pat&#x27;</span>,<span class="hljs-string">&#x27;123456&#x27;</span>);<br>Query OK, <span class="hljs-number">1</span> <span class="hljs-type">row</span> affected (<span class="hljs-number">0.01</span> sec)<br><br>mysql<span class="hljs-operator">&gt;</span> <span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> <span class="hljs-keyword">user</span> <span class="hljs-keyword">values</span>(<span class="hljs-number">1</span>,<span class="hljs-string">&#x27;tim&#x27;</span>,<span class="hljs-string">&#x27;123456&#x27;</span>);<br>Query OK, <span class="hljs-number">1</span> <span class="hljs-type">row</span> affected (<span class="hljs-number">0.01</span> sec)<br><br>mysql<span class="hljs-operator">&gt;</span> <span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> <span class="hljs-keyword">user</span> <span class="hljs-keyword">values</span>(<span class="hljs-number">1</span>,<span class="hljs-string">&#x27;pat&#x27;</span>,<span class="hljs-string">&#x27;123456&#x27;</span>);<br>ERROR <span class="hljs-number">1062</span> (<span class="hljs-number">23000</span>): Duplicate entry <span class="hljs-string">&#x27;1-pat&#x27;</span> <span class="hljs-keyword">for</span> key <span class="hljs-string">&#x27;user.PRIMARY&#x27;</span><br><br><span class="hljs-comment">-- 自增约束</span><br>mysql<span class="hljs-operator">&gt;</span> <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> user2 (<br>    <span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span>     id <span class="hljs-type">INT</span> <span class="hljs-keyword">PRIMARY</span> KEY AUTO_INCREMENT,<br>    <span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span>     name <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">20</span>)<br>    <span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span> );<br>Query OK, <span class="hljs-number">0</span> <span class="hljs-keyword">rows</span> affected (<span class="hljs-number">0.01</span> sec)<br><br>mysql<span class="hljs-operator">&gt;</span> <span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> user2(name) <span class="hljs-keyword">values</span>(<span class="hljs-string">&#x27;a&#x27;</span>),(<span class="hljs-string">&#x27;b&#x27;</span>),(<span class="hljs-string">&#x27;c&#x27;</span>);<br>Query OK, <span class="hljs-number">3</span> <span class="hljs-keyword">rows</span> affected (<span class="hljs-number">0.00</span> sec)<br>Records: <span class="hljs-number">3</span>  Duplicates: <span class="hljs-number">0</span>  Warnings: <span class="hljs-number">0</span><br><br>mysql<span class="hljs-operator">&gt;</span> <span class="hljs-keyword">select</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> user2;<br><span class="hljs-operator">+</span><span class="hljs-comment">----+------+</span><br><span class="hljs-operator">|</span> id <span class="hljs-operator">|</span> name <span class="hljs-operator">|</span><br><span class="hljs-operator">+</span><span class="hljs-comment">----+------+</span><br><span class="hljs-operator">|</span>  <span class="hljs-number">1</span> <span class="hljs-operator">|</span> a    <span class="hljs-operator">|</span><br><span class="hljs-operator">|</span>  <span class="hljs-number">2</span> <span class="hljs-operator">|</span> b    <span class="hljs-operator">|</span><br><span class="hljs-operator">|</span>  <span class="hljs-number">3</span> <span class="hljs-operator">|</span> c    <span class="hljs-operator">|</span><br><span class="hljs-operator">+</span><span class="hljs-comment">----+------+</span><br><span class="hljs-number">3</span> <span class="hljs-keyword">rows</span> <span class="hljs-keyword">in</span> <span class="hljs-keyword">set</span> (<span class="hljs-number">0.00</span> sec)<br><br><span class="hljs-comment">-- 外键约束</span><br><span class="hljs-comment">-- 班级</span><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> classes (<br>    id <span class="hljs-type">INT</span> <span class="hljs-keyword">PRIMARY</span> KEY,<br>    name <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">20</span>)<br>);<br><br><span class="hljs-comment">-- 学生表</span><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> students (<br>    id <span class="hljs-type">INT</span> <span class="hljs-keyword">PRIMARY</span> KEY,<br>    name <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">20</span>),<br>    <span class="hljs-comment">-- 这里的 class_id 要和 classes 中的 id 字段相关联</span><br>    class_id <span class="hljs-type">INT</span>,<br>    <span class="hljs-comment">-- 表示 class_id 的值必须来自于 classes 中的 id 字段值</span><br>    <span class="hljs-keyword">FOREIGN</span> KEY(class_id) <span class="hljs-keyword">REFERENCES</span> classes(id)<br>);<br><br><span class="hljs-comment">-- 1. 主表（父表）classes 中没有的数据值，在副表（子表）students 中，是不可以使用的；</span><br><span class="hljs-comment">-- 2. 主表中的记录被副表引用时，主表不可以被删除。</span><br></code></pre></td></tr></table></figure>
+
+
+
+<p>忘记添加主键约束的<strong>补充</strong>办法&amp;<strong>删除</strong>主键办法：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-comment">-- 添加主键约束</span><br><span class="hljs-comment">-- 如果忘记设置主键，还可以通过SQL语句设置（两种方式）：</span><br><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-keyword">user</span> <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">PRIMARY</span> KEY(id);<br><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-keyword">user</span> MODIFY id <span class="hljs-type">INT</span> <span class="hljs-keyword">PRIMARY</span> KEY;<br><br><span class="hljs-comment">-- 删除主键</span><br><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-keyword">user</span> <span class="hljs-keyword">drop</span> <span class="hljs-keyword">PRIMARY</span> KEY;<br></code></pre></td></tr></table></figure>
+
 
 
 <h2 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h2><p><strong>Join</strong> 是“连接”的意思，顾名思义，SQL JOIN 子句用于将两个或者多个表联合起来进行查询。</p>
 <p><strong>INNER JOIN(内连接)</strong> 是 SQL 中最重要、最常用的表连接形式，只有当连接的两个或者多个表中都存在满足条件的记录时，才返回行。</p>
-<p><img src="http://c.biancheng.net/uploads/allimg/210824/092Z42610-0.gif" srcset="/img/loading.gif" lazyload alt="inner join"></p>
+<img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/%E6%88%AA%E5%B1%8F2023-09-28%20%E4%B8%8B%E5%8D%884.21.23.png" srcset="/img/loading.gif" lazyload alt="截屏2023-09-28 下午4.21.23" style="zoom:50%;" />
+
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-comment">-- INNER JOIN: 表示为内连接，将两张表拼接在一起。</span><br><span class="hljs-comment">-- on: 表示要执行某个条件。</span><br><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> person <span class="hljs-keyword">INNER</span> <span class="hljs-keyword">JOIN</span> card <span class="hljs-keyword">on</span> person.cardId <span class="hljs-operator">=</span> card.id;<br></code></pre></td></tr></table></figure>
 
 <p><strong>LEFT JOIN(左连接)</strong> 和 **RIGHT JOIN(右连接)**是相对的，</p>
@@ -490,10 +506,11 @@
 <li>LEFT JOIN 将返回左表（table1）中的所有记录，即使右表（table2）中没有匹配的记录也是如此。当右表中没有匹配的记录时，LEFT JOIN 仍然返回一行，只是该行的左表字段有值，而右表字段以 NULL 填充。</li>
 <li>RIGHT JOIN 将返回右表（table2）中的所有记录，即使左表（table1）中没有匹配的记录也是如此。当左表中没有匹配的记录时，RIGHT JOIN 仍然返回一行，只是该行的右表字段有值，而左表字段以 NULL 填充。</li>
 </ul>
-<p><img src="http://c.biancheng.net/uploads/allimg/210824/093001K37-0.gif" srcset="/img/loading.gif" lazyload alt="left join"></p>
-<p><img src="http://c.biancheng.net/uploads/allimg/210824/09330262M-0.gif" srcset="/img/loading.gif" lazyload alt="right join"></p>
+<img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/%E6%88%AA%E5%B1%8F2023-09-28%20%E4%B8%8B%E5%8D%884.21.41.png" srcset="/img/loading.gif" lazyload alt="截屏2023-09-28 下午4.21.41" style="zoom:50%;" />
+
 <p><strong>FULL JOIN(全连接)</strong> 将返回左表（table1）和右表（table1）中的所有记录，相当于 LEFT JOIN 和 RIGHT JOIN的叠加。(mysql不支持，使用union可实现效果)</p>
-<p><img src="http://c.biancheng.net/uploads/allimg/210824/09350M4S-0.gif" srcset="/img/loading.gif" lazyload alt="full join"></p>
+<img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/%E6%88%AA%E5%B1%8F2023-09-28%20%E4%B8%8B%E5%8D%884.22.01.png" srcset="/img/loading.gif" lazyload alt="截屏2023-09-28 下午4.22.01" style="zoom:50%;" />
+
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> person <span class="hljs-keyword">LEFT</span> <span class="hljs-keyword">JOIN</span> card <span class="hljs-keyword">on</span> person.cardId <span class="hljs-operator">=</span> card.id<br><span class="hljs-keyword">UNION</span><br><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> person <span class="hljs-keyword">RIGHT</span> <span class="hljs-keyword">JOIN</span> card <span class="hljs-keyword">on</span> person.cardId <span class="hljs-operator">=</span> card.id;<br></code></pre></td></tr></table></figure>
 
 
@@ -537,7 +554,8 @@
 
 
 
-<h1 id="SQL注入"><a href="#SQL注入" class="headerlink" title="SQL注入"></a>SQL注入</h1><p><strong>常见的注入类型</strong>：联合注入、布尔注入、报错注入、时间注入、堆叠注入、二次注入、宽字节注入、cookie注入等。</p>
+<h1 id="SQL注入"><a href="#SQL注入" class="headerlink" title="SQL注入"></a>SQL注入</h1><p>靶场笔记：**<a target="_blank" rel="noopener" href="https://sheepandbread.github.io/2020/10/30/old/%E5%9F%B9%E8%AE%AD/%E5%9F%B9%E8%AE%ADday3/index.html#sqli-labs">sqli-labs</a>|<a target="_blank" rel="noopener" href="https://sheepandbread.github.io/2020/10/30/old/%E5%9F%B9%E8%AE%AD/%E5%9F%B9%E8%AE%ADday3/index.html#BUUCTF">BUUCTF</a>|<a target="_blank" rel="noopener" href="https://sheepandbread.github.io/2021/07/06/old/dvwa2/#%E4%B8%83%E3%80%81SQL-Injection%EF%BC%88sql%E6%B3%A8%E5%85%A5%EF%BC%89">DVWA-sql部分</a>**</p>
+<p><strong>常见的注入类型</strong>：联合注入、布尔注入、报错注入、时间注入、堆叠注入、二次注入、宽字节注入、cookie注入等。</p>
 <p><strong>SQL注入的产生需要两个条件</strong></p>
 <ol>
 <li>我们传递给后端的参数是可以控制的</li>
@@ -566,25 +584,19 @@
 </ol>
 <h1 id="XSS"><a href="#XSS" class="headerlink" title="XSS"></a>XSS</h1><p><strong>练习平台：</strong></p>
 <p>xss【<a target="_blank" rel="noopener" href="https://xss.haozi.me/#/0x00">在线平台</a> ｜<a target="_blank" rel="noopener" href="https://sheepandbread.github.io/2020/11/03/old/%E5%9F%B9%E8%AE%AD/%E5%9F%B9%E8%AE%ADday4/index.html">笔记</a>】</p>
-<p>pikachu</p>
-<p>XSS（跨站脚本）概述</p>
+<p>pikachu【<a target="_blank" rel="noopener" href="https://sheepandbread.github.io/2023/04/25/2023/pikachu%E9%9D%B6%E5%9C%BA%EF%BC%88+%E5%88%86%E6%9E%90%EF%BC%89/">笔记</a>】</p>
+<p><strong>XSS（跨站脚本）概述</strong></p>
 <p>Cross-Site Scripting 简称为“CSS”，为避免与前端叠成样式表的缩写”CSS”冲突，故又称XSS。</p>
 <p>XSS是一种前端漏洞，主要发生原因是前端没有对输入输出进行是当处理过滤。</p>
-<p>常见的类型有：</p>
+<p><strong>常见的类型有：</strong></p>
 <p>1、反射性XSS（非持续型攻击，攻击者构造后【带xss的url】等待对方触发。一次型，不会写入数据库）</p>
-<p>2、存储型XSS（持续型攻击，将跨站代码植入到网站数据库。一次成功，其他访问者都会收到攻击【例如留言板】）</p>
+<p>2、存储型XSS（持续型攻击，将跨站代码植入到网站数据库。一次成功，其他访问者都会收到攻击【例如 <a href="%E8%BF%87%E5%8E%BB%E7%9F%A5%E8%AF%86%E7%82%B9%E7%AE%80%E5%8D%95%E6%95%B4%E5%90%88.md">过去知识点简单整合.md</a> 留言板】）</p>
 <p>3、DOM型XSS</p>
 <p>​	DOM即文档对象模型，是W3C制定的标准接口规范，是一种处理HTML和XML文件的标准API。</p>
 <p>​	只在前端。</p>
 <p><strong>输入过滤</strong>：对输入进行过滤，不允许可能导致XSS攻击的字符输入;</p>
 <p><strong>输出转义</strong>：根据输出点的位置对输出到前端的内容进行适当转义;</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"><span class="hljs-title function_">alert</span>(<span class="hljs-string">&#x27;1&#x27;</span>)</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-comment">&lt;!-- 当()被过滤 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">alert<span class="hljs-string">`1`</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">svg</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-handlebars"><span class="language-xml">alert<span class="hljs-symbol">&amp;#40;</span>1<span class="hljs-symbol">&amp;#41;</span></span></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">svg</span>&gt;</span>  <span class="hljs-comment">&lt;!-- &amp;#40是( ,也可以使用&amp;#96 ` --&gt;</span><br><br>  <span class="hljs-comment">&lt;!-- 闭合被过滤 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">onload</span>=<span class="hljs-string">alert(1)</span></span><br><span class="hljs-tag">     </span><br></code></pre></td></tr></table></figure>
-
-
-
-
-
-
 
 
 

@@ -1,0 +1,702 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="咩包">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="pygame的第一次学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="pygame-大球吃小球">
+<meta property="og:url" content="http://example.com/2023/10/12/2023/PYGAME%E5%AD%A6%E4%B9%A0%EF%BC%88%E5%A4%A7%E7%90%83%E5%90%83%E5%B0%8F%E7%90%83%EF%BC%89/index.html">
+<meta property="og:site_name" content="咩包">
+<meta property="og:description" content="pygame的第一次学习">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/%E6%88%AA%E5%B1%8F2023-10-12%20%E4%B8%8A%E5%8D%887.39.48.png">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/%E6%88%AA%E5%B1%8F2023-10-12%20%E4%B8%8A%E5%8D%887.58.29.png">
+<meta property="article:published_time" content="2023-10-12T12:37:00.000Z">
+<meta property="article:modified_time" content="2023-10-12T12:38:54.733Z">
+<meta property="article:author" content="咩包">
+<meta property="article:tag" content="pygame">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/%E6%88%AA%E5%B1%8F2023-10-12%20%E4%B8%8A%E5%8D%887.39.48.png">
+  
+  
+  
+  <title>pygame-大球吃小球 - 咩包</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":false,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>咩包</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="pygame-大球吃小球"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-10-12 20:37" pubdate>
+          2023年10月12日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          6.5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          55 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">pygame-大球吃小球</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <blockquote>
+<p>Pygame是一个开源的Python模块，专门用于多媒体应用（如电子游戏）的开发，其中包含对图像、声音、视频、事件、碰撞等的支持。Pygame建立在<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/SDL">SDL</a>的基础上，SDL是一套跨平台的多媒体开发库，用C语言实现，被广泛的应用于游戏、模拟器、播放器等的开发。而Pygame让游戏开发者不再被底层语言束缚，可以更多的关注游戏的功能和逻辑。</p>
+</blockquote>
+<p>安装：<code>pip install pygame</code></p>
+<p><a target="_blank" rel="noopener" href="https://www.pygame.org/docs/">pygame文档参考</a></p>
+<h1 id="大球吃小球（学习）"><a href="#大球吃小球（学习）" class="headerlink" title="大球吃小球（学习）"></a>大球吃小球（学习）</h1><p><strong><a target="_blank" rel="noopener" href="https://github.com/jackfrued/Python-100-Days/blob/master/Day01-15/10.%E5%9B%BE%E5%BD%A2%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2%E5%92%8C%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91.md">·参考</a></strong></p>
+<p>要求：鼠标点击生成球、球们在一定范围内自动移动，碰壁后转向，大球可吞并小球</p>
+<h2 id="游戏窗口"><a href="#游戏窗口" class="headerlink" title="游戏窗口"></a>游戏窗口</h2><p><strong>先绘制游戏窗口</strong>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> pygame<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>():<br>    <span class="hljs-comment">#初始化导入的pygame中的模块</span><br>    pygame.init()<br>    <span class="hljs-comment">#初始化窗口大小</span><br>    screen = pygame.display.set_mode((<span class="hljs-number">800</span>,<span class="hljs-number">600</span>))<br>    <span class="hljs-comment">#标题</span><br>    pygame.display.set_caption(<span class="hljs-string">&#x27;大球吃小球&#x27;</span>)<br>    running = <span class="hljs-literal">True</span><br>    <span class="hljs-comment">#开启一个事件循环处理发生的事件</span><br>    <span class="hljs-keyword">while</span> running:<br>        <span class="hljs-comment">#从消息队列中获取事件并对事件进行处理</span><br>        <span class="hljs-keyword">for</span> event <span class="hljs-keyword">in</span> pygame.event.get():<br>            <span class="hljs-keyword">if</span> event.<span class="hljs-built_in">type</span> == pygame.QUIT:<br>                running = <span class="hljs-literal">False</span><br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    main()<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="小球（绘制-amp-加载图片）"><a href="#小球（绘制-amp-加载图片）" class="headerlink" title="小球（绘制&amp;加载图片）"></a>小球（绘制&amp;加载图片）</h2><p>pygame中draw模块的函数可以在窗口上绘图，可以绘制的图形包括：线条、矩形、多边形、圆、椭圆、圆弧等。</p>
+<p>默认单位为像素。</p>
+<p>pgame中颜色用的是色光三原色表示法，即通过一个元组或列表来指定颜色的RGB值，每个值都在0~255之间。</p>
+<p>刷新当前窗口（渲染窗口将绘制的图像呈现出来）：<code>pygame.display.flip()</code></p>
+<p>现在，<strong>设置窗口为米白色</strong>，<strong>并且绘制一个浅绿色、半径30的圆</strong>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> pygame<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>():<br>    <span class="hljs-comment">#初始化导入的pygame中的模块</span><br>    pygame.init()<br>    <span class="hljs-comment">#初始化窗口大小</span><br>    screen = pygame.display.set_mode((<span class="hljs-number">800</span>,<span class="hljs-number">600</span>))<br>    <span class="hljs-comment">#标题</span><br>    pygame.display.set_caption(<span class="hljs-string">&#x27;大球吃小球&#x27;</span>)<br>    <span class="hljs-comment">#设计窗口的背景色</span><br>    screen.fill((<span class="hljs-number">245</span>, <span class="hljs-number">245</span>, <span class="hljs-number">220</span>))<br>    <span class="hljs-comment">#绘制一个圆(参数分别是: 屏幕, 颜色, 圆心位置, 半径, 0表示填充圆)</span><br>    pygame.draw.circle(screen,(<span class="hljs-number">0</span>,<span class="hljs-number">250</span>,<span class="hljs-number">154</span>),(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>),<span class="hljs-number">30</span>,<span class="hljs-number">0</span>)<br>    <span class="hljs-comment">#刷新当前窗口（渲染窗口将绘制的图像呈现出来）</span><br>    pygame.display.flip()<br>    running = <span class="hljs-literal">True</span><br>    <span class="hljs-comment">#开启一个事件循环处理发生的事件</span><br>    <span class="hljs-keyword">while</span> running:<br>        <span class="hljs-comment">#从消息队列中获取事件并对事件进行处理</span><br>        <span class="hljs-keyword">for</span> event <span class="hljs-keyword">in</span> pygame.event.get():<br>            <span class="hljs-keyword">if</span> event.<span class="hljs-built_in">type</span> == pygame.QUIT:<br>                running = <span class="hljs-literal">False</span><br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    main()<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/%E6%88%AA%E5%B1%8F2023-10-12%20%E4%B8%8A%E5%8D%887.39.48.png" srcset="/img/loading.gif" lazyload alt="截屏2023-10-12 上午7.39.48"></p>
+<p>也可以使用image模块的函数加载小球图像，通过之前获得的窗口对象的<code>blit</code>方法渲染图像。</p>
+<p><strong>加载一个网上下载的小球图片,设置大小为50*50</strong>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> pygame<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>():<br>    <span class="hljs-comment">#初始化导入的pygame中的模块</span><br>    pygame.init()<br>    <span class="hljs-comment">#初始化窗口大小</span><br>    screen = pygame.display.set_mode((<span class="hljs-number">800</span>,<span class="hljs-number">600</span>))<br>    <span class="hljs-comment">#标题</span><br>    pygame.display.set_caption(<span class="hljs-string">&#x27;大球吃小球&#x27;</span>)<br>    <span class="hljs-comment">#设计窗口的背景色</span><br>    screen.fill((<span class="hljs-number">245</span>, <span class="hljs-number">245</span>, <span class="hljs-number">220</span>))<br>    <span class="hljs-comment"># #绘制一个圆(参数分别是: 屏幕, 颜色, 圆心位置, 半径, 0表示填充圆)</span><br>    <span class="hljs-comment"># pygame.draw.circle(screen,(0,250,154),(100,100),30,0)</span><br>    <span class="hljs-comment"># #刷新当前窗口（渲染窗口将绘制的图像呈现出来）</span><br>    <span class="hljs-comment"># pygame.display.flip()</span><br><br>    <span class="hljs-comment">#通过指定的文件名加载图像</span><br>    ball_image = pygame.image.load(<span class="hljs-string">&#x27;./ball.png&#x27;</span>)<br>    <span class="hljs-comment">#缩放图片</span><br>    <span class="hljs-comment">#scale(surface, size, dest_surface=None)</span><br>    ball_image = pygame.transform.scale(ball_image,(<span class="hljs-number">50</span>,<span class="hljs-number">50</span>))<br>    <span class="hljs-comment">#在窗口渲染图像(图像，位置）</span><br>    screen.blit(ball_image,(<span class="hljs-number">50</span>,<span class="hljs-number">50</span>))<br><br>    <span class="hljs-comment">#刷新当前窗口（渲染窗口将绘制的图像呈现出来）</span><br>    pygame.display.flip()<br>    running = <span class="hljs-literal">True</span><br>    <span class="hljs-comment">#开启一个事件循环处理发生的事件</span><br>    <span class="hljs-keyword">while</span> running:<br>        <span class="hljs-comment">#从消息队列中获取事件并对事件进行处理</span><br>        <span class="hljs-keyword">for</span> event <span class="hljs-keyword">in</span> pygame.event.get():<br>            <span class="hljs-keyword">if</span> event.<span class="hljs-built_in">type</span> == pygame.QUIT:<br>                running = <span class="hljs-literal">False</span><br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    main()<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/%E6%88%AA%E5%B1%8F2023-10-12%20%E4%B8%8A%E5%8D%887.58.29.png" srcset="/img/loading.gif" lazyload alt="截屏2023-10-12 上午7.58.29"></p>
+<h2 id="运动"><a href="#运动" class="headerlink" title="运动"></a>运动</h2><p>现在要让<strong>小球动起来</strong>。</p>
+<p>动画的原理是将一张张图片连续播放，帧数越高越流畅。</p>
+<p>让小球动起来，可以将小球的坐标设置为变量，每过一定时间便修改坐标重新绘制，即可看到运动小球的效果。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> pygame<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>():<br>    <span class="hljs-comment">#初始化导入的pygame中的模块</span><br>    pygame.init()<br>    <span class="hljs-comment">#初始化窗口大小</span><br>    screen = pygame.display.set_mode((<span class="hljs-number">800</span>,<span class="hljs-number">600</span>))<br>    <span class="hljs-comment">#标题</span><br>    pygame.display.set_caption(<span class="hljs-string">&#x27;大球吃小球&#x27;</span>)<br>    <br>    <span class="hljs-comment">#小球的位置变量</span><br>    ball_x,ball_y = <span class="hljs-number">50</span>,<span class="hljs-number">50</span><br><br>    <span class="hljs-comment">#刷新当前窗口（渲染窗口将绘制的图像呈现出来）</span><br>    pygame.display.flip()<br>    running = <span class="hljs-literal">True</span><br>    <span class="hljs-comment">#开启一个事件循环处理发生的事件</span><br>    <span class="hljs-keyword">while</span> running:<br>        <span class="hljs-comment">#从消息队列中获取事件并对事件进行处理</span><br>        <span class="hljs-keyword">for</span> event <span class="hljs-keyword">in</span> pygame.event.get():<br>            <span class="hljs-keyword">if</span> event.<span class="hljs-built_in">type</span> == pygame.QUIT:<br>                running = <span class="hljs-literal">False</span><br>        <span class="hljs-comment"># 设计窗口的背景色</span><br>        screen.fill((<span class="hljs-number">245</span>, <span class="hljs-number">245</span>, <span class="hljs-number">220</span>))<br>        <span class="hljs-comment"># 绘制一个圆(参数分别是: 屏幕, 颜色, 圆心位置, 半径, 0表示填充圆)</span><br>        pygame.draw.circle(screen, (<span class="hljs-number">0</span>, <span class="hljs-number">250</span>, <span class="hljs-number">154</span>), (ball_x, ball_y), <span class="hljs-number">30</span>, <span class="hljs-number">0</span>)<br>        pygame.display.flip()<br>        <span class="hljs-comment">#每隔50毫秒就改变小球位置刷新</span><br>        pygame.time.delay(<span class="hljs-number">50</span>)<br>        ball_x,ball_y = ball_x+<span class="hljs-number">5</span>,ball_y+<span class="hljs-number">5</span><br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    main()<br></code></pre></td></tr></table></figure>
+
+<p>现在可以看见小球向右下方运动。</p>
+<p>让<strong>图片小球运动</strong>也是同理。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> pygame<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>():<br>    <span class="hljs-comment">#初始化导入的pygame中的模块</span><br>    pygame.init()<br>    <span class="hljs-comment">#初始化窗口大小</span><br>    screen = pygame.display.set_mode((<span class="hljs-number">800</span>,<span class="hljs-number">600</span>))<br>    <span class="hljs-comment">#标题</span><br>    pygame.display.set_caption(<span class="hljs-string">&#x27;大球吃小球&#x27;</span>)<br>    <span class="hljs-comment">#小球的位置变量</span><br>    ball_x,ball_y = <span class="hljs-number">50</span>,<span class="hljs-number">50</span><br>    <span class="hljs-comment"># #通过指定的文件名加载图像</span><br>    ball_image = pygame.image.load(<span class="hljs-string">&#x27;./ball.png&#x27;</span>)<br>    <span class="hljs-comment">#缩放图片</span><br>    ball_image = pygame.transform.scale(ball_image,(<span class="hljs-number">50</span>,<span class="hljs-number">50</span>))<br>    running = <span class="hljs-literal">True</span><br>    <span class="hljs-comment">#开启一个事件循环处理发生的事件</span><br>    <span class="hljs-keyword">while</span> running:<br>        <span class="hljs-comment">#从消息队列中获取事件并对事件进行处理</span><br>        <span class="hljs-keyword">for</span> event <span class="hljs-keyword">in</span> pygame.event.get():<br>            <span class="hljs-keyword">if</span> event.<span class="hljs-built_in">type</span> == pygame.QUIT:<br>                running = <span class="hljs-literal">False</span><br>        <span class="hljs-comment"># 设计窗口的背景色</span><br>        screen.fill((<span class="hljs-number">245</span>, <span class="hljs-number">245</span>, <span class="hljs-number">220</span>))<br>        <span class="hljs-comment">#在窗口渲染图像(图像，位置）</span><br>        screen.blit(ball_image,(ball_x,ball_y))<br>        pygame.display.flip()<br>        <span class="hljs-comment">#每隔50毫秒就改变小球位置刷新</span><br>        pygame.time.delay(<span class="hljs-number">50</span>)<br>        ball_x,ball_y = ball_x+<span class="hljs-number">5</span>,ball_y+<span class="hljs-number">5</span><br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    main()<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="碰撞检测"><a href="#碰撞检测" class="headerlink" title="碰撞检测"></a>碰撞检测</h2><blockquote>
+<p>通常一个游戏中会有很多对象出现，而这些对象之间的“碰撞”在所难免，比如炮弹击中了飞机、箱子撞到了地面等。碰撞检测在绝大多数的游戏中都是一个必须得处理的至关重要的问题，pygame的sprite（动画精灵）模块就提供了对碰撞检测的支持。</p>
+<p>这里我们暂时不介绍sprite模块提供的功能，因为要检测两个小球有没有碰撞其实非常简单，只需要检查球心的距离有没有小于两个球的半径之和。为了制造出更多的小球，我们可以通过对鼠标事件的处理，在点击鼠标的位置创建颜色、大小和移动速度都随机的小球，当然要做到这一点，我们可以把之前学习到的面向对象的知识应用起来。</p>
+</blockquote>
+<p>由于游戏的机制带有随机生成，所以接下来都使用draw来绘制小球。</p>
+<p>现在需要考虑的事：</p>
+<ul>
+<li>点击鼠标生成小球</li>
+<li>小球的颜色大小随机，但颜色不能重复</li>
+<li>小球随机移动，碰到墙壁后换方向</li>
+<li>两球碰撞后，大球吃掉小球，半径增加</li>
+</ul>
+<p>第一项放在事件里处理，先完成其他几项。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">@unique</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Color</span>(<span class="hljs-title class_ inherited__">Enum</span>):<br>    <span class="hljs-string">&quot;&quot;&quot;颜色&quot;&quot;&quot;</span><br>    <span class="hljs-comment"># RED = (255,0,0)</span><br>    <span class="hljs-comment"># GREEN = (0, 255, 0)</span><br>    <span class="hljs-comment"># BLUE = (0, 0, 255)</span><br>    <span class="hljs-comment"># BLACK = (0, 0, 0)</span><br>    <span class="hljs-comment"># WHITE = (255, 255, 255)</span><br>    <span class="hljs-comment"># GRAY = (242, 242, 242)</span><br>    <br><span class="hljs-meta">    @staticmethod</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">random_color</span>():<br>        <span class="hljs-string">&quot;&quot;&quot;随机颜色&quot;&quot;&quot;</span><br>        r = randint(<span class="hljs-number">0</span>, <span class="hljs-number">255</span>)<br>        g = randint(<span class="hljs-number">0</span>, <span class="hljs-number">255</span>)<br>        b = randint(<span class="hljs-number">0</span>, <span class="hljs-number">255</span>)<br>        <span class="hljs-keyword">return</span> (r, g, b)<br><br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Ball</span>(<span class="hljs-title class_ inherited__">object</span>):<br>    <span class="hljs-string">&quot;&quot;&quot;球&quot;&quot;&quot;</span><br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, x, y, radius, sx, sy, color</span>):<br>        <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">        初始化方法</span><br><span class="hljs-string">        :param x: 横坐标</span><br><span class="hljs-string">        :param y: 纵坐标</span><br><span class="hljs-string">        :param radius:半径</span><br><span class="hljs-string">        :param sx:移动x坐标速度</span><br><span class="hljs-string">        :param sy:移动y坐标速度</span><br><span class="hljs-string">        :param color:颜色</span><br><span class="hljs-string">        &quot;&quot;&quot;</span><br>        self.x = x<br>        self.y = y<br>        self.radius = radius<br>        self.sx = sx<br>        self.sy = sy<br>        self.color = color<br>        self.alive = <span class="hljs-literal">True</span><br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">move</span>(<span class="hljs-params">self, screen</span>):<br>        <span class="hljs-string">&quot;&quot;&quot;移动&quot;&quot;&quot;</span><br>        self.x += self.sx<br>        self.y += self.sy<br>        <span class="hljs-comment"># 碰撞后转向</span><br>        <span class="hljs-keyword">if</span> self.x - self.radius &lt;= <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> \<br>                self.x + self.radius &gt;= screen.get_width():<br>            self.sx = - self.sx<br>        <span class="hljs-keyword">if</span> self.y - self.radius &lt;= <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> \<br>                self.y + self.radius &gt;= screen.get_height():<br>            self.sy = -self.sy<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">eat</span>(<span class="hljs-params">self, other</span>):<br>        <span class="hljs-string">&quot;&quot;&quot;吃其他球&quot;&quot;&quot;</span><br>        <span class="hljs-keyword">if</span> self.alive <span class="hljs-keyword">and</span> other.alive <span class="hljs-keyword">and</span> self != other:<br>            dx, dy = self.x - other.x, self.y - other.y<br>            distance = sqrt(dx ** <span class="hljs-number">2</span> + dy ** <span class="hljs-number">2</span>)<br>            <span class="hljs-keyword">if</span> distance &lt; self.radius + other.radius \<br>                    <span class="hljs-keyword">and</span> self.radius &gt; other.radius:<br>                other.alive = <span class="hljs-literal">False</span><br>                self.radius = self.radius + <span class="hljs-built_in">int</span>(other.radius * <span class="hljs-number">0.146</span>)<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">draw</span>(<span class="hljs-params">self, screen</span>):<br>        <span class="hljs-string">&quot;&quot;&quot;在窗口绘制球&quot;&quot;&quot;</span><br>        pygame.draw.circle(screen, self.color, (self.x, self.y), self.radius, <span class="hljs-number">0</span>)<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理"></a>事件处理</h2><blockquote>
+<p>可以在事件循环中对鼠标事件进行处理，通过事件对象的<code>type</code>属性可以判定事件类型，再通过<code>pos</code>属性就可以获得鼠标点击的位置。如果要处理键盘事件也是在这个地方，做法与处理鼠标事件类似。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>():<br>    <span class="hljs-comment"># 定义装球的容器</span><br>    balls = []<br>    <span class="hljs-comment"># 初始化导入的pygame中的模块</span><br>    pygame.init()<br>    <span class="hljs-comment"># 初始化窗口大小</span><br>    screen = pygame.display.set_mode((<span class="hljs-number">800</span>, <span class="hljs-number">600</span>))<br>    <span class="hljs-comment"># 标题</span><br>    pygame.display.set_caption(<span class="hljs-string">&#x27;大球吃小球&#x27;</span>)<br>    running = <span class="hljs-literal">True</span><br>    <span class="hljs-comment"># 开启一个事件循环处理发生的事件</span><br>    <span class="hljs-keyword">while</span> running:<br>        <span class="hljs-comment"># 从消息队列中获取事件并对事件进行处理</span><br>        <span class="hljs-keyword">for</span> event <span class="hljs-keyword">in</span> pygame.event.get():<br>            <span class="hljs-keyword">if</span> event.<span class="hljs-built_in">type</span> == pygame.QUIT:<br>                running = <span class="hljs-literal">False</span><br>            <span class="hljs-comment"># 处理鼠标事件的代码</span><br>            <span class="hljs-keyword">if</span> event.<span class="hljs-built_in">type</span> == pygame.MOUSEBUTTONDOWN <span class="hljs-keyword">and</span> event.button == <span class="hljs-number">1</span>:<br>                <span class="hljs-comment"># event.button==1 为鼠标左键点击事件</span><br>                <span class="hljs-comment"># 获得鼠标点击的位置</span><br>                x, y = event.pos<br>                radius = randint(<span class="hljs-number">10</span>, <span class="hljs-number">100</span>)<br>                sx, sy = randint(-<span class="hljs-number">10</span>, <span class="hljs-number">10</span>), randint(-<span class="hljs-number">10</span>, <span class="hljs-number">10</span>)<br>                color = Color.random_color()<br>                <span class="hljs-comment"># 点击鼠标创建一个球</span><br>                ball = Ball(x,y,radius,sx,sy,color)<br>                <span class="hljs-comment">#将球加进容器</span><br>                balls.append(ball)<br>        <span class="hljs-comment"># 设计窗口的背景色</span><br>        screen.fill((<span class="hljs-number">245</span>, <span class="hljs-number">245</span>, <span class="hljs-number">220</span>))<br>        <span class="hljs-comment">#取出容器中的球，如果没被吃掉就绘制，被吃了就移除</span><br>        <span class="hljs-keyword">for</span> ball <span class="hljs-keyword">in</span> balls:<br>            <span class="hljs-keyword">if</span> ball.alive:<br>                ball.draw(screen)<br>            <span class="hljs-keyword">else</span>:<br>                balls.remove(ball)<br>        pygame.display.flip()<br>        <span class="hljs-comment"># 每隔50毫秒就改变小球位置刷新</span><br>        pygame.time.delay(<span class="hljs-number">50</span>)<br>        <span class="hljs-keyword">for</span> ball <span class="hljs-keyword">in</span> balls:<br>            ball.move(screen)<br>            <span class="hljs-comment">#检查球有没有吃其他球</span><br>            <span class="hljs-keyword">for</span> other <span class="hljs-keyword">in</span> balls:<br>                ball.eat(other)<br><br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    main()<br></code></pre></td></tr></table></figure>
+
+<p>完成！</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://github.com/jackfrued/Python-100-Days/tree/master#python---100%E5%A4%A9%E4%BB%8E%E6%96%B0%E6%89%8B%E5%88%B0%E5%A4%A7%E5%B8%88">Python-100-days</a></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/python/" class="category-chain-item">python</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/pygame/">#pygame</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>pygame-大球吃小球</div>
+      <div>http://example.com/2023/10/12/2023/PYGAME学习（大球吃小球）/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>咩包</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年10月12日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/04/25/2023/pikachu%E9%9D%B6%E5%9C%BA%EF%BC%88+%E5%88%86%E6%9E%90%EF%BC%89/" title="pikachu靶场+分析">
+                        <span class="hidden-mobile">pikachu靶场+分析</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       主题： <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
