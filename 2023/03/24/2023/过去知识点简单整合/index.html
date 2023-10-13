@@ -28,7 +28,7 @@
 <meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/%E6%88%AA%E5%B1%8F2023-09-28%20%E4%B8%8B%E5%8D%884.21.41.png">
 <meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/%E6%88%AA%E5%B1%8F2023-09-28%20%E4%B8%8B%E5%8D%884.22.01.png">
 <meta property="article:published_time" content="2023-03-24T08:15:16.000Z">
-<meta property="article:modified_time" content="2023-10-07T02:07:27.228Z">
+<meta property="article:modified_time" content="2023-10-13T04:39:40.284Z">
 <meta property="article:author" content="咩包">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://github.com/jackfrued/Python-100-Days/raw/master/Day01-15/res/python-set.png">
@@ -234,7 +234,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          12k 字
+          17k 字
         
       </span>
     
@@ -245,7 +245,7 @@
         
         
         
-          99 分钟
+          141 分钟
         
       </span>
     
@@ -296,7 +296,7 @@
 <p>自带开发工具IDLE（用户体验不太好）</p>
 <p>python之禅：import this</p>
 <p>turtle画图：import turtle （原LOGO语言）</p>
-<p>常见的数据类型：整型、浮点型、字符串型、布尔型、负数型</p>
+<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><p>常见的数据类型：整型、浮点型、字符串型、布尔型、负数型</p>
 <p><strong>变量命名规则</strong></p>
 <ul>
 <li>硬性规则：<ul>
@@ -438,6 +438,133 @@
 <p>如果希望属性是<strong>私有</strong>属性，在给属性命名时可以用两个下划线__作为开头。私有变量<strong>只能在本类的内部直接调用</strong>，若想间接调用，可**<code>._类名__私有变量</code>**进行调用。</p>
 <p>若是受保护的，一个下划线_作为开头。但总的来说，和公共变量差别不大。</p>
 <p>本质上，python没有真正意义上的私有，仍可以在外部访问私有属性和私有方法，所以是相对私有。</p>
+<p><strong>文件读写</strong>：open函数</p>
+<p>read()：读</p>
+<p>write()：写入</p>
+<p>close()：关闭文件</p>
+<table>
+<thead>
+<tr>
+<th>操作模式</th>
+<th>具体含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&#39;r&#39;</code></td>
+<td>读取 （默认）</td>
+</tr>
+<tr>
+<td><code>&#39;w&#39;</code></td>
+<td>写入（会先截断之前的内容）</td>
+</tr>
+<tr>
+<td><code>&#39;x&#39;</code></td>
+<td>写入，如果文件已经存在会产生异常</td>
+</tr>
+<tr>
+<td><code>&#39;a&#39;</code></td>
+<td>追加，将内容写入到已有文件的末尾</td>
+</tr>
+<tr>
+<td><code>&#39;b&#39;</code></td>
+<td>二进制模式</td>
+</tr>
+<tr>
+<td><code>&#39;t&#39;</code></td>
+<td>文本模式（默认）</td>
+</tr>
+<tr>
+<td><code>&#39;+&#39;</code></td>
+<td>更新（既可以读又可以写）</td>
+</tr>
+</tbody></table>
+<p><strong>捕获异常：try…except</strong></p>
+<p>（<a target="_blank" rel="noopener" href="https://www.runoob.com/python/python-exceptions.html?_t_t_t=0.9078544684529848">python标准异常查询</a>）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>():<br>    f = <span class="hljs-literal">None</span><br>    <span class="hljs-keyword">try</span>:<br>        f = <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;./src/生如夏花.txt&#x27;</span>, <span class="hljs-string">&#x27;r&#x27;</span>, encoding=<span class="hljs-string">&#x27;utf-8&#x27;</span>)<br>        <span class="hljs-built_in">print</span>(f.read())<br>    <span class="hljs-keyword">except</span> FileNotFoundError:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;无法打开指定的文件!&#x27;</span>)<br>    <span class="hljs-keyword">except</span> LookupError:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;指定了未知的编码!&#x27;</span>)<br>    <span class="hljs-keyword">except</span> UnicodeDecodeError:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;读取文件时解码错误!&#x27;</span>)<br>    <span class="hljs-keyword">finally</span>:<br>        <span class="hljs-keyword">if</span> f:<br>            f.close()<br><br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    main()<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>由于<code>finally</code>块的代码不论程序正常还是异常都会执行到。</p>
+<p>（甚至是调用了<code>sys</code>模块的<code>exit</code>函数退出Python环境，<code>finally</code>块都会被执行，因为<code>exit</code>函数实质上是引发了<code>SystemExit</code>异常）</p>
+<p>因此我们通常把<code>finally</code>块称为“总是执行代码块”，它最适合用来做释放外部资源的操作。</p>
+<p>如果不愿意在<code>finally</code>代码块中关闭文件对象释放资源，也可以使用上下文语法，通过<code>with</code>关键字指定文件对象的上下文环境并在离开上下文环境时自动释放文件资源，</p>
+</blockquote>
+<p>使用 <strong>with</strong> 关键字系统会自动调用 f.close() 方法， with 的作用等效于 try&#x2F;finally 语句是一样的。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>():<br>    <span class="hljs-keyword">try</span>:<br>        <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;./src/生如夏花.txt&#x27;</span>, <span class="hljs-string">&#x27;r&#x27;</span>, encoding=<span class="hljs-string">&#x27;utf-8&#x27;</span>) <span class="hljs-keyword">as</span> f:<br>            <span class="hljs-built_in">print</span>(f.read())<br>    <span class="hljs-keyword">except</span> FileNotFoundError:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;无法打开指定的文件!&#x27;</span>)<br>    <span class="hljs-keyword">except</span> LookupError:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;指定了未知的编码!&#x27;</span>)<br>    <span class="hljs-keyword">except</span> UnicodeDecodeError:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;读取文件时解码错误!&#x27;</span>)<br><br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    main()<br></code></pre></td></tr></table></figure>
+
+<p>除了read（）外，也可使用**<code>for-in</code>循环读取<strong>、或者</strong><code>readlines</code>方法**将文件按行读取到一个列表容器。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#一次性读取</span><br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;./src/生如夏花.txt&#x27;</span>, <span class="hljs-string">&#x27;r&#x27;</span>, encoding=<span class="hljs-string">&#x27;utf-8&#x27;</span>) <span class="hljs-keyword">as</span> f:<br>    <span class="hljs-built_in">print</span>(f.read())<br><span class="hljs-comment">#for-in循环读取</span><br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;./src/生如夏花.txt&#x27;</span>, mode=<span class="hljs-string">&#x27;r&#x27;</span>) <span class="hljs-keyword">as</span> f:<br>    <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> f:<br>        <span class="hljs-built_in">print</span>(line,end=<span class="hljs-string">&#x27;&#x27;</span>)<br>        time.sleep(<span class="hljs-number">0.5</span>)<br>    <span class="hljs-built_in">print</span>()<br><span class="hljs-comment">#readlines按行读取</span><br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;./src/生如夏花.txt&#x27;</span>) <span class="hljs-keyword">as</span> f:<br>    lines = f.readlines()<br><span class="hljs-built_in">print</span>(lines)<br></code></pre></td></tr></table></figure>
+
+
+
+<p><strong>assert断言</strong>：判断表达式，false时抛出异常</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">assert</span> expression [, arguments]<br><span class="hljs-comment">#等价于</span><br><span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> expression:<br>    <span class="hljs-keyword">raise</span> AssertionError(arguments)<br></code></pre></td></tr></table></figure>
+
+
+
+<p><strong>写入文件</strong>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> math <span class="hljs-keyword">import</span> sqrt<br><br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">is_prime</span>(<span class="hljs-params">n</span>):<br>    <span class="hljs-string">&quot;&quot;&quot;判断素数的函数&quot;&quot;&quot;</span><br>    <span class="hljs-keyword">assert</span> n &gt; <span class="hljs-number">0</span><br>    <span class="hljs-keyword">for</span> factor <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">2</span>, <span class="hljs-built_in">int</span>(sqrt(n)) + <span class="hljs-number">1</span>):<br>        <span class="hljs-keyword">if</span> n % factor == <span class="hljs-number">0</span>:<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">False</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">True</span> <span class="hljs-keyword">if</span> n != <span class="hljs-number">1</span> <span class="hljs-keyword">else</span> <span class="hljs-literal">False</span><br><br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>():<br>    filenames = (<span class="hljs-string">&#x27;a.txt&#x27;</span>, <span class="hljs-string">&#x27;b.txt&#x27;</span>, <span class="hljs-string">&#x27;c.txt&#x27;</span>)<br>    file_list = []<br>    <span class="hljs-keyword">try</span>:<br>        <span class="hljs-keyword">for</span> filename <span class="hljs-keyword">in</span> filenames:<br>            file_list.append(<span class="hljs-built_in">open</span>(filename, <span class="hljs-string">&#x27;w&#x27;</span>, encoding=<span class="hljs-string">&#x27;utf-8&#x27;</span>))<br>        <span class="hljs-keyword">for</span> number <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>, <span class="hljs-number">10000</span>):<br>            <span class="hljs-keyword">if</span> is_prime(number):<br>                <span class="hljs-keyword">if</span> number &lt; <span class="hljs-number">100</span>:<br>                    file_list[<span class="hljs-number">0</span>].write(<span class="hljs-built_in">str</span>(number)+<span class="hljs-string">&#x27;\n&#x27;</span>)<br>                <span class="hljs-keyword">elif</span> number &lt;<span class="hljs-number">1000</span>:<br>                    file_list[<span class="hljs-number">1</span>].write(<span class="hljs-built_in">str</span>(number)+<span class="hljs-string">&#x27;\n&#x27;</span>)<br>                <span class="hljs-keyword">else</span>:<br>                    file_list[<span class="hljs-number">2</span>].write(<span class="hljs-built_in">str</span>(number)+<span class="hljs-string">&#x27;\n&#x27;</span>)<br>    <span class="hljs-keyword">except</span> IOError <span class="hljs-keyword">as</span> ex:<br>        <span class="hljs-built_in">print</span>(ex)<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;写文件出现错误&quot;</span>)<br>    <span class="hljs-keyword">finally</span>:<br>        <span class="hljs-keyword">for</span> fs <span class="hljs-keyword">in</span> file_list:<br>            fs.close()<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;操作完成！&#x27;</span>)<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    main()<br></code></pre></td></tr></table></figure>
+
+<p><strong>读取二进制文件</strong>（例如图片）：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">try</span>:<br>    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;./game/ball.png&#x27;</span>,<span class="hljs-string">&#x27;rb&#x27;</span>) <span class="hljs-keyword">as</span> fs1:<br>        data = fs1.read()<br>        <span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>(data)) <span class="hljs-comment">#&lt;class &#x27;bytes&#x27;&gt;</span><br>    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;copy_ball.png&#x27;</span>,<span class="hljs-string">&#x27;wb&#x27;</span>) <span class="hljs-keyword">as</span> fs2:<br>        <span class="hljs-comment">#复制图片</span><br>        fs2.write(data)<br><span class="hljs-keyword">except</span> FileNotFoundError <span class="hljs-keyword">as</span> e:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;指定的文件无法打开&quot;</span>)<br><span class="hljs-keyword">except</span> IOError <span class="hljs-keyword">as</span> e:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;读写文件出现错误&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;执行结束&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+<p><strong>读取JSON文件</strong>：</p>
+<blockquote>
+<p>JSON是“JavaScript Object Notation”的缩写，它本来是JavaScript语言中创建对象的一种字面量语法，现在已经被广泛的应用于跨平台跨语言的数据交换。</p>
+<p>原因很简单，因为JSON也是纯文本，任何系统任何编程语言处理纯文本都是没有问题的。目前JSON基本上已经取代了XML作为异构系统间交换数据的事实标准。</p>
+<p>关于JSON的知识，更多的可以参考<a target="_blank" rel="noopener" href="http://json.org/">JSON的官方网站</a>，从这个网站也可以了解到每种语言处理JSON数据格式可以使用的工具或三方库，下面是一个JSON的简单例子。</p>
+<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs prolog">&#123;<br>    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;骆昊&quot;</span>,<br>    <span class="hljs-string">&quot;age&quot;</span>: <span class="hljs-number">38</span>,<br>    <span class="hljs-string">&quot;qq&quot;</span>: <span class="hljs-number">957658</span>,<br>    <span class="hljs-string">&quot;friends&quot;</span>: [<span class="hljs-string">&quot;王大锤&quot;</span>, <span class="hljs-string">&quot;白元芳&quot;</span>],<br>    <span class="hljs-string">&quot;cars&quot;</span>: [<br>        &#123;<span class="hljs-string">&quot;brand&quot;</span>: <span class="hljs-string">&quot;BYD&quot;</span>, <span class="hljs-string">&quot;max_speed&quot;</span>: <span class="hljs-number">180</span>&#125;,<br>        &#123;<span class="hljs-string">&quot;brand&quot;</span>: <span class="hljs-string">&quot;Audi&quot;</span>, <span class="hljs-string">&quot;max_speed&quot;</span>: <span class="hljs-number">280</span>&#125;,<br>        &#123;<span class="hljs-string">&quot;brand&quot;</span>: <span class="hljs-string">&quot;Benz&quot;</span>, <span class="hljs-string">&quot;max_speed&quot;</span>: <span class="hljs-number">320</span>&#125;<br>    ]<br>&#125;<br></code></pre></td></tr></table></figure>
+</blockquote>
+<p>JSON的数据类型和Python的数据类型很容易找到对应关系：</p>
+<table>
+<thead>
+<tr>
+<th>Python</th>
+<th>JSON</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>dict</td>
+<td>object</td>
+</tr>
+<tr>
+<td>list, tuple</td>
+<td>array</td>
+</tr>
+<tr>
+<td>str</td>
+<td>string</td>
+</tr>
+<tr>
+<td>int, float, int- &amp; float-derived Enums</td>
+<td>number</td>
+</tr>
+<tr>
+<td>True &#x2F; False</td>
+<td>true &#x2F; false</td>
+</tr>
+<tr>
+<td>None</td>
+<td>null</td>
+</tr>
+</tbody></table>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> json<br><span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>():<br>    mydict = &#123;<br>        <span class="hljs-string">&#x27;name&#x27;</span>: <span class="hljs-string">&#x27;骆昊&#x27;</span>,<br>        <span class="hljs-string">&#x27;age&#x27;</span>: <span class="hljs-number">38</span>,<br>        <span class="hljs-string">&#x27;qq&#x27;</span>: <span class="hljs-number">957658</span>,<br>        <span class="hljs-string">&#x27;friends&#x27;</span>: [<span class="hljs-string">&#x27;王大锤&#x27;</span>, <span class="hljs-string">&#x27;白元芳&#x27;</span>],<br>        <span class="hljs-string">&#x27;cars&#x27;</span>: [<br>            &#123;<span class="hljs-string">&#x27;brand&#x27;</span>: <span class="hljs-string">&#x27;BYD&#x27;</span>, <span class="hljs-string">&#x27;max_speed&#x27;</span>: <span class="hljs-number">180</span>&#125;,<br>            &#123;<span class="hljs-string">&#x27;brand&#x27;</span>: <span class="hljs-string">&#x27;Audi&#x27;</span>, <span class="hljs-string">&#x27;max_speed&#x27;</span>: <span class="hljs-number">280</span>&#125;,<br>            &#123;<span class="hljs-string">&#x27;brand&#x27;</span>: <span class="hljs-string">&#x27;Benz&#x27;</span>, <span class="hljs-string">&#x27;max_speed&#x27;</span>: <span class="hljs-number">320</span>&#125;<br>        ]<br>    &#125;<br>    <span class="hljs-keyword">try</span>:<br>        <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;data.json&#x27;</span>, <span class="hljs-string">&#x27;w&#x27;</span>, encoding=<span class="hljs-string">&#x27;utf-8&#x27;</span>) <span class="hljs-keyword">as</span> fs:<br>            json.dump(mydict, fs)<br>    <span class="hljs-keyword">except</span> IOError <span class="hljs-keyword">as</span> e:<br>        <span class="hljs-built_in">print</span>(e)<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;保存数据完成!&#x27;</span>)<br><br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    main()<br></code></pre></td></tr></table></figure>
+
+<p>json模块主要有四个比较重要的函数，分别是：</p>
+<ul>
+<li><code>dump</code> - 将Python对象按照JSON格式序列化到文件中</li>
+<li><code>dumps</code> - 将Python对象处理成JSON格式的字符串</li>
+<li><code>load</code> - 将文件中的JSON数据反序列化成对象</li>
+<li><code>loads</code> - 将字符串的内容反序列化成Python对象</li>
+</ul>
+<blockquote>
+<p>这里出现了两个概念，一个叫序列化，一个叫反序列化。</p>
+<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/">维基百科</a>上对这两个概念是这样解释的：</p>
+<p>“<strong>序列化（serialization）</strong>在计算机科学的数据处理中，是指将<strong>数据结构或对象状态转换为可以存储或传输的形式</strong>，这样在需要的时候能够恢复到原先的状态，而且通过序列化的数据重新获取字节时，可以利用这些字节来产生原始对象的副本（拷贝）。与这个过程相反的动作，即<strong>从一系列字节中提取数据结构</strong>的操作，就是<strong>反序列化（deserialization）</strong>”。</p>
+<p>目前绝大多数网络数据服务（或称之为网络API）都是基于<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%B6%85%E6%96%87%E6%9C%AC%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE">HTTP协议</a>提供JSON格式的数据。</p>
+<p>关于HTTP协议的相关知识，可以看看阮一峰老师的<a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2016/08/http.html">《HTTP协议入门》</a>，如果想了解国内的网络数据服务，可以看看<a target="_blank" rel="noopener" href="https://www.juhe.cn/">聚合数据</a>和<a target="_blank" rel="noopener" href="http://www.avatardata.cn/">阿凡达数据</a>等网站，国外的可以看看<a target="_blank" rel="noopener" href="http://apis.io/">{API}Search</a>网站。</p>
+<p>下面的例子演示了如何使用<a target="_blank" rel="noopener" href="http://docs.python-requests.org/zh_CN/latest/">requests</a>模块（封装得足够好的第三方网络访问模块）访问网络API获取国内新闻，如何通过json模块解析JSON数据并显示新闻标题，这个例子使用了<a target="_blank" rel="noopener" href="https://www.tianapi.com/">天行数据</a>提供的国内新闻数据接口，其中的APIKey需要自己到该网站申请。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> requests<br><span class="hljs-keyword">import</span> json<br><br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>():<br>    resp = requests.get(<span class="hljs-string">&#x27;http://api.tianapi.com/guonei/?key=APIKey&amp;num=10&#x27;</span>)<br>    data_model = json.loads(resp.text)<br>    <span class="hljs-keyword">for</span> news <span class="hljs-keyword">in</span> data_model[<span class="hljs-string">&#x27;newslist&#x27;</span>]:<br>        <span class="hljs-built_in">print</span>(news[<span class="hljs-string">&#x27;title&#x27;</span>])<br><br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    main()<br></code></pre></td></tr></table></figure>
+</blockquote>
 <h1 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h1><p><strong>参考：<a target="_blank" rel="noopener" href="https://github.com/baa-god/sql_node/blob/master/mysql/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.md">详细笔记</a>、<a target="_blank" rel="noopener" href="http://c.biancheng.net/sql/what-is-sql.html">sql教程</a></strong></p>
 <p>MySQL是关系型数据库。</p>
 <p><strong>登录</strong>：mysql -u 用户名 -p 密码</p>
