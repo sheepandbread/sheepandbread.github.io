@@ -16,12 +16,12 @@
   <meta name="author" content="咩包">
   <meta name="keywords" content="">
   
-    <meta name="description" content="好久没整理了，过下知识点。 在线测试网站： JSBin 、 Glitch web开发技术文档：MDN|web开发文档汇总 html验证服务：HTML validator css验证服务：CSS Validator CSS 弹性盒子技巧——一篇以视觉吸引人的方式解释弹性盒子所有内容的文章 弹性盒子青蛙游戏——学习和更好地了解弹性盒子基础知识的教育游戏 HTMLHyper Text Markup La">
+    <meta name="description" content="html+css+h5新特性 的笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="html+css+h5">
 <meta property="og:url" content="http://example.com/2023/10/20/2023/html-css-h5/index.html">
 <meta property="og:site_name" content="咩包">
-<meta property="og:description" content="好久没整理了，过下知识点。 在线测试网站： JSBin 、 Glitch web开发技术文档：MDN|web开发文档汇总 html验证服务：HTML validator css验证服务：CSS Validator CSS 弹性盒子技巧——一篇以视觉吸引人的方式解释弹性盒子所有内容的文章 弹性盒子青蛙游戏——学习和更好地了解弹性盒子基础知识的教育游戏 HTMLHyper Text Markup La">
+<meta property="og:description" content="html+css+h5新特性 的笔记">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/grumpy-cat-small.png">
 <meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/grumpy-cat-attribute-small.png">
@@ -36,7 +36,7 @@
 <meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/%E6%88%AA%E5%B1%8F2023-10-19%20%E4%B8%8B%E5%8D%886.09.19.png">
 <meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/%E6%88%AA%E5%B1%8F2023-10-19%20%E4%B8%8B%E5%8D%883.35.15.png">
 <meta property="article:published_time" content="2023-10-20T08:58:12.000Z">
-<meta property="article:modified_time" content="2023-10-21T10:28:18.111Z">
+<meta property="article:modified_time" content="2023-10-22T04:39:04.804Z">
 <meta property="article:author" content="咩包">
 <meta property="article:tag" content="html">
 <meta property="article:tag" content="css">
@@ -256,7 +256,7 @@
         
         
         
-          266 分钟
+          270 分钟
         
       </span>
     
@@ -307,7 +307,8 @@
 <p><a target="_blank" rel="noopener" href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">CSS 弹性盒子技巧</a>——一篇以视觉吸引人的方式解释弹性盒子所有内容的文章</p>
 <p><a target="_blank" rel="noopener" href="https://flexboxfroggy.com/">弹性盒子青蛙游戏</a>——学习和更好地了解弹性盒子基础知识的教育游戏</p>
 <h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><p>Hyper Text Markup Language （超文本标记语言）简写：HTML</p>
-<p>是一种用来告知浏览器如何组织页面的<em><strong>标记语言</strong></em><sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="标记语言是一种将文本以及文本相关的其他信息结合起来，展现出关于文档结构和数据处理细节的电脑文字编码。如SVG和XML。">[1]</span></a></sup>。</p>
+<p>是一种用来告知浏览器如何组织页面的<em><strong>标记语言</strong></em>。</p>
+<p><em>标记语言：是一种将文本以及文本相关的其他信息结合起来，展现出关于文档结构和数据处理细节的电脑文字编码。如SVG和XML。</em></p>
 <p>（<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure#%E8%A7%84%E5%88%92%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E7%BD%91%E7%AB%99">文档和网站架构</a>）</p>
 <h2 id="1-基础语法"><a href="#1-基础语法" class="headerlink" title="1.基础语法"></a>1.基础语法</h2><h3 id="1-1-元素"><a href="#1-1-元素" class="headerlink" title="1.1 元素"></a>1.1 元素</h3><p>HTML由一系列的<strong>元素</strong>组成，这些元素可以用来包围或<em>标记</em>不同部分的内容，使其以某种方式呈现或者工作。</p>
 <p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/grumpy-cat-small.png" srcset="/img/loading.gif" lazyload alt="一个示范性的代码片断，展示了 html 元素 &lt;p&gt; My cat is very grumpy &lt;/p&gt; 的结构。"></p>
@@ -501,7 +502,8 @@
 </li>
 <li><p>表单标签form</p>
 <ul>
-<li>表单的属性action是设置提交的服务器地址，method设置提交的方式（默认Get、可选Post）<ul>
+<li><p>表单的属性action是设置提交的服务器地址，method设置提交的方式（默认Get、可选Post）</p>
+<ul>
 <li>GET请求的特点是：<ol>
 <li>浏览器地址栏中的地址是：action属性［＋？＋请求参数］<br>请求参数的格式是：name＝value＆name＝value</li>
 <li>不安全</li>
@@ -522,19 +524,37 @@
 </li>
 </ul>
 </li>
-<li>input：根据不同的 type 属性值，输入字段拥有很多种形式。<ul>
-<li>具体type类型可参考文档，常用的有例如text、password、reset、submit、file、hidden等。</li>
-<li>checked&#x3D;”checked”表示默认值</li>
+<li><p>input：基于 Web 的表单创建交互式控件，以便接受来自用户的数据。</p>
+<ul>
+<li>type：输入类型。具体可参考文档，常用的有例如text、password、reset、submit、file、hidden等。</li>
 <li>value：按钮上的默认字</li>
+<li>placeholder：当没有值设定时，出现在表单控件上的文字（提示用户输入信息）</li>
+<li>required：一个布尔属性，如果存在，则表示用户必须在提交表单之前指定一个非空值。</li>
+<li>checked&#x3D;”checked”：默认选中该选项。</li>
 </ul>
 </li>
-<li>select：下拉列表框<ul>
+<li><p>select：下拉列表框</p>
+<ul>
 <li>option：选项</li>
 </ul>
 </li>
-<li>textarea:长文本<ul>
+<li><p>textarea:长文本</p>
+<ul>
 <li>rows：行（高度）</li>
 <li>cols：字符数（宽度）</li>
+</ul>
+</li>
+<li><p>label:表示用户界面中某个元素的说明。</p>
+<ul>
+<li><p>将一个 <code>&lt;label&gt;</code> 和一个 <code>&lt;input&gt;</code> 元素匹配在一起，你需要给 <code>&lt;input&gt;</code> 一个 <code>id</code> 属性。而 <code>&lt;label&gt;</code> 需要一个 <code>for</code> 属性，其值和 <code>&lt;input&gt;</code> 的 <code>id</code> 一样。</p>
+</li>
+<li><p>也可以将 <code>&lt;input&gt;</code> 直接放在 <code>&lt;label&gt;</code> 里，此时则不需要 <code>for</code> 和 <code>id</code> 属性，因为关联已隐含存在.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">label</span></span><br><span class="hljs-tag">  &gt;</span>Do you like peas?<br>  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;peas&quot;</span> /&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>fieldset:用于对表单中的控制元素进行分组（包括label）</p>
+<ul>
+<li><code>&lt;legend&gt; </code>元素用于表示其父元素<code>fieldset</code>的内容标题。</li>
 </ul>
 </li>
 </ul>
@@ -714,12 +734,13 @@
 <li><strong>重要程度</strong></li>
 </ol>
 <p>资源顺序：同样权重时，<strong>后面的规则会应用</strong>（后覆盖前）</p>
-<p>一个选择器的**优先级<sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote"><span class="hint--top hint--rounded" aria-label="**备注：** 通用选择器（[`*`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Universal_selectors)）、组合符（`+`、`>`、`~`、' '）和调整优先级的选择器（[`:where()`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:where)）不会影响优先级。">[2]</span></a></sup>**可以说是由三个不同的值（或分量）相加，可以认为是百（ID）十（类）个（元素）——三位数的三个位数：</p>
+<p>一个选择器的<strong>优先级</strong>可以说是由三个不同的值（或分量）相加，可以认为是百（ID）十（类）个（元素）——三位数的三个位数：</p>
 <ul>
 <li><strong>ID</strong>：选择器中包含 ID 选择器则百位得一分。</li>
 <li><strong>类</strong>：选择器中包含类选择器、属性选择器或者伪类则十位得一分。</li>
 <li><strong>元素</strong>：选择器中包含元素、伪元素选择器则个位得一分。</li>
 </ul>
+<p>通用选择器（<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Universal_selectors"><code>*</code></a>）、组合符（<code>+</code>、<code>&gt;</code>、<code>~</code>、’ ‘）和调整优先级的选择器（<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:where"><code>:where()</code></a>）不会影响优先级。</p>
 <p><strong>内联样式优先于所有的普通样式</strong>（优先级可理解为1-0-0-0）。</p>
 <p><strong>!important</strong>：一个特殊的css，可以覆盖上面所有的优先级计算。（谨慎使用，两个!important优先级的情况下，顺序靠后的优先）</p>
 <h4 id="层叠层（级联层、cascade-layers）"><a href="#层叠层（级联层、cascade-layers）" class="headerlink" title="层叠层（级联层、cascade layers）"></a>层叠层（级联层、cascade layers）</h4><p>三种创建方法：</p>
@@ -1213,7 +1234,10 @@
 </li>
 <li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/list-style-position"><code>list-style-position</code></a>：设置在每个项目开始之前，项目符号是出现在列表项内，还是出现在其外。<ul>
 <li>outside：默认。The <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/CSS/::marker"><code>::marker</code></a> is outside the principal block box（标记盒在主体盒外。）.</li>
-<li>inside：The<code>::marker</code><sup id="fnref:3" class="footnote-ref"><a href="#fn:3" rel="footnote"><span class="hint--top hint--rounded" aria-label="匹配列表的标记框（通常为一个符号或数字）。它作用在任何设置了 display: list-item 的元素或伪元素上，例如  和  元素。">[3]</span></a></sup>is the first element among the list item’s contents.（标记盒位于元素内容之后）</li>
+<li>inside：The<code>::marker</code>is the first element among the list item’s contents.（标记盒位于元素内容之后）<ul>
+<li><code>::marker</code>：匹配列表的标记框（通常为一个符号或数字）。它作用在任何设置了 display: list-item 的元素或伪元素上，例如<code> &lt;li&gt;</code> 和<code>&lt;summary&gt;</code>元素。</li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/list-style-image"><code>list-style-image</code></a>：允许为项目符号使用自定义图片</li>
@@ -1256,7 +1280,11 @@
 <p>元素可以膨胀以填充额外的空间，收缩以适应更小的空间。</p>
 <p>父元素定义**<code>display: flex</code><strong>（这样的父元素被称为</strong>flex容器<strong>），所有子元素（</strong>flex项**）都会按照flex进行布局。</p>
 <h4 id="flex模型说明"><a href="#flex模型说明" class="headerlink" title="flex模型说明"></a>flex模型说明</h4><p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/flex_terms.png" srcset="/img/loading.gif" lazyload alt="flex模型：https://developer.mozilla.org/zh-CN/docs/Learn/CSS/CSS_layout/Flexbox/flex_terms.png"></p>
-<p>flex模型沿着<strong>主轴（main axis）</strong><sup id="fnref:4" class="footnote-ref"><a href="#fn:4" rel="footnote"><span class="hint--top hint--rounded" aria-label="**主轴**（main axis）是沿着 flex 元素放置的方向延伸的轴（比如页面上的横向的行、纵向的列）。该轴的开始和结束被称为 **main start** 和 **main end**。">[4]</span></a></sup>和<strong>交叉轴（cross axis）</strong><sup id="fnref:5" class="footnote-ref"><a href="#fn:5" rel="footnote"><span class="hint--top hint--rounded" aria-label="**交叉轴**（cross axis）是垂直于 flex 元素放置方向的轴。该轴的开始和结束被称为 **cross start** 和 **cross end**。">[5]</span></a></sup>两个轴进行布局。</p>
+<p>flex模型沿着<strong>主轴（main axis）</strong>和<strong>交叉轴（cross axis）</strong>两个轴进行布局。</p>
+<ul>
+<li><strong>主轴</strong>（main axis）是沿着 flex 元素放置的方向延伸的轴（比如页面上的横向的行、纵向的列）。该轴的开始和结束被称为 <strong>main start</strong> 和 <strong>main end</strong>。</li>
+<li><strong>交叉轴</strong>（cross axis）是垂直于 flex 元素放置方向的轴。该轴的开始和结束被称为 <strong>cross start</strong> 和 <strong>cross end</strong>。</li>
+</ul>
 <p> **<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex-direction"><code>flex-direction</code></a>**指定主轴的方向（默认为row）。</p>
 <p> <strong><code>flex-wrap</code></strong> 属性指定 flex 元素单行显示还是多行显示（wrap为换行）。</p>
 <p>以上两个属性可以缩写为：<code>flex-flow:</code>。</p>
@@ -1301,7 +1329,7 @@
 <li>order值越大越排后</li>
 </ul>
 <h3 id="网格-Grid"><a href="#网格-Grid" class="headerlink" title="网格 Grid"></a>网格 Grid</h3><p>网格是一个用于 web 的二维布局系统（由一系列水平及垂直的线构成的一种布局模式）。被设计用于同时在<u>两个维度上把元素按行和列排列整齐</u>。</p>
-<p>网格具有许多<strong>列（column）</strong>与<strong>行（row）</strong>，还有<strong>沟槽（gutter）</strong><sup id="fnref:6" class="footnote-ref"><a href="#fn:6" rel="footnote"><span class="hint--top hint--rounded" aria-label="沟槽：行与行、列与列之间的间隙">[6]</span></a></sup>。</p>
+<p>网格具有许多<strong>列（column）</strong>与<strong>行（row）</strong>，还有<strong>沟槽（gutter）</strong>(指行与行、列与列之间的间隙)。</p>
 <p><strong>定义网格</strong>：**<code>display:grid</code>**。</p>
 <p>使用 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/grid-template-rows"><code>grid-template-rows</code></a> 和 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/grid-template-columns"><code>grid-template-columns</code></a> 两个属性定义一些行和列的轨道。</p>
 <p>利用 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/grid-column"><code>grid-column</code></a> 和 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/grid-row"><code>grid-row</code></a> 两个属性来指定每一个子元素应该从哪一行&#x2F;列开始，并在哪一行&#x2F;列结束。</p>
@@ -1469,87 +1497,87 @@
 <th align="left">描述</th>
 </tr>
 <tr>
-<td><a href="/tags/tag-article.html">&lt;article&gt;</a></td>
+<td><a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-article.html">&lt;article&gt;</a></td>
 <td>定义页面独立的内容区域。</td>
 </tr>
 <tr>
-<td><a href="/tags/tag-aside.html">&lt;aside&gt;</a></td>
+<td><a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-aside.html">&lt;aside&gt;</a></td>
 <td>定义页面的侧边栏内容。</td>
 </tr>
 <tr>
-<td><a href="/tags/tag-bdi.html">&lt;bdi&gt;</a></td>
+<td><a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-bdi.html">&lt;bdi&gt;</a></td>
 <td>允许您设置一段文本，使其脱离其父元素的文本方向设置。</td>
 </tr>
 <tr>
-<td><a href="/tags/tag-command.html">&lt;command&gt;</a></td>
+<td><a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-command.html">&lt;command&gt;</a></td>
 <td>定义命令按钮，比如单选按钮、复选框或按钮</td>
 </tr>
 <tr>
-<td><a href="/tags/tag-details.html">&lt;details&gt;</a></td>
+<td><a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-details.html">&lt;details&gt;</a></td>
 <td>用于描述文档或文档某个部分的细节</td>
 </tr>
 <tr>
-<td><a href="/tags/tag-dialog.html">&lt;dialog&gt;</a></td>
+<td><a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-dialog.html">&lt;dialog&gt;</a></td>
 <td>定义对话框，比如提示框</td>
 </tr>
 <tr>
-<td><a href="/tags/tag-summary.html">&lt;summary&gt;</a></td>
+<td><a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-summary.html">&lt;summary&gt;</a></td>
 <td>标签包含 details 元素的标题</td>
 </tr>
 <tr>
-<td><a href="/tags/tag-figure.html">&lt;figure&gt;</a></td>
+<td><a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-figure.html">&lt;figure&gt;</a></td>
 <td>规定独立的流内容（图像、图表、照片、代码等等）。</td>
 </tr>
 <tr>
-<td><a href="/tags/tag-figcaption.html">&lt;figcaption&gt;</a></td>
+<td><a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-figcaption.html">&lt;figcaption&gt;</a></td>
 <td>定义 &lt;figure&gt; 元素的标题</td>
 </tr>
 <tr>
-<td><a href="/tags/tag-footer.html">&lt;footer&gt;</a></td>
+<td><a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-footer.html">&lt;footer&gt;</a></td>
 <td>定义 section 或 document 的页脚。</td>
 </tr>
 <tr>
-<td><a href="/tags/tag-header.html">&lt;header&gt;</a></td>
+<td><a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-header.html">&lt;header&gt;</a></td>
 <td>定义了文档的头部区域</td>
 </tr>
 <tr>
-<td><a href="/tags/tag-mark.html">&lt;mark&gt;</a></td>
+<td><a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-mark.html">&lt;mark&gt;</a></td>
 <td>定义带有记号的文本。</td>
 </tr>
 <tr>
-<td><a href="/tags/tag-meter.html">&lt;meter&gt;</a></td>
+<td><a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-meter.html">&lt;meter&gt;</a></td>
 <td>定义度量衡。仅用于已知最大和最小值的度量。</td>
 </tr>
 <tr>
-<td><a href="/tags/tag-nav.html">&lt;nav&gt;</a></td>
+<td><a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-nav.html">&lt;nav&gt;</a></td>
 <td>定义导航链接的部分。</td>
 </tr>
 <tr>
-<td><a href="/tags/tag-progress.html">&lt;progress&gt;</a></td>
+<td><a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-progress.html">&lt;progress&gt;</a></td>
 <td>定义任何类型的任务的进度。</td>
 </tr>
 <tr>
-<td><a href="/tags/tag-ruby.html">&lt;ruby&gt;</a></td>
+<td><a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-ruby.html">&lt;ruby&gt;</a></td>
 <td>定义 ruby 注释（中文注音或字符）。</td>
 </tr>
 <tr>
-<td><a href="/tags/tag-rt.html">&lt;rt&gt;</a></td>
+<td><a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-rt.html">&lt;rt&gt;</a></td>
 <td>定义字符（中文注音或字符）的解释或发音。</td>
 </tr>
 <tr>
-<td><a href="/tags/tag-rp.html">&lt;rp&gt;</a></td>
+<td><a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-rp.html">&lt;rp&gt;</a></td>
 <td>在 ruby 注释中使用，定义不支持 ruby 元素的浏览器所显示的内容。</td>
 </tr>
 <tr>
-<td><a href="/tags/tag-section.html">&lt;section&gt;</a></td>
+<td><a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-section.html">&lt;section&gt;</a></td>
 <td>定义文档中的节（section、区段）。</td>
 </tr>
 <tr>
-<td><a href="/tags/tag-time.html">&lt;time&gt;</a></td>
+<td><a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-time.html">&lt;time&gt;</a></td>
 <td>定义日期或时间。</td>
 </tr>
 <tr>
-<td><a href="/tags/tag-wbr.html">&lt;wbr&gt;</a></td>
+<td><a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-wbr.html">&lt;wbr&gt;</a></td>
 <td>规定在文本中的何处适合添加换行符。</td>
 </tr>
 </table>
@@ -1574,13 +1602,8 @@
 <h2 id="web-worker"><a href="#web-worker" class="headerlink" title="web worker"></a>web worker</h2><p>Web Worker 为 Web 内容在后台线程中运行脚本提供了一种简单的方法。</p>
 <p>html页面在执行脚本时，页面的状态是不可相应的，直到脚本完成。而web worker是运行在后台的JavaScript，独立于其他脚本，不会影响页面的性能。</p>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>Mmdn - 学习web开发：<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Learn">https://developer.mozilla.org/zh-CN/docs/Learn</a></p>
-<section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>标记语言是一种将文本以及文本相关的其他信息结合起来，展现出关于文档结构和数据处理细节的电脑文字编码。如SVG和XML。
-<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:2" class="footnote-text"><span><strong>备注：</strong> 通用选择器（<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Universal_selectors"><code>*</code></a>）、组合符（<code>+</code>、<code>&gt;</code>、<code>~</code>、’ ‘）和调整优先级的选择器（<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:where"><code>:where()</code></a>）不会影响优先级。
-<a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:3" class="footnote-text"><span>匹配列表的标记框（通常为一个符号或数字）。它作用在任何设置了 display: list-item 的元素或伪元素上，例如 <li> 和 <summary> 元素。
-<a href="#fnref:3" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:4" class="footnote-text"><span><strong>主轴</strong>（main axis）是沿着 flex 元素放置的方向延伸的轴（比如页面上的横向的行、纵向的列）。该轴的开始和结束被称为 <strong>main start</strong> 和 <strong>main end</strong>。
-<a href="#fnref:4" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:5" class="footnote-text"><span><strong>交叉轴</strong>（cross axis）是垂直于 flex 元素放置方向的轴。该轴的开始和结束被称为 <strong>cross start</strong> 和 <strong>cross end</strong>。
-<a href="#fnref:5" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:6" class="footnote-text"><span>沟槽：行与行、列与列之间的间隙
-<a href="#fnref:6" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
+<p>菜鸟教程。</p>
+
                 
               </div>
             
@@ -1652,6 +1675,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2023/10/25/2023/JavaScript%E7%AC%94%E8%AE%B0/" title="JavaScript笔记">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">JavaScript笔记</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
