@@ -36,7 +36,7 @@
 <meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/%E6%88%AA%E5%B1%8F2023-10-19%20%E4%B8%8B%E5%8D%886.09.19.png">
 <meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/%E6%88%AA%E5%B1%8F2023-10-19%20%E4%B8%8B%E5%8D%883.35.15.png">
 <meta property="article:published_time" content="2023-10-20T08:58:12.000Z">
-<meta property="article:modified_time" content="2023-10-22T04:39:04.804Z">
+<meta property="article:modified_time" content="2023-10-27T14:49:39.740Z">
 <meta property="article:author" content="咩包">
 <meta property="article:tag" content="html">
 <meta property="article:tag" content="css">
@@ -245,7 +245,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          32k 字
+          33k 字
         
       </span>
     
@@ -256,7 +256,7 @@
         
         
         
-          270 分钟
+          278 分钟
         
       </span>
     
@@ -361,8 +361,31 @@
 </li>
 <li><p><code>&lt;meta charset=&quot;utf-8&quot;&gt;</code>: 这个元素代表了不能由其他 HTML 元相关元素表示的元数据，比如 <code>&lt;base&gt;</code>、<code>&lt;link&gt;</code>、<code>&lt;script&gt;</code>、<code>&lt;style&gt;</code> 或<code> &lt;title&gt;</code>。</p>
 <ul>
-<li>charset 属性将你的文档的字符集设置为 UTF-8</li>
-<li>name &#x3D; “description” ：里面的内容会被显示在搜索引擎的结果页。（<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML#%E4%B8%BB%E5%8A%A8%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%9C%A8%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E4%B8%AD_description_%E7%9A%84%E4%BD%BF%E7%94%A8">主动学习：在搜索引擎中 description 的使用</a>）</li>
+<li><p><strong>charset</strong> 属性将你的文档的字符集设置为 UTF-8</p>
+</li>
+<li><p><strong>name</strong> 属性和 content 属性可以一起使用。以名-值对的方式给文档提供元数据。（详情参数见<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/meta/name">标准元数据名称</a>）</p>
+<p>其中name作为元数据的名称，content作为元数据的值。</p>
+<ul>
+<li><p>description：里面的内容会被显示在搜索引擎的结果页。</p>
+</li>
+<li><p>viewport：为视口的初始大小提供指示（hint）。目前仅用于移动设备。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width,initial-scale=1&quot;</span> /&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>这个元标签告诉移动端浏览器，它们应该将视口宽度设定为设备的宽度，将文档放大到其预期大小的 100%，在移动端以你所希望的为移动优化的大小展示文档。（响应式设计）</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code>&lt;link&gt;</code>外部资源链接元素。规定了当前文档与外部资源的关系。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;main.css&quot;</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> /&gt;</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>rel：定义了所链接的资源与当前文档的<strong>关系</strong>。<ul>
+<li>stylesheet：导入样式表</li>
+<li>icon：代表当前文档的图标</li>
+</ul>
+</li>
 </ul>
 </li>
 <li><p><code>&lt;title&gt;&lt;/title&gt;</code>: 这设置了页面的<strong>标题</strong>，也就是出现在该页面加载的浏览器标签中的内容。当页面被加入书签时，页面标题也被用来描述该页面。</p>
@@ -526,11 +549,16 @@
 </li>
 <li><p>input：基于 Web 的表单创建交互式控件，以便接受来自用户的数据。</p>
 <ul>
-<li>type：输入类型。具体可参考文档，常用的有例如text、password、reset、submit、file、hidden等。</li>
+<li>type：输入类型。具体可参考文档，常用的有例如text、password、reset、submit、file、hidden等。<ul>
+<li>email：验证是否为正确邮件地址形成的字符串</li>
+</ul>
+</li>
 <li>value：按钮上的默认字</li>
 <li>placeholder：当没有值设定时，出现在表单控件上的文字（提示用户输入信息）</li>
 <li>required：一个布尔属性，如果存在，则表示用户必须在提交表单之前指定一个非空值。</li>
 <li>checked&#x3D;”checked”：默认选中该选项。</li>
+<li>minlength : 最小长度</li>
+<li>pattern：规定了一个表单控件的值应该匹配的正则表达式。</li>
 </ul>
 </li>
 <li><p>select：下拉列表框</p>
@@ -1080,6 +1108,44 @@
 <p>前三位表示红蓝绿通道（和前一种方法类似），第四位表示颜色的<strong>alpha通道</strong>，用于控制不透明度。</p>
 <p>旧版css中，rgb()不支持alpha通道。</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs css">rgb(<span class="hljs-number">2</span> <span class="hljs-number">121</span> <span class="hljs-number">139</span>);<br>rgb(<span class="hljs-number">197</span> <span class="hljs-number">93</span> <span class="hljs-number">161</span> / .<span class="hljs-number">7</span>);<br></code></pre></td></tr></table></figure>
+
+<p>原色、间色、复色：</p>
+<ul>
+<li><p>原色</p>
+<ul>
+<li>红：rgb(255,0,0)</li>
+<li>绿：rgb(0,255,0)</li>
+<li>蓝：rgb(0,0,255)</li>
+</ul>
+</li>
+<li><p>间色</p>
+<ul>
+<li>黄：rgb(255,255,0)</li>
+<li>青：rgb(0,255,255)</li>
+<li>品红：rgb(255,0,255)</li>
+</ul>
+</li>
+<li><p>复色：通过组合一种原色和一种邻近的间色来创建。</p>
+<ul>
+<li>橙（红+黄）：rgb(255,127,0)</li>
+<li>亮绿（绿+青）：rgb(0,255,127)</li>
+<li>蓝紫（品红+蓝）：rgb(127,0,255)</li>
+<li>黄绿（绿+黄）：rgb(127, 255, 0)</li>
+<li>天蓝（蓝+青）：rgb(0, 127, 255);</li>
+<li>玫瑰（红+品红）：rgb(255, 0, 127);</li>
+</ul>
+</li>
+<li><p>黑白</p>
+<ul>
+<li>黑：rgb(0,0,0)</li>
+<li>白：rgb(255,255,255)</li>
+</ul>
+</li>
+<li><p>补色：色轮上相互对立的两种颜色</p>
+<p> 例如：rgb(255, 0, 0) 和 rgb(0, 255, 255)。</p>
+</li>
+<li></li>
+</ul>
 </li>
 <li><p><strong>HSL和HSLA</strong></p>
 <p>HSL颜色模型。</p>
@@ -1095,6 +1161,19 @@
 <h3 id="min-和-max-尺寸"><a href="#min-和-max-尺寸" class="headerlink" title="min- 和 max- 尺寸"></a>min- 和 max- 尺寸</h3><p>可以让css给元素一个最大或最小尺寸。</p>
 <p>例如<code>max-height</code>,<code>max-width</code>.</p>
 <p>这个技术让图片<strong>可响应</strong>，当在更小的设备上浏览时，它们会适合的缩放。</p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ul>
+<li><p>box-shadow：元素周围应用一个或多个阴影</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">box-shadow</span>: offsetX offsetY blurRadius spreadRadius color;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>正 <code>offsetX</code> 值将阴影向右移动，负值将它向左移动</li>
+<li>正 <code>offsetY</code> 值将阴影向下移动，负值将它向上移动</li>
+<li><code>blurRadius</code>：阴影模糊半径。默认为0。</li>
+<li><code>spreadRadius</code>：阴影扩散半径。默认为0。</li>
+</ul>
+</li>
+<li></li>
+</ul>
 <h2 id="图像、媒体、表单"><a href="#图像、媒体、表单" class="headerlink" title="图像、媒体、表单"></a>图像、媒体、表单</h2><p>图像和视频被称为<strong>替换元素</strong>。</p>
 <p><strong>可替换元素</strong>（<strong>replaced element</strong>）的展现效果不是由 CSS 来控制的。这些元素是一种外部对象，它们外观的渲染，是独立于 CSS 的。</p>
 <h3 id="调整图像"><a href="#调整图像" class="headerlink" title="调整图像"></a>调整图像</h3><p>图像溢出盒子时，常用的方法是将图片的<code>max-width</code>设置为100%（这个方法也适用于其他替换元素，如<code>&lt;video&gt;</code>、<code>&lt;frame&gt;</code>）。</p>
