@@ -35,8 +35,8 @@
 <meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/%E6%88%AA%E5%B1%8F2023-10-19%20%E4%B8%8B%E5%8D%885.56.59.png">
 <meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/%E6%88%AA%E5%B1%8F2023-10-19%20%E4%B8%8B%E5%8D%886.09.19.png">
 <meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/%E6%88%AA%E5%B1%8F2023-10-19%20%E4%B8%8B%E5%8D%883.35.15.png">
-<meta property="article:published_time" content="2023-10-20T08:58:12.000Z">
-<meta property="article:modified_time" content="2023-11-03T08:53:41.500Z">
+<meta property="article:published_time" content="2023-10-20T08:00:00.000Z">
+<meta property="article:modified_time" content="2023-12-05T11:23:21.999Z">
 <meta property="article:author" content="咩包">
 <meta property="article:tag" content="html">
 <meta property="article:tag" content="css">
@@ -233,7 +233,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-10-20 16:58" pubdate>
+        <time datetime="2023-10-20 16:00" pubdate>
           2023年10月20日 下午
         </time>
       </span>
@@ -245,7 +245,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          35k 字
+          36k 字
         
       </span>
     
@@ -256,7 +256,7 @@
         
         
         
-          289 分钟
+          299 分钟
         
       </span>
     
@@ -499,6 +499,11 @@
 <li><p>表格</p>
 <ul>
 <li><p>table 标签是表格标签</p>
+</li>
+<li><p>caption 展示一个表格的<strong>标题</strong>。常作为table的第一个子元素出现，同时出现表格的最前面。</p>
+<ul>
+<li>可使用css中的<strong>caption-side</strong>属性，指定标题的位置（例如<code>caption-side</code>)。</li>
+</ul>
 </li>
 <li><p>thead 定义了一组定义表格的列头的<strong>行</strong>。</p>
 </li>
@@ -743,11 +748,22 @@
 <li><p><strong>伪类和伪元素</strong> 例：<code>:hover</code>、<code>::first-line</code></p>
 <p>一些伪类：</p>
 <ul>
-<li><code>:first-child</code>和<code>:last-child</code>：第一个&#x2F;最后一个元素</li>
-<li><code>:invalid</code> 用来选择任何未通过验证的<code>&lt;from&gt;、&lt;fieldset&gt;、&lt;input&gt;</code>或其他表单元素</li>
-<li><code>:hover</code>：用户将指针挪到元素上时激活</li>
-<li><code>:focus</code>：用户点击、轻触或使用键盘的 Tab 键焦点某个元素时激活（如表单输入）</li>
-<li><code>:nth-child(an+b)</code>：首先找到所有当前元素的兄弟元素，然后按照位置先后顺序从 1 开始排序，选择的结果为 CSS 伪类:nth-child 括号中表达式（an+b）匹配到的元素集合（n&#x3D;0，1，2，3…）。<ul>
+<li><p><code>:first-child</code>和<code>:last-child</code>：第一个&#x2F;最后一个元素</p>
+</li>
+<li><p><code>:first-of-type</code> 表示一组兄弟元素中其类型的第一个元素。</p>
+</li>
+<li><p><code>:invalid</code> 用来选择任何未通过验证的<code>&lt;from&gt;、&lt;fieldset&gt;、&lt;input&gt;</code>或其他表单元素</p>
+</li>
+<li><p><strong><code>:not()</code></strong> CSS <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Pseudo-classes">伪类</a>用来匹配不符合一组选择器的元素。由于它的作用是防止特定的元素被选中，它也被称为<em>反选伪类</em>（<em>negation pseudo-class</em>）。</p>
+</li>
+<li><p><code>:hover</code>：用户将指针挪到元素上时激活</p>
+</li>
+<li><p><code>:focus</code>：用户点击、轻触或使用键盘的 Tab 键焦点某个元素时激活（如表单输入）</p>
+</li>
+<li><p><strong><code>:nth-of-type()</code></strong> CSS 伪类基于相同类型（标签名称）的兄弟元素中的位置来匹配元素。</p>
+</li>
+<li><p><code>:nth-child(an+b)</code>：首先找到所有当前元素的兄弟元素，然后按照位置先后顺序从 1 开始排序，选择的结果为 CSS 伪类:nth-child 括号中表达式（an+b）匹配到的元素集合（n&#x3D;0，1，2，3…）。</p>
+<ul>
 <li><code>0n+3</code> 或简单的 <code>3</code> 匹配第三个元素。</li>
 <li><code>1n+0</code> 或简单的 <code>n</code> 匹配每个元素。（兼容性提醒：在 Android 浏览器 4.3 以下的版本 <code>n</code> 和 <code>1n</code> 的匹配方式不一致。<code>1n</code> 和 <code>1n+0</code> 是一致的，可根据喜好任选其一来使用。）</li>
 <li><code>2n+0</code> 或简单的 <code>2n</code> 匹配位置为 2、4、6、8…的元素（n&#x3D;0 时，2n+0&#x3D;0，第 0 个元素不存在，因为是从 1 开始排序)。你可以使用关键字 <strong><code>even</code></strong> 来替换此表达式。</li>
@@ -900,6 +916,13 @@
 </ul>
 <p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/%E6%88%AA%E5%B1%8F2023-10-18%20%E4%B8%8A%E5%8D%881.38.11.png" srcset="/img/loading.gif" lazyload alt="盒子模型，来源：https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Building_blocks/The_box_model"></p>
 <p><strong>标准盒模型（默认）：content+padding+border</strong>。（<code>box-sizing: content-box</code>）</p>
+<ul>
+<li>box-sizing属性定义了 user agent 应该如何计算一个元素的总宽度和总高度。<ul>
+<li>content-box是默认值。</li>
+<li>border-box告诉浏览器 边框和内边距都包含在width内。（也就是不含margin）</li>
+</ul>
+</li>
+</ul>
 <p><strong>替代(IE)盒模型</strong>：所有宽度都是可见宽度（如边框，填充)。使用<code>box-sizing: border-box</code>来进行设置。</p>
 <h3 id="外边距margin"><a href="#外边距margin" class="headerlink" title="外边距margin"></a>外边距margin</h3><p>外边距是盒子周围一圈看不到的空间。它会把其他元素从盒子旁边推开。</p>
 <p>外边距的属性值可设置为负数。</p>
@@ -922,6 +945,17 @@
 </ul>
 </li>
 <li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-color"><code>border-color</code></a> 颜色</li>
+</ul>
+<p>其他：</p>
+<ul>
+<li><strong><code>border-collapse</code></strong> ：属性是用来决定表格的边框是分开的还是合并的。<ul>
+<li>collapse：合并模式。表格中相邻单元格共享边框。<ul>
+<li>在这种模式下，CSS 属性border-style 的值 inset 表现为槽，值 outset 表现为脊。</li>
+</ul>
+</li>
+<li>separate：分隔膜式（html表格的传统模式）。相邻单元格都拥有不同的边框。边框之间的距离是通过 CSS 属性 border-spacing 来确定的。</li>
+</ul>
+</li>
 </ul>
 <h3 id="内边距-padding"><a href="#内边距-padding" class="headerlink" title="内边距 padding"></a>内边距 padding</h3><p>border和content之间。</p>
 <p>与margin不同，值不能为负数，必须为0或整数。</p>
@@ -1235,6 +1269,34 @@
 </li>
 <li><p>accesskey : （全局属性）为当前元素生成快捷键。属性值必须包含一个可打印字符。</p>
 </li>
+<li><p>aria-hidden：可以用来控制一系列可访问 API 中的非交互内容的<strong>显示或隐藏</strong>。</p>
+<ul>
+<li><blockquote>
+<p>把 <code>aria-hidden=&quot;true&quot;</code> 加到元素上会把该元素和它的所有子元素从无障碍树上移除。这样做可以通过隐藏下列内容来提升使用辅助技术的用户体验：</p>
+<ul>
+<li>纯装饰性的内容，如图标、图片</li>
+<li>重复的内容，如重复的文本</li>
+<li>屏幕外或被折叠的内容，如菜单</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>clip 属性定义了元素的哪一部分是可见的。（已弃用）</p>
+<p>clip 属性只适用于 position:absolute 的元素。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">clip</span>: <span class="hljs-built_in">rect</span>(<span class="hljs-number">1px</span>, <span class="hljs-number">10em</span>, <span class="hljs-number">3rem</span>, <span class="hljs-number">2ch</span>)<br><span class="hljs-comment">/*rect(&lt;top&gt;, &lt;right&gt;, &lt;bottom&gt;, &lt;left&gt;) */</span><br>clip: auto<br>clip: inherit<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>clip-path属性使用<strong>裁剪方式</strong>创建元素的可显示区域。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/* 圆形剪切 */</span><br><span class="hljs-attribute">clip-path</span>: <span class="hljs-built_in">circle</span>(<span class="hljs-number">40%</span>);<br><span class="hljs-comment">/* inset矩形：定义一个矩形，该矩形与引用框的每一边相距指定的插入距离。 */</span><br><span class="hljs-attribute">clip-path</span>: <span class="hljs-built_in">inset</span>(<span class="hljs-number">60px</span>);<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>white-space CSS属性设置如何处理元素中的空白。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">white-space</span>: nowrap; <span class="hljs-comment">/* 与正常情况一样折叠白色空间，但在源代码中不显示换行符（文本换行）。 */</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong><code>z-index</code></strong> 属性设置定位元素及其后代元素或 flex 项目的 Z 轴顺序。z-index 较大的重叠元素会覆盖较小的元素.</p>
+</li>
+<li><p><strong><code>vertical-align</code></strong> 用来指定行内元素（inline）或表格单元格（table-cell）元素的垂直对齐方式。</p>
+</li>
+<li></li>
 </ul>
 <h2 id="图像、媒体、表单"><a href="#图像、媒体、表单" class="headerlink" title="图像、媒体、表单"></a>图像、媒体、表单</h2><p>图像和视频被称为<strong>替换元素</strong>。</p>
 <p><strong>可替换元素</strong>（<strong>replaced element</strong>）的展现效果不是由 CSS 来控制的。这些元素是一种外部对象，它们外观的渲染，是独立于 CSS 的。</p>
@@ -1741,7 +1803,6 @@
 <h2 id="web-worker"><a href="#web-worker" class="headerlink" title="web worker"></a>web worker</h2><p>Web Worker 为 Web 内容在后台线程中运行脚本提供了一种简单的方法。</p>
 <p>html页面在执行脚本时，页面的状态是不可相应的，直到脚本完成。而web worker是运行在后台的JavaScript，独立于其他脚本，不会影响页面的性能。</p>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>Mmdn - 学习web开发：<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Learn">https://developer.mozilla.org/zh-CN/docs/Learn</a></p>
-<p>菜鸟教程。</p>
 
                 
               </div>

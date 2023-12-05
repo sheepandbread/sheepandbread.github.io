@@ -24,7 +24,7 @@
 <meta property="og:description" content="about JavaScript">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-25T01:56:18.000Z">
-<meta property="article:modified_time" content="2023-11-21T03:35:13.095Z">
+<meta property="article:modified_time" content="2023-11-30T02:31:38.012Z">
 <meta property="article:author" content="咩包">
 <meta property="article:tag" content="js">
 <meta name="twitter:card" content="summary_large_image">
@@ -230,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          83k 字
+          88k 字
         
       </span>
     
@@ -241,7 +241,7 @@
         
         
         
-          695 分钟
+          730 分钟
         
       </span>
     
@@ -284,7 +284,8 @@
             
               <div class="markdown-body">
                 
-                <p><a href="#start" style="color:pink;">跳到指南</a></p>
+                <p>自用笔记。</p>
+<p><a href="#start" style="color:pink;">跳到指南</a></p>
 <h1 id="简介-amp-基础"><a href="#简介-amp-基础" class="headerlink" title="简介&amp;基础"></a>简介&amp;基础</h1><p>JavaScript是一种具有函数有限特性的轻量级、解释型（即时编译型[just-in-time compiling]）编程语言。</p>
 <p>进一步说，JavaScript 是一种<strong>基于原型、多范式、单线程的动态语言</strong>，并且<strong>支持</strong>面向对象、命令式和声明式（如函数式编程）风格。</p>
 <p>（严格来说，JavaScript并不算面向对象编程语言。ES6后新增了class，使它更贴合传统的oop。但在Netscape官方定义，JavaScript是基于对象的语言。）</p>
@@ -1674,6 +1675,8 @@
 <h2 id="7-Promise-对象"><a href="#7-Promise-对象" class="headerlink" title="7.Promise 对象"></a>7.Promise 对象</h2><blockquote>
 <p><strong>Promise</strong> 是现代 JavaScript 中异步编程的基础，是一个由异步函数返回的可以向我们指示当前操作所处的状态的对象。在 Promise 返回给调用者的时候，操作往往还没有完成，但 Promise 对象可以让我们操作最终完成时对其进行处理（无论成功还是失败）。</p>
 </blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> myPromise = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> &#123;<br>  <span class="hljs-keyword">if</span>(condition here) &#123;<br>    <span class="hljs-title function_">resolve</span>(<span class="hljs-string">&quot;Promise was fulfilled&quot;</span>);<br>  &#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-title function_">reject</span>(<span class="hljs-string">&quot;Promise was rejected&quot;</span>);<br>  &#125;<br>&#125;);<br>myPromise.<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">result</span> =&gt;</span> &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(result);<br>&#125;);<br>myPromise.<span class="hljs-title function_">catch</span>(<span class="hljs-function"><span class="hljs-params">error</span> =&gt;</span> &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(error);<br>&#125;);<br></code></pre></td></tr></table></figure>
+
 <h3 id="7-1-概述"><a href="#7-1-概述" class="headerlink" title="7.1 概述"></a>7.1 概述</h3><p>Promise 是一个对象，也是一个构造函数。</p>
 <p>Promise 的设计思想是，所有异步任务都返回一个 Promise 实例。Promise 实例有一个<code>then</code>方法，用来指定下一步的回调函数。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> p1 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(f1);<br>p1.<span class="hljs-title function_">then</span>(f2);<br><span class="hljs-comment">//f1异步操作完成后，执行f2</span><br></code></pre></td></tr></table></figure>
@@ -1685,11 +1688,15 @@
 <p>采用Promise以后，程序流程变得十分清晰易读。</p>
 <h3 id="7-2-Promise对象的状态"><a href="#7-2-Promise对象的状态" class="headerlink" title="7.2 Promise对象的状态"></a>7.2 Promise对象的状态</h3><p>Promise对象通过自身的状态，来控制异步操作。</p>
 <p>Promise实例具有<strong>三种状态</strong>：</p>
+<p>( you did not add a way to complete the promise. )</p>
 <ul>
 <li><p><strong>待定（pending）</strong></p>
 <p>初始状态，既没有被兑现，也没有被拒绝。</p>
 <p>这是调用 <code>fetch()</code> 返回 Promise 时的状态，此时请求还在进行中。</p>
 </li>
+</ul>
+<p>(given to the promise argument are used to do this)</p>
+<ul>
 <li><p><strong>已兑现（fulfilled）</strong></p>
 <p>意味着操作成功完成。当 Promise 完成时，它的 <code>then()</code> 处理函数被调用。</p>
 </li>
@@ -1717,7 +1724,7 @@
 
 
 
-<h3 id="7-4-Promise-prototype-then"><a href="#7-4-Promise-prototype-then" class="headerlink" title="7.4 Promise.prototype.then()"></a>7.4 Promise.prototype.then()</h3><p>Promise 实例的<code>then</code>方法，用来添加回调函数。它立即返回一个等效的Promise对象，允许你链接到其他 Promise 方法，从而实现链式调用。</p>
+<h3 id="7-4-Promise-prototype-then"><a href="#7-4-Promise-prototype-then" class="headerlink" title="7.4 Promise.prototype.then()"></a>7.4 Promise.prototype.then()</h3><p>Promise 实例的<code>then</code>方法，用来<strong>添加回调函数</strong>。它立即返回一个等效的Promise对象，允许你链接到其他 Promise 方法，从而实现链式调用。</p>
 <p><code>then</code>方法最多接受两个回调函数。<code>then(onFulfilled, onRejected)</code></p>
 <ul>
 <li>第一个是异步操作成功时（变为<code>fulfilled</code>状态）的回调函数</li>
@@ -1849,7 +1856,85 @@
 <li><strong>shared workers</strong></li>
 <li><strong>service workers</strong></li>
 </ul>
-<h2 id="练习：序列动画"><a href="#练习：序列动画" class="headerlink" title="练习：序列动画"></a>练习：序列动画</h2><div id="start"></div>
+<h2 id="练习：序列动画"><a href="#练习：序列动画" class="headerlink" title="练习：序列动画"></a>练习：序列动画</h2><h1 id="ES6新特性"><a href="#ES6新特性" class="headerlink" title="ES6新特性"></a>ES6新特性</h1><ul>
+<li><p><strong>let</strong></p>
+</li>
+<li><p><strong>解构赋值</strong></p>
+</li>
+<li><p><strong>简写</strong></p>
+<p>xxx:function()可简写为xxx()</p>
+<p>a:a,b:b可简写为a,b</p>
+</li>
+<li><p><strong>Class</strong>,<strong>getter</strong>,<strong>setter</strong></p>
+</li>
+<li><p><strong>export、import</strong></p>
+</li>
+<li><p><strong>Promise</strong></p>
+</li>
+</ul>
+<h2 id="Module"><a href="#Module" class="headerlink" title="Module"></a>Module</h2><p>过去的js没有模块体系，无法将大程序拆分成小文件，再简单拼接。</p>
+<p>ES6实现了模块功能，设计思想是尽量静态化，使编译时就能确定模块的依赖关系，以及输入输出的变量。</p>
+<p>ES6的模块<strong>自动采用严格模式</strong>。</p>
+<p>模块功能主要由<code>export</code>和<code>import</code>构成。</p>
+<ul>
+<li><strong>export</strong>：规定模块的对外接口</li>
+<li><strong>import</strong>：输入其他模块提供的功能</li>
+</ul>
+<p>模块之间可继承。</p>
+<h3 id="export"><a href="#export" class="headerlink" title="export"></a>export</h3><p>在创建 JavaScript 模块时，export 语句用于从模块中**<u>导出</u>实时绑定**的函数、对象或原始值，以便其他程序可以通过 import 语句使用它们。</p>
+<p>如果你希望外部能够读取模块内部的某个变量，就必须使用<code>export</code>关键字输出该变量。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// profile.js</span><br><span class="hljs-comment">//输出变量</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">var</span> firstName = <span class="hljs-string">&#x27;Michael&#x27;</span>;<br><span class="hljs-keyword">export</span> <span class="hljs-keyword">var</span> lastName = <span class="hljs-string">&#x27;Jackson&#x27;</span>;<br><span class="hljs-keyword">export</span> <span class="hljs-keyword">var</span> year = <span class="hljs-number">1958</span>;<br><span class="hljs-comment">//也可以</span><br><span class="hljs-keyword">var</span> firstName = <span class="hljs-string">&#x27;Michael&#x27;</span>;<br><span class="hljs-keyword">var</span> lastName = <span class="hljs-string">&#x27;Jackson&#x27;</span>;<br><span class="hljs-keyword">var</span> year = <span class="hljs-number">1958</span>;<br><span class="hljs-keyword">export</span> &#123; firstName, lastName, year &#125;;<br><br><span class="hljs-comment">//输出函数和类</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">multiply</span>(<span class="hljs-params">x, y</span>) &#123;<br>  <span class="hljs-keyword">return</span> x * y;<br>&#125;;<br><br><span class="hljs-comment">//可使用ad关键字重命名</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">v1</span>(<span class="hljs-params"></span>) &#123; ... &#125;<br><span class="hljs-keyword">function</span> <span class="hljs-title function_">v2</span>(<span class="hljs-params"></span>) &#123; ... &#125;<br><br><span class="hljs-keyword">export</span> &#123;<br>  v1 <span class="hljs-keyword">as</span> streamV1,<br>  v2 <span class="hljs-keyword">as</span> streamV2,<br>  v2 <span class="hljs-keyword">as</span> streamLatestVersion<br>&#125;;<br><br><br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-title function_">add</span> = (<span class="hljs-params">x, y</span>) =&gt; &#123;<br>  <span class="hljs-keyword">return</span> x + y;<br>&#125;<br><br><span class="hljs-comment">//也可以</span><br><span class="hljs-keyword">const</span> <span class="hljs-title function_">add</span> = (<span class="hljs-params">x, y</span>) =&gt; &#123;<br>  <span class="hljs-keyword">return</span> x + y;<br>&#125;<br><span class="hljs-keyword">export</span> &#123; add &#125;;<br></code></pre></td></tr></table></figure>
+
+<p>由于<code>export</code>命令规定的是对外的接口，必须与模块内部的<strong>变量</strong>建立一一对应关系（不能是值）。</p>
+<p>例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 报错，不能直接对应一个值</span><br><span class="hljs-keyword">export</span> <span class="hljs-number">1</span>;<br><span class="hljs-comment">//正确写法</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">var</span> n = <span class="hljs-number">1</span>;<br><br><span class="hljs-comment">// 报错</span><br><span class="hljs-keyword">var</span> m = <span class="hljs-number">1</span>;<br><span class="hljs-keyword">export</span> m;<br><span class="hljs-comment">//正确写法</span><br><span class="hljs-keyword">export</span> &#123;m&#125;;<br><span class="hljs-comment">//或者</span><br><span class="hljs-keyword">export</span> &#123;a <span class="hljs-keyword">as</span> m&#125;<br><br><span class="hljs-comment">// 报错</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">f</span>(<span class="hljs-params"></span>) &#123;&#125;<br><span class="hljs-keyword">export</span> f;<br><span class="hljs-comment">// 正确写法</span><br><span class="hljs-keyword">export</span> &#123;f&#125;;<br><br><span class="hljs-comment">//或者</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">f</span>(<span class="hljs-params"></span>) &#123;&#125;;<br></code></pre></td></tr></table></figure>
+
+<p><strong><code>export default</code><strong>可以为模块指定</strong>默认输出</strong>。该命令可以用在匿名函数前。</p>
+<p>一个模块只能有一个默认输出（也就是该名令只能使用一次）。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">add</span>(<span class="hljs-params">x, y</span>) &#123;<br>  <span class="hljs-keyword">return</span> x + y;<br>&#125;<br><span class="hljs-comment">//匿名</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">function</span>(<span class="hljs-params">x, y</span>) &#123;<br>  <span class="hljs-keyword">return</span> x + y;<br>&#125;<br><br><span class="hljs-comment">//import,无需使用&#123;&#125;</span><br><span class="hljs-keyword">import</span> add <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./math_functions.js&quot;</span>;<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="import"><a href="#import" class="headerlink" title="import"></a>import</h3><p>静态的<code>import</code> 语句用于<strong>导入</strong>由另一个模块导出的绑定。使用export命令定义了模块对外接口以后，其他的js文件就可以通过<code>import</code>加载这个模块。</p>
+<p>无论是否声明了 strict mode （严格模式），导入的模块都运行在严格模式下。</p>
+<p>在浏览器中，import 语句只能在声明了 type&#x3D;”module” 的 script 的标签中使用。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// main.js</span><br><span class="hljs-keyword">import</span> &#123; firstName, lastName, year &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./profile.js&#x27;</span>;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">setName</span>(<span class="hljs-params">element</span>) &#123;<br>  element.<span class="hljs-property">textContent</span> = firstName + <span class="hljs-string">&#x27; &#x27;</span> + lastName;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>import命令输入的<strong>变量都是只读的</strong>，因为它的本质是输入接口。</p>
+<p>但输入的若是一个对象，对象内的属性是可更改的（但不建议）。</p>
+<p>由于<code>import</code>是静态执行，所以<strong>不能使用表达式和变量</strong>。</p>
+<p><strong><code>Import * as</code></strong> 导入所有。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> myMathModule <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./math_functions.js&quot;</span>;<br>myMathModule.<span class="hljs-title function_">add</span>(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>);<br>myMathModule.<span class="hljs-title function_">subtract</span>(<span class="hljs-number">5</span>,<span class="hljs-number">3</span>);<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="export和import的复合写法"><a href="#export和import的复合写法" class="headerlink" title="export和import的复合写法"></a>export和import的复合写法</h3><p>如果在一个模块之中，先输入后输出同一个模块，<code>import</code>语句可以与<code>export</code>语句写在一起。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">export</span> &#123; foo, bar &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;my_module&#x27;</span>;<br><br><span class="hljs-comment">// 可以简单理解为</span><br><span class="hljs-keyword">import</span> &#123; foo, bar &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;my_module&#x27;</span>;<br><span class="hljs-keyword">export</span> &#123; foo, bar &#125;;<br><br><span class="hljs-comment">//默认接口的写法</span><br><span class="hljs-keyword">export</span> &#123; <span class="hljs-keyword">default</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;foo&#x27;</span>;<br><span class="hljs-keyword">export</span> &#123; es6 <span class="hljs-keyword">as</span> <span class="hljs-keyword">default</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./someModule&#x27;</span>;<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="Destructuring-assignment解构赋值"><a href="#Destructuring-assignment解构赋值" class="headerlink" title="Destructuring assignment解构赋值"></a><strong>Destructuring assignment解构赋值</strong></h2><p>将数组中的值或对象的属性取出，赋值给其他变量。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> [a, b,,,c] = [<span class="hljs-number">10</span>, <span class="hljs-number">20</span>, <span class="hljs-number">30</span>, <span class="hljs-number">40</span>, <span class="hljs-number">50</span>, <span class="hljs-number">60</span>,];<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(a);<span class="hljs-comment">// 10</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(b);<span class="hljs-comment">// 20</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(c);<span class="hljs-comment">// 50</span><br><span class="hljs-keyword">const</span> [d,e,...arr] = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>];<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(arr); <span class="hljs-comment">// [3,4,5,6,7]</span><br></code></pre></td></tr></table></figure>
+
+<p>用于在对象上直接取值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> user = &#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;John Doe&#x27;</span>, <span class="hljs-attr">age</span>: <span class="hljs-number">34</span> &#125;;<br><br><span class="hljs-keyword">const</span> name = user.<span class="hljs-property">name</span>;<br><span class="hljs-keyword">const</span> age = user.<span class="hljs-property">age</span>; <br><span class="hljs-comment">//Destructuring assignment可以直接写成一句话</span><br><span class="hljs-keyword">const</span> &#123; name, age &#125; = user;<br><br>name <span class="hljs-comment">//John Doe</span><br>age <span class="hljs-comment">//34</span><br></code></pre></td></tr></table></figure>
+
+<p>解构赋值允许赋予新的变量名（如下）：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> &#123; <span class="hljs-attr">name</span>: userName, <span class="hljs-attr">age</span>: userAge &#125; = user;<br>userName <span class="hljs-comment">//John Doe</span><br>userAge <span class="hljs-comment">//34</span><br></code></pre></td></tr></table></figure>
+
+<p>也可配合箭头函数使用：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> stats = &#123;<br>  <span class="hljs-attr">max</span>: <span class="hljs-number">56.78</span>,<br>  <span class="hljs-attr">standard_deviation</span>: <span class="hljs-number">4.34</span>,<br>  <span class="hljs-attr">median</span>: <span class="hljs-number">34.54</span>,<br>  <span class="hljs-attr">mode</span>: <span class="hljs-number">23.87</span>,<br>  <span class="hljs-attr">min</span>: -<span class="hljs-number">0.75</span>,<br>  <span class="hljs-attr">average</span>: <span class="hljs-number">35.85</span><br>&#125;;<br><br><span class="hljs-keyword">const</span> <span class="hljs-title function_">half2</span> = (<span class="hljs-params">stats</span>) =&gt; (stats.<span class="hljs-property">max</span> + stats.<span class="hljs-property">min</span>) / <span class="hljs-number">2.0</span>; <br><span class="hljs-comment">//等同于</span><br><span class="hljs-keyword">const</span> <span class="hljs-title function_">half</span> = (<span class="hljs-params">&#123;max,min&#125;</span>) =&gt;&#123;<br>  <span class="hljs-keyword">return</span> (max+min)/<span class="hljs-number">2.0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="Template-Literals-模板字面量"><a href="#Template-Literals-模板字面量" class="headerlink" title="Template Literals 模板字面量"></a>Template Literals 模板字面量</h2><blockquote>
+<p>模板字面量是用<strong>反引号（&#96;）</strong>分隔的字面量，允许多行字符串、带嵌入表达式的字符串插值和一种叫带标签的模板的特殊结构。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> person = &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Zodiac Hasbro&quot;</span>,<br>  <span class="hljs-attr">age</span>: <span class="hljs-number">56</span><br>&#125;;<br><br><span class="hljs-keyword">const</span> greeting = <span class="hljs-string">`Hello, my name is <span class="hljs-subst">$&#123;person.name&#125;</span>!</span><br><span class="hljs-string">I am <span class="hljs-subst">$&#123;person.age&#125;</span> years old.`</span>;<br><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(greeting);<br><br></code></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<p>Hello, my name is Zodiac Hasbro!<br>I am 56 years old.</p>
+<div id="start"></div>
 
 <h1 id="JS指南"><a href="#JS指南" class="headerlink" title="JS指南"></a>JS指南</h1><h2 id="1-1语法和数据类型"><a href="#1-1语法和数据类型" class="headerlink" title="1.1语法和数据类型"></a>1.1语法和数据类型</h2><blockquote>
 <p>JavaScript 的基本语法、变量声明、数据类型和字面量（literal）</p>
@@ -2337,11 +2422,6 @@
 <li>无符号右移位赋值&gt;&gt;&gt;</li>
 <li>按位与&amp;、按位异或^、按位或|</li>
 </ul>
-<p><strong>解构赋值</strong>：将数组中的值或对象的属性取出，赋值给其他变量。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> a, b;<br>[a, b] = [<span class="hljs-number">10</span>, <span class="hljs-number">20</span>];<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(a);<br><span class="hljs-comment">// Expected output: 10</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(b);<br><span class="hljs-comment">// Expected output: 20</span><br></code></pre></td></tr></table></figure>
-
-
-
 <h4 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h4><p>比较它的操作数并返回一个基于表达式是否为真的逻辑值。</p>
 <p>在多数情况下，如果两个操作数不是相同的类型，JavaScript 会尝试转换它们为恰当的类型来比较。</p>
 <ul>
@@ -2787,14 +2867,19 @@
 <li><p><strong>at()</strong> : 返回指定索引出的元素。索引超出范围，返回undefined。</p>
 </li>
 <li><p><strong>splice()</strong> ：移出一些元素，[并替换它们]，返回从数组中删除的元素</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> myArray = [<span class="hljs-string">&quot;1&quot;</span>, <span class="hljs-string">&quot;2&quot;</span>, <span class="hljs-string">&quot;3&quot;</span>, <span class="hljs-string">&quot;4&quot;</span>, <span class="hljs-string">&quot;5&quot;</span>];<br>myArray.<span class="hljs-title function_">splice</span>(<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;b&quot;</span>, <span class="hljs-string">&quot;c&quot;</span>, <span class="hljs-string">&quot;d&quot;</span>);<br><span class="hljs-comment">//Array(3) [ &quot;2&quot;, &quot;3&quot;, &quot;4&quot; ]</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> myArray = [<span class="hljs-string">&quot;1&quot;</span>, <span class="hljs-string">&quot;2&quot;</span>, <span class="hljs-string">&quot;3&quot;</span>, <span class="hljs-string">&quot;4&quot;</span>, <span class="hljs-string">&quot;5&quot;</span>];<br>myArray.<span class="hljs-title function_">splice</span>(<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;b&quot;</span>, <span class="hljs-string">&quot;c&quot;</span>, <span class="hljs-string">&quot;d&quot;</span>);<br><span class="hljs-comment">//Array(3) [ &quot;2&quot;, &quot;3&quot;, &quot;4&quot; ]</span><br>myArray <span class="hljs-comment">//Array(6) [ &quot;1&quot;, &quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;5&quot; ]</span><br></code></pre></td></tr></table></figure>
 </li>
 <li><p><strong>reverse()</strong> ：翻转数组。</p>
 </li>
 <li><p><strong>flat()</strong> ：返回一个新的数组，并根据指定深度递归地将所有子数组元素拼接到新的数组中。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> arr2 = [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, [<span class="hljs-number">2</span>, [<span class="hljs-number">3</span>, [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>]]]];<br><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(arr2.<span class="hljs-title function_">flat</span>());<br><span class="hljs-comment">// expected output: Array [0, 1, 2, Array [3, Array [4, 5]]]</span><br><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(arr2.<span class="hljs-title function_">flat</span>(<span class="hljs-number">2</span>));<br><span class="hljs-comment">// expected output: Array [0, 1, 2, 3, Array [4, 5]]</span><br><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(arr2.<span class="hljs-title function_">flat</span>(<span class="hljs-title class_">Infinity</span>));<br><span class="hljs-comment">// expected output: Array [0, 1, 2, 3, 4, 5]</span><br></code></pre></td></tr></table></figure>
 </li>
-<li><p><strong>sort()</strong> : 数组排序。可以接受回调函数来决定如何比较数组元素</p>
+<li><p><strong>sort()</strong> : 数组排序。可以ay接受回调函数来决定如何比较数组元素</p>
+<ul>
+<li><p>sort(compareFn)：非 <code>undefined</code> 的数组元素都会按照比较函数的返回值进行排序。</p>
+<p>常用compare：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//升序</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">compareNumbers</span>(<span class="hljs-params">a, b</span>) &#123;<br>  <span class="hljs-keyword">return</span> a - b;<br>&#125;<br><span class="hljs-comment">//某个案例(按sortType状态升降序）：</span><br>arr.<span class="hljs-title function_">sort</span>(<span class="hljs-function">(<span class="hljs-params">p1,p2</span>)=&gt;</span>&#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">sortType</span> === <span class="hljs-number">1</span> ? p2.<span class="hljs-property">age</span>-p1.<span class="hljs-property">age</span>:p1.<span class="hljs-property">age</span>-p2.<span class="hljs-property">age</span>;<br>&#125;)<br><span class="hljs-keyword">return</span> arr;<br></code></pre></td></tr></table></figure></li>
+</ul>
 </li>
 <li><p><strong>indexOf()</strong> ：数组中搜索参数元素，并返回第一个匹配的结果。正向搜索。</p>
 </li>
@@ -2822,7 +2907,11 @@
 </li>
 <li><p>some() ：如果 <code>callback</code> 对数组中至少一个元素返回 <code>true</code>，返回true。</p>
 </li>
-<li><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce">reduce()</a> ：对数组中的每个值执行 <code>callback(accumulator, currentValue, currentIndex, Array)</code>。将列表中的元素减少到单个值。返回 <code>callback</code> 函数返回的最终值。</p>
+<li><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce">reduce()</a> ：对数组中的每个值执行 <code>callback(accumulator, currentValue, currentIndex, Array)</code>。将列表中的元素减少到单个值。返回 <code>callback</code> 函数返回的最终值。(常用于条件统计)</p>
+<ul>
+<li><p>案例：统计todo.done为true的个数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//forEach遍历法：</span><br><span class="hljs-title function_">doneTotal</span>(<span class="hljs-params"></span>)&#123;<br>  <span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span><br>  <span class="hljs-variable language_">this</span>.<span class="hljs-property">todos</span>.<span class="hljs-title function_">forEach</span>(<span class="hljs-function"><span class="hljs-params">todo</span> =&gt;</span> &#123;<br>    <span class="hljs-keyword">if</span>(todo.<span class="hljs-property">done</span>) i++<br>  &#125;);<br>  <span class="hljs-keyword">return</span> i<br>&#125;<br><br><span class="hljs-comment">//array.reduce方法</span><br><span class="hljs-title function_">doneTotal</span>(<span class="hljs-params"></span>)&#123;<br><span class="hljs-keyword">const</span> x = <span class="hljs-variable language_">this</span>.<span class="hljs-property">todos</span>.<span class="hljs-title function_">reduce</span>(<span class="hljs-function">(<span class="hljs-params">pre,current</span>)=&gt;</span>&#123;<br>  <span class="hljs-keyword">return</span> pre + (current.<span class="hljs-property">done</span> ? <span class="hljs-number">1</span>:<span class="hljs-number">0</span>)<br>&#125;,<span class="hljs-number">0</span>)<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(x)<br>&#125;<br><span class="hljs-comment">//简写：</span><br><span class="hljs-title function_">doneTotal</span>(<span class="hljs-params"></span>)&#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">todos</span>.<span class="hljs-title function_">reduce</span>(<span class="hljs-function">(<span class="hljs-params">pre,current</span>)=&gt;</span> pre+(current.<span class="hljs-property">done</span> ? <span class="hljs-number">1</span> : <span class="hljs-number">0</span>),<span class="hljs-number">0</span>)<br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ul>
 </li>
 <li><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/reduceRight">reduceRight()</a> ：工作原理类似于 <code>reduce()</code>，但从最后一个元素开始。</p>
 </li>
@@ -2967,14 +3056,8 @@
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-title class_">Object</span>.<span class="hljs-title function_">freeze</span>(obj);<br></code></pre></td></tr></table></figure>
 
-<ul>
-<li><p>Destructuring assignment解构赋值  （ES6）</p>
-<p>用于在对象上直接取值。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> user = &#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;John Doe&#x27;</span>, <span class="hljs-attr">age</span>: <span class="hljs-number">34</span> &#125;;<br><br><span class="hljs-keyword">const</span> name = user.<span class="hljs-property">name</span>;<br><span class="hljs-keyword">const</span> age = user.<span class="hljs-property">age</span>; <br><span class="hljs-comment">//Destructuring assignment可以直接写成一句话</span><br><span class="hljs-keyword">const</span> &#123; name, age &#125; = user;<br><br>name <span class="hljs-comment">//John Doe</span><br>age <span class="hljs-comment">//34</span><br></code></pre></td></tr></table></figure>
 
-<p>解构赋值允许赋予新的变量名（如下）：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> &#123; <span class="hljs-attr">name</span>: userName, <span class="hljs-attr">age</span>: userAge &#125; = user;<br>userName <span class="hljs-comment">//John Doe</span><br>userAge <span class="hljs-comment">//34</span><br></code></pre></td></tr></table></figure></li>
-</ul>
+
 <h2 id="1-11使用类"><a href="#1-11使用类" class="headerlink" title="1.11使用类"></a>1.11使用类</h2><p>JavaScript 是一个基于原型的语言——一个对象的行为取决于它自身的属性及其原型的属性。</p>
 <p>类可以看作是已有的原型继承机制的一种抽象，所有语法都可以转换为原型继承。类本身也是不过是 JavaScript 里一种普通的值，它们有其自己的原型链。</p>
 <p>类的三大关键特征：</p>
@@ -3115,6 +3198,8 @@
 <p>详见<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Typed_arrays">类型化数组</a>。</p>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://wangdoc.com/javascript/index.html">网道JavaScript教程</a></p>
 <p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/">mdn web docs</a></p>
+<p><a target="_blank" rel="noopener" href="https://wangdoc.com/es6/index.html">ES6教程</a></p>
+<p>练习：<a target="_blank" rel="noopener" href="https://www.freecodecamp.org/learn">freeCodeCamp</a></p>
 <section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>window对象表示 一个包含DOM文档的窗口。其<code>document</code>属性指向窗口中载入的DOM文档。
 <a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:2" class="footnote-text"><span><strong><code>Node</code></strong> 是一个接口，各种类型的 DOM API 对象会从这个接口继承。
 <a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
