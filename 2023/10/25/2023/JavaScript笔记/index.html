@@ -24,7 +24,7 @@
 <meta property="og:description" content="about JavaScript">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-25T01:56:18.000Z">
-<meta property="article:modified_time" content="2023-11-30T02:31:38.012Z">
+<meta property="article:modified_time" content="2023-12-24T04:34:12.238Z">
 <meta property="article:author" content="咩包">
 <meta property="article:tag" content="js">
 <meta name="twitter:card" content="summary_large_image">
@@ -831,9 +831,11 @@
 </ul>
 <h3 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h3><ul>
 <li><p>NodeList.prototype.<strong>length</strong> —— Nodelist实例包含的<strong>节点数量</strong></p>
-<ul>
-<li>&#96;&#96;&#96;js<br>document.querySelectorAll(‘xxx’).length<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs reasonml"><br>### 方法<br><br>- <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">NodeList</span>.</span></span>prototype.**<span class="hljs-keyword">for</span><span class="hljs-constructor">Each()</span>** —— **遍历**所有成员<br><br>  - ```js<br>    var children = document.body.childNodes;<br>    children.<span class="hljs-keyword">for</span><span class="hljs-constructor">Each(<span class="hljs-params">function</span> <span class="hljs-params">f</span>(<span class="hljs-params">item</span>, <span class="hljs-params">i</span>, <span class="hljs-params">list</span>)</span> &#123;<br>      <span class="hljs-comment">// ...</span><br>    &#125;, this);<br></code></pre></td></tr></table></figure></li>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelectorAll</span>(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-property">length</span><br></code></pre></td></tr></table></figure></li>
 </ul>
+<h3 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h3><ul>
+<li><p>NodeList.prototype.<strong>forEach()</strong> —— <strong>遍历</strong>所有成员</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> children = <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-property">childNodes</span>;<br>children.<span class="hljs-title function_">forEach</span>(<span class="hljs-keyword">function</span> <span class="hljs-title function_">f</span>(<span class="hljs-params">item, i, list</span>) &#123;<br>  <span class="hljs-comment">// ...</span><br>&#125;, <span class="hljs-variable language_">this</span>);<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>NodeList.prototype.<strong>item()</strong> —— 返回位置上的成员</p>
 <ul>
@@ -859,7 +861,7 @@
 <h3 id="属性-2"><a href="#属性-2" class="headerlink" title="属性"></a>属性</h3><ul>
 <li>HTMLCollection.prototype.length ——包含的成员数量</li>
 </ul>
-<h3 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h3><ul>
+<h3 id="方法-2"><a href="#方法-2" class="headerlink" title="方法"></a>方法</h3><ul>
 <li><p>HTMLCollection.prototype.item() —— 返回参数位置上的成员</p>
 </li>
 <li><p>HTMLCollection.prototype.<strong>namedItem()</strong> —— 返回<strong>当前集合中对应的元素节点</strong></p>
@@ -886,7 +888,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="方法-2"><a href="#方法-2" class="headerlink" title="方法"></a>方法</h3><ul>
+<h3 id="方法-3"><a href="#方法-3" class="headerlink" title="方法"></a>方法</h3><ul>
 <li><p>ParentNode.<strong>append()</strong> —— 当前节点<strong>追加</strong>一个或多个子节点</p>
 <ul>
 <li>位置是<strong>最后一个元素子节点后</strong></li>
@@ -908,7 +910,7 @@
 </li>
 </ul>
 <h2 id="ChildNode-接口"><a href="#ChildNode-接口" class="headerlink" title="ChildNode 接口"></a>ChildNode 接口</h2><p>如果一个节点有父节点，那么该节点就拥有了<code>ChildNode</code>接口。</p>
-<h3 id="方法-3"><a href="#方法-3" class="headerlink" title="方法"></a>方法</h3><ul>
+<h3 id="方法-4"><a href="#方法-4" class="headerlink" title="方法"></a>方法</h3><ul>
 <li><p>ChildNode.<strong>remove()</strong> —— 从父节点<strong>移除当前节点</strong></p>
 </li>
 <li><p>ChildNode.<strong>before()</strong> —— 在当前<strong>节点前插入</strong>一个或多个<strong>同级节点</strong></p>
@@ -1085,7 +1087,7 @@
 <li><code>DOMImplementation.createHTMLDocument()</code>：创建一个 HTML 文档。</li>
 <li><code>DOMImplementation.createDocumentType()</code>：创建一个 DocumentType 对象。</li>
 </ul>
-<h3 id="方法-4"><a href="#方法-4" class="headerlink" title="方法"></a>方法</h3><ul>
+<h3 id="方法-5"><a href="#方法-5" class="headerlink" title="方法"></a>方法</h3><ul>
 <li><p>document.<strong>open()</strong> —— <strong>清除</strong>当前文档的所有内容，使文档处于<strong>可写</strong>状态</p>
 </li>
 <li><p>document.<strong>close()</strong>  —— 关闭document.open() 打开的文档</p>
@@ -1450,7 +1452,7 @@
 <li><strong>nextElementSibling</strong> —— 紧跟当前文本节点后的那个同级元素节点</li>
 <li><strong>previousElementSibling</strong> —— 当前文本节点前最近的那个同级元素节点</li>
 </ul>
-<h3 id="方法-5"><a href="#方法-5" class="headerlink" title="方法"></a>方法</h3><ul>
+<h3 id="方法-6"><a href="#方法-6" class="headerlink" title="方法"></a>方法</h3><ul>
 <li><p>appendData() —— 在Text节点<strong>尾部追加</strong>字符串。</p>
 </li>
 <li><p>deleteData() —— <strong>删除</strong>Text节点内部的子字符串</p>
