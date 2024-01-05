@@ -1,0 +1,979 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="咩包">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Nodejs的学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nodejs">
+<meta property="og:url" content="http://example.com/2024/01/05/2024/Nodejs/index.html">
+<meta property="og:site_name" content="咩包">
+<meta property="og:description" content="Nodejs的学习">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/%E6%88%AA%E5%B1%8F2023-12-29%20%E4%B8%8A%E5%8D%8810.34.47.png">
+<meta property="article:published_time" content="2024-01-04T18:51:11.000Z">
+<meta property="article:modified_time" content="2024-01-05T01:59:47.566Z">
+<meta property="article:author" content="咩包">
+<meta property="article:tag" content="vue">
+<meta property="article:tag" content="nodejs">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/%E6%88%AA%E5%B1%8F2023-12-29%20%E4%B8%8A%E5%8D%8810.34.47.png">
+  
+  
+  
+  <title>Nodejs - 咩包</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":false,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>咩包</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Nodejs"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-01-05 02:51" pubdate>
+          2024年1月5日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          7.4k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          62 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Nodejs</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="简介-amp-下载"><a href="#简介-amp-下载" class="headerlink" title="简介&amp;下载"></a>简介&amp;下载</h1><blockquote>
+<p>Node.js是一个开源的、跨平台的JavaScript运行环境</p>
+</blockquote>
+<p>作用：</p>
+<ol>
+<li>开发服务器应用</li>
+<li>开发工具类应用：webpack、vite、Babel</li>
+<li>开发桌面端应用：VSCode、Figma、Postman</li>
+</ol>
+<p>下载：</p>
+<ul>
+<li>官网：<a target="_blank" rel="noopener" href="https://nodejs.org/en">https://nodejs.org/en</a></li>
+<li>LTS为长期维护版本</li>
+</ul>
+<p>Node.js的注意点：</p>
+<ul>
+<li>DOM、BOM等api无法使用。</li>
+<li>console和定时器可使用。</li>
+<li>顶级对象为global（可使用globalThis访问顶级对象）。</li>
+</ul>
+<h1 id="Buffer"><a href="#Buffer" class="headerlink" title="Buffer"></a>Buffer</h1><p><strong>Buffer</strong>：缓冲区。是一个类似于数组的对象，用于表示固定长度的字节序列。（一段内存空间，专门处理二进制数据）</p>
+<ul>
+<li>特点<ul>
+<li>Buffer大小 固定且无法调整</li>
+<li>Buffer性能较好，可以直接对计算机内存进行操作</li>
+<li>每个元素的大小为1字节（byte）</li>
+</ul>
+</li>
+<li>创建（三个方法）<ol>
+<li><code>Buffer.alloc()</code> 方法创建指定大小的新缓冲区对象。<ul>
+<li>创建的二进制会归零</li>
+</ul>
+</li>
+<li><code>Buffer.allocUnsafe()</code> 方法创建指定大小的新缓冲区对象。<ul>
+<li>与 Buffer.alloc() 方法不同，因为它创建了一个未预填充的缓冲区，并且可能包含来自旧缓冲区的信息。这就是为什么它 <strong>不安全</strong>。</li>
+<li>但相比alloc，它会更快</li>
+</ul>
+</li>
+<li><code>Buffer.from()</code>方法用于创建包含指定字符串，数组或缓冲区的新缓冲区。<ul>
+<li>将字符串或数组转换成二进制存储</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>buffer和字符串转换：<code>buf.toString()</code><ul>
+<li>转换后的字符串为UTF-8格式</li>
+<li>中文的utf-8格式占三个字节</li>
+</ul>
+</li>
+</ul>
+<h1 id="fs模块"><a href="#fs模块" class="headerlink" title="fs模块"></a>fs模块</h1><p><strong>fs模块</strong>：file system（文件系统）。实现与硬盘的交互，例如文件的创建、删除、重命名、移动。还有文件内容的写入、读取，以及文件夹的相关操作。</p>
+<p><strong>__dirname</strong>：表示所在文件的<strong>所在目录的绝对路径</strong>。</p>
+<p><strong>__filename</strong>：表示<strong>文件的绝对路径</strong>。</p>
+<h2 id="一、文件写入"><a href="#一、文件写入" class="headerlink" title="一、文件写入"></a>一、文件写入</h2><blockquote>
+<p>需要持久化文件保存数据的时候，可以用到文件写入。</p>
+</blockquote>
+<p>应用场景：下载文件、安装软件、保存程序日志（如git）、编辑器保存文件等。</p>
+<ul>
+<li><p><strong>写入文件</strong>（异步）：<code>fs.writeFile(file, data[, options], callback)</code></p>
+<p>若写入文件不存在，会创建。</p>
+<ul>
+<li><strong>file</strong> - 文件名或文件描述符。</li>
+<li><strong>data</strong> - 要写入文件的数据，可以是 String(字符串) 或 Buffer(缓冲) 对象。</li>
+<li><strong>options</strong> - 该参数是一个对象，包含 {encoding, mode, flag}。默认编码为 utf8, 模式为 0666 ， flag 为 ‘w’</li>
+<li><strong>callback</strong> - 回调函数，回调函数只包含错误信息参数(err)，在写入失败时返回.</li>
+<li>同步版：<code>fs.writeFileSync(filename, data[, options])</code></li>
+</ul>
+</li>
+<li><p><strong>追加写入</strong>：</p>
+<ul>
+<li>异步版：<code>fs.appendFile(filename, data[, options], callback)</code></li>
+<li>同步版：<code>fs.appendFileSync(filename, data[, options])</code></li>
+<li>writeFile也可以实现追加写入，flag设置为a即可。</li>
+</ul>
+</li>
+<li><p><strong>流式写入</strong>：适合<strong>大文件写入或频繁写入</strong></p>
+<ul>
+<li>创建writestream对象：<code> fs.createWriteStream(path[, options])</code></li>
+<li>写入：ws.write()&#96;</li>
+<li>关闭文档：ws.<code>close()</code></li>
+</ul>
+</li>
+</ul>
+<p>案例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 1.导入fs模块</span><br><span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;fs&#x27;</span>);<br><br><span class="hljs-comment">//2.写入文件</span><br>fs.<span class="hljs-title function_">writeFile</span>(<span class="hljs-string">&#x27;./text.txt&#x27;</span>, <span class="hljs-string">&#x27;三人行，必有我师焉&#x27;</span>,<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> &#123;<br>    <span class="hljs-comment">//写入错误后</span><br>    <span class="hljs-keyword">if</span> (err) &#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;写入失败&#x27;</span>);<br>        <span class="hljs-keyword">return</span>; <br>    &#125;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;写入成功&#x27;</span>);<br>&#125;)<br><br><span class="hljs-comment">//3.追加</span><br>fs.<span class="hljs-title function_">appendFile</span>(<span class="hljs-string">&#x27;./text.txt&#x27;</span>,<span class="hljs-string">&#x27;择其善者而从之&#x27;</span>,<span class="hljs-function"><span class="hljs-params">err</span>=&gt;</span>&#123;<br>    <span class="hljs-keyword">if</span> (err) &#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;写入失败&#x27;</span>)<br>    &#125;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;写入成功&#x27;</span>)<br>&#125;)<br><br><span class="hljs-comment">//4.流式写入</span><br><span class="hljs-keyword">const</span> ws = fs.<span class="hljs-title function_">createWriteStream</span>(<span class="hljs-string">&#x27;./text2.txt&#x27;</span>);<br>ws.<span class="hljs-title function_">write</span>(<span class="hljs-string">&#x27;半亩方塘一鉴开\r\n&#x27;</span>);<br>ws.<span class="hljs-title function_">write</span>(<span class="hljs-string">&#x27;天光云影共徘徊\r\n&#x27;</span>);<br>ws.<span class="hljs-title function_">write</span>(<span class="hljs-string">&#x27;问渠那得清如许\r\n&#x27;</span>);<br>ws.<span class="hljs-title function_">write</span>(<span class="hljs-string">&#x27;为有源头活水来\r\n&#x27;</span>);<br>	<span class="hljs-comment">//关闭文档</span><br>ws.<span class="hljs-title function_">close</span>();<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><p>打开文件（异步）:<code>fs.open(path, flags[, mode], callback)</code></p>
+<ul>
+<li>flags - 文件打开的行为（例如r为读取模式，w为写入模式，a为追加模式等）</li>
+<li>mode - 设置文件权限（默认为0666【可读，可写】）</li>
+</ul>
+</li>
+</ul>
+<h2 id="二、文件读取"><a href="#二、文件读取" class="headerlink" title="二、文件读取"></a>二、文件读取</h2><p>应用场景：电脑开机、程序运行、查看图片、播放视频&#x2F;音乐、git查看日志、上传文件、查看聊天信息、编辑器打开文件等。</p>
+<ul>
+<li><p><strong>读取文件readFile</strong></p>
+<ul>
+<li><p>异步：<code>fs.readFile(filename[, options], callback)</code></p>
+</li>
+<li><p>同步：<code>fs.readFileSync(filename[, options])</code></p>
+</li>
+<li><p>案例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;fs&#x27;</span>);<br><br>fs.<span class="hljs-title function_">readFile</span>(<span class="hljs-string">&#x27;./text.txt&#x27;</span>,<span class="hljs-function">(<span class="hljs-params">err,data</span>)=&gt;</span>&#123;<br>    <span class="hljs-keyword">if</span>(err)&#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;读取失败&#x27;</span>)<br>        <span class="hljs-keyword">return</span><br>    &#125;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(data.<span class="hljs-title function_">toString</span>()); <span class="hljs-comment">//输出文件内容</span><br>&#125;)<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>读取read</p>
+<ul>
+<li>异步：<code>fs.read(fd, buffer, offset, length, position, callback)</code><ul>
+<li><strong>fd</strong> - 通过 fs.open() 方法返回的文件描述符。</li>
+<li><strong>buffer</strong> - 数据写入的缓冲区。</li>
+<li><strong>offset</strong> - 缓冲区写入的写入偏移量。</li>
+<li><strong>length</strong> - 要从文件中读取的字节数。</li>
+<li><strong>position</strong> - 文件读取的起始位置，如果 position 的值为 null，则会从当前文件指针的位置读取。</li>
+<li><strong>callback</strong> - 回调函数，有三个参数err, bytesRead, buffer，err 为错误信息， bytesRead 表示读取的字节数，buffer 为缓冲区对象。</li>
+</ul>
+</li>
+<li>同步：<code>	fs.readSync(fd, buffer, offset, length, position)</code></li>
+</ul>
+</li>
+<li><p><strong>流式读取</strong>：将文件分为一块块读取（每次读取64KB）</p>
+<ul>
+<li><p><code>fs.createReadStream(path[, options])</code></p>
+</li>
+<li><p>案例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;fs&#x27;</span>);<br><br><span class="hljs-comment">// 2.创建读取流对象</span><br><span class="hljs-keyword">const</span> rs = fs.<span class="hljs-title function_">createReadStream</span>(<span class="hljs-string">&#x27;./09.mp4&#x27;</span>);<br><br><span class="hljs-comment">// 3.绑定data事件 chunk块</span><br>rs.<span class="hljs-title function_">on</span>(<span class="hljs-string">&#x27;data&#x27;</span>,<span class="hljs-function"><span class="hljs-params">chunk</span>=&gt;</span>&#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(chunk.<span class="hljs-property">length</span>) <span class="hljs-comment">//65536字节 =&gt; 64KB</span><br>&#125;)<br><br><span class="hljs-comment">// 4.end 可选事件</span><br>rs.<span class="hljs-title function_">on</span>(<span class="hljs-string">&#x27;end&#x27;</span>,<span class="hljs-function">()=&gt;</span>&#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;读取完成&#x27;</span>)<br>&#125;)<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<p>小练习：文件复制</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//要求：复制 视频.mp4 文件</span><br><span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;fs&#x27;</span>);<br><br><span class="hljs-comment">//方式一：readFile</span><br><span class="hljs-comment">//读取文件</span><br><span class="hljs-keyword">let</span> data = fs.<span class="hljs-title function_">readFileSync</span>(<span class="hljs-string">&#x27;./src/视频.mp4&#x27;</span>,<span class="hljs-function"><span class="hljs-params">err</span>=&gt;</span>&#123;<br>    <span class="hljs-keyword">if</span>(err)&#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;读取失败&#x27;</span>)<br>    &#125;<br>&#125;)<br><span class="hljs-comment">//写入文件</span><br>fs.<span class="hljs-title function_">writeFileSync</span>(<span class="hljs-string">&#x27;./src/视频-2.mp4&#x27;</span>,data)<br><br><span class="hljs-comment">//方式二：流式操作</span><br><span class="hljs-comment">//创建读取流对象</span><br><span class="hljs-keyword">const</span> rs2 = fs.<span class="hljs-title function_">createReadStream</span>(<span class="hljs-string">&#x27;./src/视频.mp4&#x27;</span>);<br><span class="hljs-comment">//创建写入流对象</span><br><span class="hljs-keyword">const</span> ws =  fs.<span class="hljs-title function_">createWriteStream</span>(<span class="hljs-string">&#x27;./src/视频-3.mp4&#x27;</span>);<br><span class="hljs-comment">//写入</span><br>rs2.<span class="hljs-title function_">on</span>(<span class="hljs-string">&#x27;data&#x27;</span>,<span class="hljs-function"><span class="hljs-params">chunk</span>=&gt;</span>&#123;<br>    ws.<span class="hljs-title function_">write</span>(chunk);<br>&#125;)<br><span class="hljs-comment">//也可缩写为rs2.pipe(ws)</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="三、文件移动和重命名"><a href="#三、文件移动和重命名" class="headerlink" title="三、文件移动和重命名"></a>三、文件移动和重命名</h2><ul>
+<li>重命名和文件移动：<code>fs.rename(oldPath, newPath, callback)</code></li>
+</ul>
+<p>本质就是修改路径。</p>
+<h2 id="四、文件删除"><a href="#四、文件删除" class="headerlink" title="四、文件删除"></a>四、文件删除</h2><ul>
+<li>文件删除unlink<ul>
+<li>异步：<code>fs.unlink(path, callback)</code></li>
+<li>同步：<code>fs.unlinkSync(path)</code></li>
+</ul>
+</li>
+<li>文件&#x2F;目录递归删除rm<ul>
+<li>异步：<code>fs.rm( path, options, callback );</code></li>
+<li>同步：<code>fs.rmSync( path, options );</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="五、文件夹操作"><a href="#五、文件夹操作" class="headerlink" title="五、文件夹操作"></a>五、文件夹操作</h2><ul>
+<li>创建文件夹<ul>
+<li>异步：<code>fs.mkdir(path[, options], callback)</code><ul>
+<li><strong>path</strong> - 文件路径。</li>
+<li>options 参数可以是：<ul>
+<li><strong>recursive</strong> - 是否以递归的方式创建目录，默认为 false。</li>
+<li><strong>mode</strong> - 设置目录权限，默认为 0777。</li>
+</ul>
+</li>
+<li><strong>callback</strong> - 回调函数，没有参数。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>读取文件夹<ul>
+<li>异步：<code>fs.readdir(path, callback)</code></li>
+<li>同步：<code>fs.readdirSync(path)</code></li>
+</ul>
+</li>
+<li>删除文件夹<ul>
+<li>异步：<code>fs.rmdir(path, callback)</code><ul>
+<li>可以递归删除，设置{recursive:true}。但不建议。</li>
+</ul>
+</li>
+<li>同步：<code>fs.rmdirSync(path)</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="六、查看资源信息"><a href="#六、查看资源信息" class="headerlink" title="六、查看资源信息"></a>六、查看资源信息</h2><ul>
+<li>获取文件信息（异步）：<code>fs.stat(path, callback)</code><ul>
+<li><strong>path</strong> - 文件路径。</li>
+<li><strong>callback</strong> - 回调函数，带有两个参数如：(err, stats), <strong>stats</strong> 是 fs.Stats 对象。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js">fs.<span class="hljs-title function_">stat</span>(<span class="hljs-string">&#x27;./src/视频.mp4&#x27;</span>,<span class="hljs-function">(<span class="hljs-params">err,data</span>)=&gt;</span>&#123;<br>    <span class="hljs-keyword">if</span> (err) &#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;操作失败&#x27;</span>);<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(data) <span class="hljs-comment">//资源信息</span><br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(data.<span class="hljs-title function_">isFile</span>()); <span class="hljs-comment">//是否为文件</span><br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(data.<span class="hljs-title function_">isDirectory</span>()); <span class="hljs-comment">//是否为目录  </span><br>&#125;)<br></code></pre></td></tr></table></figure>
+
+
+
+<p>练习：批量重命名</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;fs&#x27;</span>);<br><br><span class="hljs-comment">//读取code文件夹</span><br><span class="hljs-keyword">const</span> files = fs.<span class="hljs-title function_">readdirSync</span>(<span class="hljs-string">&#x27;./code&#x27;</span>);<br><span class="hljs-comment">//遍历数组</span><br>files.<span class="hljs-title function_">forEach</span>(<span class="hljs-function"><span class="hljs-params">item</span>=&gt;</span>&#123;<br>    <span class="hljs-comment">// 拆分文件名</span><br>    <span class="hljs-keyword">let</span> data = item.<span class="hljs-title function_">split</span>(<span class="hljs-string">&#x27;-&#x27;</span>)<br>    <span class="hljs-keyword">let</span> [num,name] = data<br>    <span class="hljs-comment">//判断：开头数字小于10的前加0</span><br>    <span class="hljs-keyword">if</span> (<span class="hljs-title class_">Number</span>(num)&lt;<span class="hljs-number">10</span>) &#123;<br>        num = <span class="hljs-string">&#x27;0&#x27;</span>+num<br>    &#125;<br>    <span class="hljs-comment">//创建新的文件名</span><br>    <span class="hljs-keyword">let</span> newFileName = num+<span class="hljs-string">&#x27;-&#x27;</span>+name;<br>    fs.<span class="hljs-title function_">renameSync</span>(<span class="hljs-string">`./code/<span class="hljs-subst">$&#123;item&#125;</span>`</span>,<span class="hljs-string">`./code/<span class="hljs-subst">$&#123;newFileName&#125;</span>`</span>)<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+
+
+<h1 id="path模块"><a href="#path模块" class="headerlink" title="path模块"></a>path模块</h1><table>
+<thead>
+<tr>
+<th>API</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>path.resolve</td>
+<td>拼接规范的绝对路径 <code>常用</code></td>
+</tr>
+<tr>
+<td>path.sep</td>
+<td>获取操作系统的路径分隔符</td>
+</tr>
+<tr>
+<td>path.parse</td>
+<td>解析路径并返回对象</td>
+</tr>
+<tr>
+<td>path.basename</td>
+<td>获取路径的基础名称（文件名）</td>
+</tr>
+<tr>
+<td>path.dirname</td>
+<td>获取路径的目录名</td>
+</tr>
+<tr>
+<td>path.extname</td>
+<td>获得路径的扩展名（例如.js）</td>
+</tr>
+</tbody></table>
+<h1 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h1><p>协议：双方必须遵从的一种规定。</p>
+<p>HTTP：Hypertext Transfer Protocol（超文本传输协议）。</p>
+<p><img src="https://soya-1300102518.cos.ap-shenzhen-fsi.myqcloud.com/2022/%E6%88%AA%E5%B1%8F2023-12-29%20%E4%B8%8A%E5%8D%8810.34.47.png" srcset="/img/loading.gif" lazyload alt="HTTP请求"></p>
+<p>请求报文分析：</p>
+<ul>
+<li><strong>请求行： 方法 URL HTTP版本号</strong><ul>
+<li>常见方法：GET、POST、PUT&#x2F;PATCH（更新数据）、DELETE……</li>
+<li>URL：Uniform Resource Locator（统一资源定位符）<ul>
+<li>用于定位服务器的资源。</li>
+<li>组成：协议名+主机名+[端口号]+路径+[查询字符串]</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>请求头</strong>：由一系列键值对组成。记录浏览器的相关信息。</li>
+<li><strong>请求体</strong></li>
+</ul>
+<p>响应报文和请求报文格式类似，由响应行、响应头、响应体组成：</p>
+<ul>
+<li><p><strong>响应行</strong>：HTTP&#x2F;1.1 200 OK</p>
+<ul>
+<li>HTTP&#x2F;1.1：HTTP协议版本号 </li>
+<li>200：响应状态码 </li>
+<li>404 Not Found 500 Internal Server Error <ul>
+<li>还有一些状态码，参考： <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status">https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status</a></li>
+</ul>
+</li>
+<li>OK：响应状态描述</li>
+</ul>
+</li>
+<li><p><strong>响应头</strong></p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs ruby"><span class="hljs-title class_">Cache</span>-<span class="hljs-title class_">Control</span><span class="hljs-symbol">:</span>缓存控制 <span class="hljs-keyword">private</span> 私有的，只允许客户端缓存数据 <br><span class="hljs-title class_">Connection</span> 链接设置 <br><span class="hljs-title class_">Content</span>-<span class="hljs-title class_">Type</span><span class="hljs-symbol">:text/html</span>;charset=utf-<span class="hljs-number">8</span> 设置响应体的数据类型以及字符集,响应体为html，字符集 utf-<span class="hljs-number">8</span> <br><span class="hljs-title class_">Content</span>-<span class="hljs-title class_">Length</span><span class="hljs-symbol">:</span>响应体的长度，单位为字节<br></code></pre></td></tr></table></figure></li>
+</ul>
+<p><strong>IP地址</strong>：一个数字标识。用来表示网络中的设备，<strong>实现设备间通信</strong>。</p>
+<ul>
+<li>分类<ul>
+<li><strong>本机回环IP</strong>：127.0.0.1 - 127.255.255.254</li>
+<li><strong>局域网（私网）IP</strong><ul>
+<li>10.0.0.0 - 10.255.255.255</li>
+<li>172.16.0.0 - 172.31.255.255</li>
+<li>192.168.0.0 - 192.168.255.255（用的较多）</li>
+</ul>
+</li>
+<li><strong>广域网（公网）IP</strong></li>
+</ul>
+</li>
+</ul>
+<p><strong>端口</strong>：应用程序的数字标识。一台现代计算机有65535个端口。<strong>实现不同主机应用程序之间的通信</strong>。</p>
+<h1 id="HTTP模块"><a href="#HTTP模块" class="headerlink" title="HTTP模块"></a>HTTP模块</h1><p><strong>创建HTTP服务</strong></p>
+<p>步骤：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 1.导入http模块</span><br><span class="hljs-keyword">const</span> http = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;http&#x27;</span>);<br><span class="hljs-comment">// 2.创建服务对象 createServer()</span><br><span class="hljs-comment">// request 意为请求. 是对请求报文的封装对象, 通过 request 对象可以获得请求报文的数据 </span><br><span class="hljs-comment">// response 意为响应. 是对响应报文的封装对象, 通过 response 对象可以设置响应报文</span><br><span class="hljs-keyword">const</span> server = http.<span class="hljs-title function_">createServer</span>(<span class="hljs-function">(<span class="hljs-params">request, response</span>) =&gt;</span> &#123;<br>    response.<span class="hljs-title function_">end</span>(<span class="hljs-string">&#x27;Hello HTTP Server&#x27;</span>); <span class="hljs-comment">//设置响应体</span><br>&#125;);<br><br><span class="hljs-comment">// 3.监听端口，启动对象</span><br>server.<span class="hljs-title function_">listen</span>(<span class="hljs-number">9000</span>, <span class="hljs-function">() =&gt;</span> &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;服务已经启动&#x27;</span>)<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p>测试：<a target="_blank" rel="noopener" href="http://127.0.0.1:9000/">http://127.0.0.1:9000</a></p>
+<p>HTTP 协议默认端口是80。</p>
+<p>HTTPS 协议的默认端口是 443,</p>
+<p>HTTP 服务开发常用端口有 3000，8080，8090，9000 等。</p>
+<p><strong>获取 HTTP 请求报文</strong></p>
+<table>
+<thead>
+<tr>
+<th>含义</th>
+<th>语法</th>
+<th>重点掌握</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>请求方法</td>
+<td>request.method</td>
+<td>*</td>
+</tr>
+<tr>
+<td>请求版本</td>
+<td>request.httpVersion</td>
+<td></td>
+</tr>
+<tr>
+<td>请求路径</td>
+<td>request.url</td>
+<td>*</td>
+</tr>
+<tr>
+<td>URL 路径</td>
+<td>require(‘url’).parse(request.url).pathname</td>
+<td>*</td>
+</tr>
+<tr>
+<td>URL 查询字符串</td>
+<td>require(‘url’).parse(request.url, true).query</td>
+<td>*</td>
+</tr>
+<tr>
+<td>请求头</td>
+<td>request.headers</td>
+<td>*</td>
+</tr>
+<tr>
+<td>请求体</td>
+<td>request.on(‘data’, function(chunk){}) request.on(‘end’, function(){});</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>练习：</p>
+<blockquote>
+<p>按照以下要求搭建 HTTP 服务</p>
+<table>
+<thead>
+<tr>
+<th>请求类型(方法)</th>
+<th>请求地址</th>
+<th>响应体结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>get</td>
+<td>&#x2F;login</td>
+<td>登录页面</td>
+</tr>
+<tr>
+<td>get</td>
+<td>&#x2F;reg</td>
+<td>注册页面</td>
+</tr>
+</tbody></table>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 导入http模块</span><br><span class="hljs-keyword">const</span> http = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;http&#x27;</span>)<br><span class="hljs-comment">// 创建服务对象</span><br><span class="hljs-keyword">const</span> server = http.<span class="hljs-title function_">createServer</span>(<span class="hljs-function">(<span class="hljs-params">request,response</span>)=&gt;</span>&#123;<br>    <span class="hljs-comment">// 获取请求方法</span><br>    <span class="hljs-keyword">let</span> &#123;method&#125; = request; <span class="hljs-comment">//解构赋值</span><br>    <span class="hljs-comment">// 获取请求的url路径</span><br>    <span class="hljs-keyword">let</span> &#123;pathname&#125; = <span class="hljs-keyword">new</span> <span class="hljs-title function_">URL</span>(request.<span class="hljs-property">url</span>,<span class="hljs-string">&#x27;http://127.0.0.1&#x27;</span>);<br>    <span class="hljs-comment">// 设置编码格式（防止乱码）</span><br>    response.<span class="hljs-title function_">setHeader</span>(<span class="hljs-string">&#x27;content-type&#x27;</span>,<span class="hljs-string">&#x27;text/html;charset=utf-8&#x27;</span>);<br>    <span class="hljs-keyword">if</span>(method===<span class="hljs-string">&quot;GET&quot;</span>&amp;&amp;pathname===<span class="hljs-string">&quot;/login&quot;</span>)&#123;<br>        <span class="hljs-comment">// 登录的情况</span><br>        response.<span class="hljs-title function_">end</span>(<span class="hljs-string">&#x27;登录页面&#x27;</span>);<br>    &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(method===<span class="hljs-string">&quot;POST&quot;</span>&amp;&amp;pathname===<span class="hljs-string">&quot;/reg&quot;</span>)&#123;<br>        <span class="hljs-comment">// 注册的情况</span><br>        response.<span class="hljs-title function_">end</span>(<span class="hljs-string">&#x27;注册页面&#x27;</span>)<br>    &#125;<span class="hljs-keyword">else</span>&#123;<br>        response.<span class="hljs-title function_">end</span>(<span class="hljs-string">&#x27;404 Not Found&#x27;</span>)<br>    &#125;<br>&#125;)<br><span class="hljs-comment">// 监听端口，启动服务</span><br>server.<span class="hljs-title function_">listen</span>(<span class="hljs-number">9000</span>,<span class="hljs-function">()=&gt;</span>&#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;服务已启动，9000端口监听中……&quot;</span>)<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%89%8D%E7%AB%AF/" class="category-chain-item">前端</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/vue/">#vue</a>
+      
+        <a href="/tags/nodejs/">#nodejs</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Nodejs</div>
+      <div>http://example.com/2024/01/05/2024/Nodejs/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>咩包</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年1月5日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       主题： <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

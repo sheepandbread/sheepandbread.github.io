@@ -24,7 +24,7 @@
 <meta property="og:description" content="about JavaScript">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-25T01:56:18.000Z">
-<meta property="article:modified_time" content="2023-12-24T04:34:12.238Z">
+<meta property="article:modified_time" content="2024-01-03T13:49:27.193Z">
 <meta property="article:author" content="咩包">
 <meta property="article:tag" content="js">
 <meta name="twitter:card" content="summary_large_image">
@@ -241,7 +241,7 @@
         
         
         
-          730 分钟
+          736 分钟
         
       </span>
     
@@ -289,6 +289,11 @@
 <h1 id="简介-amp-基础"><a href="#简介-amp-基础" class="headerlink" title="简介&amp;基础"></a>简介&amp;基础</h1><p>JavaScript是一种具有函数有限特性的轻量级、解释型（即时编译型[just-in-time compiling]）编程语言。</p>
 <p>进一步说，JavaScript 是一种<strong>基于原型、多范式、单线程的动态语言</strong>，并且<strong>支持</strong>面向对象、命令式和声明式（如函数式编程）风格。</p>
 <p>（严格来说，JavaScript并不算面向对象编程语言。ES6后新增了class，使它更贴合传统的oop。但在Netscape官方定义，JavaScript是基于对象的语言。）</p>
+<p>如今，JavaScript不仅可以在浏览器中执行，也可以在服务端执行。甚至可以在任意搭载了 <strong>JavaScript 引擎</strong> （有时也成为JavaScript虚拟机）的设备中执行。</p>
+<ul>
+<li>V8——chrome、Opera、和Edge的JavaScript</li>
+<li>SpiderMonkey —— Firefox 中的 JavaScript 引擎</li>
+</ul>
 <p>JavaScript是Netscape网景公司的产品（而java是sun家的，现在是Oracle）。</p>
 <p>JavaScript没有Java的静态类型和强类型检查特性，但JavaScript 遵循了 Java 的表达式语法，命名规范以及基础流程控制。</p>
 <table>
@@ -507,6 +512,24 @@
 </ul>
 </li>
 <li><p>stringify()：接收一个对象作为参数，返回一个对应的 JSON 字符串。</p>
+</li>
+</ul>
+<p><strong>交互：alert、prompt、confirm</strong></p>
+<ul>
+<li><p><strong>alert</strong>：弹出带有信息的小窗（被称为<strong>模态框</strong>）。</p>
+<ul>
+<li>模态：在处理完窗口前，用户无法与页面其他部分进行交互。</li>
+</ul>
+</li>
+<li><p><strong>prompt</strong>：显示一个带有文本消息的模态窗口，还有input框及确认取消。</p>
+<ul>
+<li><pre><code class="js">result = prompt(title, [default]);
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><br><span class="hljs-bullet">  -</span> 两个参数。title：显示给用户的文本。dafault：可选参数，input框的初始值。<br><br><span class="hljs-bullet">  -</span> result获取用户输入的内容。<br><br><span class="hljs-bullet">-</span> <span class="hljs-strong">**confirm**</span>：示一个带有 <span class="hljs-code">`question`</span> 以及确定和取消两个按钮的模态窗口。<br><br><span class="hljs-bullet">  -</span> <span class="hljs-code">```js</span><br><span class="hljs-code">    result = confirm(question);</span><br></code></pre></td></tr></table></figure>
+</code></pre>
+</li>
+<li><p>点击确定返回true，取消返回false</p>
+</li>
+</ul>
 </li>
 </ul>
 <h1 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h1><p><em><strong>文档对象模型 (DOM)</strong> 将 web 页面与到脚本或编程语言连接起来。</em></p>
@@ -1877,6 +1900,12 @@
 <h2 id="Module"><a href="#Module" class="headerlink" title="Module"></a>Module</h2><p>过去的js没有模块体系，无法将大程序拆分成小文件，再简单拼接。</p>
 <p>ES6实现了模块功能，设计思想是尽量静态化，使编译时就能确定模块的依赖关系，以及输入输出的变量。</p>
 <p>ES6的模块<strong>自动采用严格模式</strong>。</p>
+<ul>
+<li>严格模式（ES5)：在脚本文件顶部使用<code>&quot;use strict&quot;;</code>激活。一旦设置了严格模式就无法取消。<ul>
+<li>class和module会自动启用，无需手动添加。</li>
+</ul>
+</li>
+</ul>
 <p>模块功能主要由<code>export</code>和<code>import</code>构成。</p>
 <ul>
 <li><strong>export</strong>：规定模块的对外接口</li>
@@ -1997,14 +2026,25 @@
 <li><strong>基本数据类型</strong>（7种）<ul>
 <li><strong>布尔值Boolean</strong>。值为true、false。</li>
 <li><strong>null</strong>。一个表示null值的特殊关键字。<ul>
+<li>js的null不是一个对不存在的Object的引用或者null指针，仅仅表示”无“，”空“，或”值未知“的特殊值。</li>
 <li>因为js大小写敏感。所以null、Null、NULL或变体完全不同。</li>
+<li>typeof运算符会将其识别为object，这是一个官方承认的错误。</li>
 </ul>
 </li>
-<li><strong>undefined</strong>。一个特殊关键字，表示变量未赋值时的属性。</li>
-<li><strong>数字Number</strong>。整数或浮点数。</li>
-<li><strong>任意精度的整数BigInt</strong>。安全地存储和操作大整数。</li>
+<li><strong>undefined</strong>。一个特殊关键字，表示变量<strong>未赋值</strong>时的属性。<ul>
+<li>但也可以将undefined显式的赋值给变量（不建议）。</li>
+</ul>
+</li>
+<li><strong>数字Number</strong>。整数或浮点数。<ul>
+<li>除了常规的数字，也包括特殊数值。例如：Infinity（无穷大），NaN（计算错误）。</li>
+</ul>
+</li>
+<li><strong>任意精度的整数BigInt</strong>。安全地存储和操作大整数。<ul>
+<li>number无法安全的存储大于(2^53-1)或小于-(2^53-1)的整数。</li>
+</ul>
+</li>
 <li><strong>字符串String</strong>。一串表示文本值的字符序列。</li>
-<li><strong>代表Symbol</strong>。ES6新增类型。一种实例是唯一且不可改变的数据类型</li>
+<li><strong>代表Symbol</strong>。ES6新增类型。一种实例是唯一且不可改变的数据类型。用于创建对象的唯一标识。</li>
 </ul>
 </li>
 <li><strong>对象Object</strong></li>
@@ -3198,9 +3238,12 @@
 <li>视图：提供了上下文（即数据类型、起始偏移量和元素数），将数据转换为实际有类型的数组。</li>
 </ul>
 <p>详见<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Typed_arrays">类型化数组</a>。</p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://wangdoc.com/javascript/index.html">网道JavaScript教程</a></p>
-<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/">mdn web docs</a></p>
-<p><a target="_blank" rel="noopener" href="https://wangdoc.com/es6/index.html">ES6教程</a></p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://wangdoc.com/javascript/index.html">网道JavaScript教程</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/">mdn web docs</a></li>
+<li><a target="_blank" rel="noopener" href="https://wangdoc.com/es6/index.html">ES6教程</a></li>
+<li><a target="_blank" rel="noopener" href="https://zh.javascript.info/">javacript.info</a></li>
+</ul>
 <p>练习：<a target="_blank" rel="noopener" href="https://www.freecodecamp.org/learn">freeCodeCamp</a></p>
 <section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>window对象表示 一个包含DOM文档的窗口。其<code>document</code>属性指向窗口中载入的DOM文档。
 <a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:2" class="footnote-text"><span><strong><code>Node</code></strong> 是一个接口，各种类型的 DOM API 对象会从这个接口继承。
